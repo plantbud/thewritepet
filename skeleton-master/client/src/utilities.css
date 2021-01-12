@@ -15,15 +15,16 @@
 */
 
 /* TODO: REPLACE WITH YOUR OWN FONT! */
-@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@700&family=Roboto:ital,wght@1,300&display=swap");
 
 :root {
-  --primary: #396dff;
-  --primary--dim: #6987db;
-  --darkgrey: #d4d4d4;
-  --medgrey: #e0e0e0;
+  --primary: #FFFEFB;
+  --ltblue: #D6EDFF;
+  --darkblue: #103248;
+  --white: #ffffff;
+  --pink: #FFC0B2;
   --grey: #f7f7f7;
-  --white: #fff;
+  --aqua: #82C9CC;
 
   --xs: 4px;
   --s: 8px;
