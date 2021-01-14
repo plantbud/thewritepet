@@ -1,1 +1,40 @@
 /* Fill me in :) */
+.home{
+    background-color: var(--ltblue);
+    z-index: -2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+.home-title{
+    font-style: italic;
+    text-align: center;
+    font-weight: lighter;
+    font-size: 3rem;
+    text-justify: auto;
+    margin-top: 30vh;
+}
+.home-button{
+    background-color: var(--aqua);
+    color: white;
+    border-width: 0;
+    position: relative; 
+    left: 40vw;
+    align-items: center;
+    align-content: center;
+    width: 300px;
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 25px;
+    text-align: center;
+    display:block;
+    font-weight:bold;
+    font-size: 1.2rem;
+}
+.home-button:hover{
+    background-color: var(--pink);
+    cursor: pointer;
+}
