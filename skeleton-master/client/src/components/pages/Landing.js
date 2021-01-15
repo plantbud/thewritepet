@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
 
 import "../../utilities.css";
-import "./Skeleton.css";
+import "./Landing.css";
 
 //TODO: REPLACE WITH YOUR OWN CLIENT_ID
 const GOOGLE_CLIENT_ID = "121479668229-t5j82jrbi9oejh7c8avada226s75bopn.apps.googleusercontent.com";
 
-class Skeleton extends Component {
+class Landing extends Component {
   constructor(props) {
     super(props);
     // Initialize Default State
@@ -21,12 +21,18 @@ class Skeleton extends Component {
   render() {
     return (
       <>
-        {this.props.userId ? (
+        <div className = "home">
+          <h1 className="home-title">take a deep breath</h1>
+
+          {this.props.userId ? (
           <GoogleLogout
             clientId={GOOGLE_CLIENT_ID}
             buttonText="Logout"
             onLogoutSuccess={this.props.handleLogout}
             onFailure={(err) => console.log(err)}
+            render={(renderProps) => (
+              <button onClick = {renderProps.onClick} className="home-button">Logout</button>
+            )}
           />
         ) : (
           <GoogleLogin
@@ -34,17 +40,16 @@ class Skeleton extends Component {
             buttonText="Login"
             onSuccess={this.props.handleLogin}
             onFailure={(err) => console.log(err)}
+            render={(renderProps) => (
+              <button onClick = {renderProps.onClick} className="home-button">Log in with Google</button>
+            )}
           />
         )}
-        <div className = "home">
-          <h1 className="home-title">take a deep breath</h1>
-          <button className = "home-button">Sign in with Google</button>
-          <button className = "home-button">About</button>
-
+          <button className = "home-button" onClick={this.showModal}>About</button>
         </div>
       </>
     );
   }
 }
 
-export default Skeleton;
+export default Landing;
