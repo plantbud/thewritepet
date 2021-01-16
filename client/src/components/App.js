@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Router } from "@reach/router";
+import { navigate, Router } from "@reach/router";
 import NotFound from "./pages/NotFound.js";
 import Landing from "./pages/Landing.js";
 import Home from "./pages/Home.js";
@@ -29,8 +29,8 @@ class App extends Component {
     get("/api/whoami").then((user) => {
       if (user._id) {
         // they are registed in the database, and currently logged in.
-        this.setState({ userId: user._id, 
-        
+        this.setState({ 
+          userId: user._id, 
         });
       }
     });
@@ -42,21 +42,26 @@ class App extends Component {
     post("/api/login", { token: userToken }).then((user) => {
       this.setState({ userId: user._id });
       post("/api/initsocket", { socketid: socket.id });
+    }).then(() => {
+      navigate("/home");
     });
   };
 
   handleLogout = () => {
     this.setState({ userId: undefined });
-    post("/api/logout");
+    post("/api/logout").then(() => {
+      navigate("/");
+    });
   };
 
   render() {
-    return (
-      <>
-      <Navbar>
-        handleLogin={this.handleLogin}
-        handleLogout={this.handleLogout}
-      </Navbar>
+    if(this.state.userId) {
+      return(
+        <>
+        <Navbar
+            handleLogin={this.handleLogin}
+            handleLogout={this.handleLogout}
+        />
         <Router>
           <Landing
             path="/"
@@ -75,8 +80,28 @@ class App extends Component {
           />
           <NotFound default />
         </Router>
-      </>
-    );
+        </>
+      );
+
+    } else {
+      return (
+        <>
+             <Navbar
+            handleLogin={this.handleLogin}
+            handleLogout={this.handleLogout}
+        />
+          <Router>
+          <Landing
+            path="/"
+            handleLogin={this.handleLogin}
+            handleLogout={this.handleLogout}
+            userId={this.state.userId}
+          />
+          <NotFound default />
+        </Router>
+        </>
+      );
+    }
   }
 }
 
