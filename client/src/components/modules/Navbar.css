@@ -1,0 +1,117 @@
+.pfp {
+    height: 42px;
+    width: 42px;
+  }
+  
+  .pfp:hover {
+    cursor: pointer;
+  }
+  
+  .settings li {
+    font-family: "Poppins", sans-serif;
+    margin: auto;
+  }
+  
+  .settings-Container {
+    padding: 0px;
+    height: 24px;
+    width: 80px;
+    line-height: 24px;
+    font-size: 12px;
+    text-align: center;
+    margin: auto;
+    margin-top: -16px;
+    margin-bottom: 16px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 10px;
+  }
+  
+  .settings-Container:hover {
+    cursor: pointer;
+    background-color: var(--accent);
+    color: var(--accent-text);
+    transition: all 0.4s;
+  }
+  
+  .Navbar-container {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px 10px 20px;
+    height: 10vh;
+  }
+  
+  .Navbar-company {
+    font-family: "Sacramento", cursive;
+    color: var(--headers);
+    font-size: 36px;
+    font-weight: 500;
+    margin-left: 15px;
+  }
+  
+  .Navbar-opts {
+    display: flex;
+    margin-right: 20px;
+    position: absolute;
+    right: 0;
+  }
+  
+  /* .Navbar-opts_link {
+    font-family: "Poppins", sans-serif;
+    color: var(--headers);
+    width: 50%;
+    margin-right: 20px;
+    padding: 10px 10px 0 10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: transform 0.5s;
+  }
+  .Navbar-opts_link:hover {
+    transform: translateY(-5px);
+  }
+  .Navbar-opts_link.active {
+    border: 1px solid white;
+  } */
+  
+  .dropDown-container {
+    position: relative;
+    /* display: inline-block; */
+  }
+  
+  .dropDown {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    margin-top: 12px;
+    right: 0;
+    padding: 12px 16px;
+    /* width: 300px;  */
+    z-index: 2;
+    background: var(--bujo-body);
+    border-radius: 16px;
+    box-shadow: 0 6px 16px 1px rgba(0, 0, 0, 0.14);
+  }
+  
+  .li-pfp {
+    margin: auto;
+    height: 40px;
+    width: 40px;
+  }
+  
+  /* 
+  .logout-btn{
+    align-self: center;
+  } */
+  
+  .dropDown ul {
+    list-style: none;
+    padding: 0;
+    margin: auto;
+  }
+  
+  .dropDown li {
+    text-align: center;
+    padding: 8px 12px;
+  }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
+import Modal from "react-modal";
 
 import "../../utilities.css";
 import "./Landing.css";
@@ -15,9 +16,19 @@ class Landing extends Component {
   constructor(props) {
     super(props);
     // Initialize Default State
-    this.state = {};
+    this.state = {
+      showModal: false,
+    };
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
   }
-
+  handleOpenModal () {
+    this.setState({ showModal: true });
+  }
+  
+  handleCloseModal () {
+    this.setState({ showModal: false });
+  }
   componentDidMount() {
     // remember -- api calls go here!
   }
@@ -53,7 +64,11 @@ class Landing extends Component {
             )}
           />
         )}
-          <button className = "landing-button" onClick={this.showModal}>about</button>
+          <button className = "landing-button" onClick={this.handleOpenModal}>about</button>
+          <Modal isOpen={this.state.showModal} className="Modal" overlayClassName="Overlay"> 
+          <button onClick={this.handleCloseModal}>X</button>
+          <p>Modal text infor stuff </p>
+          </Modal>
         </div>
       </>
     );

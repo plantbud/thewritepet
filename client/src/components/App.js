@@ -9,6 +9,7 @@ import PastEntry from "./pages/PastEntry.js";
 import "../utilities.css";
 
 import { socket } from "../client-socket.js";
+import Navbar from "./modules/Navbar";
 
 import { get, post } from "../utilities";
 
@@ -28,7 +29,9 @@ class App extends Component {
     get("/api/whoami").then((user) => {
       if (user._id) {
         // they are registed in the database, and currently logged in.
-        this.setState({ userId: user._id });
+        this.setState({ userId: user._id, 
+        
+        });
       }
     });
   }
@@ -50,6 +53,10 @@ class App extends Component {
   render() {
     return (
       <>
+      <Navbar>
+        handleLogin={this.handleLogin}
+        handleLogout={this.handleLogout}
+      </Navbar>
         <Router>
           <Landing
             path="/"

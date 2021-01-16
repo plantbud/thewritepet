@@ -39,7 +39,18 @@
     background-color: var(--pink);
     cursor: pointer;
 }
-
+.Modal {
+    position: absolute;
+    top: 10vw;
+    left: 50vh;
+    width:50vw;
+    height: 50vh;
+    background-color: var(--primary);
+    border-radius: 30px;
+  }
+  .Overlay {
+    
+  }
 .cloud1{
     height:22vh;
     position: fixed;
