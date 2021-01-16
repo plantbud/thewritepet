@@ -48,4 +48,8 @@ router.all("*", (req, res) => {
   res.status(404).send({ msg: "API route not found" });
 });
 
+router.get("/login", (req, res) => {
+  //write the backend stuff
+});
+
 module.exports = router;

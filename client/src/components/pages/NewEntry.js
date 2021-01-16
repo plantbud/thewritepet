@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Editor , EditorState} from 'draft-js';
 import "./NewEntry.css";
 
 class NewEntry extends Component {

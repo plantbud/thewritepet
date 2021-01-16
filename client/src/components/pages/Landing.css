@@ -31,10 +31,33 @@
     border-radius: 25px;
     text-align: center;
     display:block;
-    font-weight:bold;
+    font-family: "Mulish";
+    font-weight: bolder;
     font-size: 1.2rem;
 }
 .landing-button:hover{
     background-color: var(--pink);
     cursor: pointer;
+}
+
+.cloud1{
+    height:22vh;
+    position: fixed;
+    bottom: 10vh;
+    left: 80vw;
+    padding: 0;
+    display: block;
+    margin: 0;   
+    z-index: -1;
+    animation: cloudMovement 15s infinite;
+}
+
+@keyframes cloudMovement{
+    0% {
+        transform: translate();
+        left: -20vw;
+    }
+    100% {
+        left: 100vw;
+      }
 }

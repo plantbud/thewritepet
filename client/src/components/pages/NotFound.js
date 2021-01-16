@@ -1,15 +1,19 @@
 import React, { Component } from "react";
+import "./NotFound.css";
+import sadDog from "../../assets/dog_sad.svg"
 
 class NotFound extends Component {
   constructor(props) {
     super(props);
+    this.state = {};
   }
 
   render() {
     return (
-      <div>
+      <div className="notFound-background text">
         <h1>404 Not Found</h1>
-        <p>The page you requested couldn't be found.</p>
+        <p>your pet is sad because the page you requested could not be found :(</p>
+        <img src={sadDog} className="sadPet-image"/>
       </div>
     );
   }
