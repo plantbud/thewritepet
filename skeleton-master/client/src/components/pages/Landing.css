@@ -1,5 +1,5 @@
 /* Fill me in :) */
-.home{
+.landing{
     background-color: var(--ltblue);
     z-index: -2;
     position: fixed;
@@ -9,7 +9,7 @@
     width: 100%;
     overflow: auto;
 }
-.home-title{
+.landing-title{
     font-style: italic;
     text-align: center;
     font-weight: lighter;
@@ -17,12 +17,12 @@
     text-justify: auto;
     margin-top: 30vh;
 }
-.home-button{
+.landing-button{
     background-color: var(--aqua);
     color: white;
     border-width: 0;
     position: relative; 
-    left: 40vw;
+    left: calc(50vw - 150px);
     align-items: center;
     align-content: center;
     width: 300px;
@@ -34,7 +34,7 @@
     font-weight:bold;
     font-size: 1.2rem;
 }
-.home-button:hover{
+.landing-button:hover{
     background-color: var(--pink);
     cursor: pointer;
 }

@@ -21,8 +21,8 @@ class Landing extends Component {
   render() {
     return (
       <>
-        <div className = "home">
-          <h1 className="home-title">take a deep breath</h1>
+        <div className = "landing">
+          <h1 className="landing-title">take a deep breath</h1>
 
           {this.props.userId ? (
           <GoogleLogout
@@ -31,7 +31,7 @@ class Landing extends Component {
             onLogoutSuccess={this.props.handleLogout}
             onFailure={(err) => console.log(err)}
             render={(renderProps) => (
-              <button onClick = {renderProps.onClick} className="home-button">Logout</button>
+              <button onClick = {renderProps.onClick} className="landing-button">Logout</button>
             )}
           />
         ) : (
@@ -41,11 +41,11 @@ class Landing extends Component {
             onSuccess={this.props.handleLogin}
             onFailure={(err) => console.log(err)}
             render={(renderProps) => (
-              <button onClick = {renderProps.onClick} className="home-button">Log in with Google</button>
+              <button onClick = {renderProps.onClick} className="landing-button">Log in with Google</button>
             )}
           />
         )}
-          <button className = "home-button" onClick={this.showModal}>About</button>
+          <button className = "landing-button" onClick={this.showModal}>About</button>
         </div>
       </>
     );
