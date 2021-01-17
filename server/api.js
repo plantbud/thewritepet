@@ -11,7 +11,7 @@ const express = require("express");
 
 // import models so we can interact with the database
 const User = require("./models/user");
-const Entry = require("./models/journalentry.js");
+const Journalentry = require("./models/journalentry.js");
 // import authentication library
 const auth = require("./auth");
 
@@ -45,17 +45,17 @@ router.post("/initsocket", (req, res) => {
 // | write your API methods below!|
 // |------------------------------|
 
-router.get("/timeline", auth.ensureLoggedIn, (req,res) => {
-  Entry.find({}).then((entries) => res.send(entries));
+router.get("/journalentries", auth.ensureLoggedIn, (req,res) => {
+  Journalentry.find({}).then((journalentries) => res.send(journalentries));
 });
 
-router.post("/newentry", auth.ensureLoggedIn, (req, res) =>{
-  const newEntry = new Entry({
+router.post("/journalentries", auth.ensureLoggedIn, (req, res) =>{
+  const newEntry = new Journalentry({
     creator: req.user._id,
-    content: req.body.content,
+    content: "aaaaa",
 
   });
-  newEntry.save().then((journalentry) => res.send(journalentry))
+  newEntry.save().then((journalentries) => res.send(journalentries))
 });
 
 // anything else falls to this "not found" case

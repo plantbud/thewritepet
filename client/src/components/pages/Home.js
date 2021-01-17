@@ -4,7 +4,7 @@ import doggo from "../../assets/dog_normal.svg";
 import arrow from "../../assets/arrow.svg";
 import { navigate, Router } from "@reach/router";
 import Navbar from "../modules/Navbar";
-
+import HomeButton from "../modules/HomeButton";
 
 
 
@@ -22,9 +22,8 @@ class Home extends Component {
   render() {
     return (
       <>
-              <Navbar
-
-        />
+      <Navbar/>
+      <HomeButton onClick={() => navigate('/home')}/>
       <div className="home-background">
         <div className="home-content">
           <div className="name-display" >

@@ -1,0 +1,15 @@
+.homebutton{
+    right:-5vw;
+    top:5vh;
+    position:fixed;
+    height:4vh;
+    background-color: var(--ltblue);
+    padding-bottom:15px;
+    padding-top:15px;
+    padding-right:8vw;
+    padding-left:2vw;
+    border-radius: 60px;
+}
+.homebutton:hover{
+    cursor: pointer;
+}

@@ -4,7 +4,6 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 const JournalEntrySchema = new mongoose.Schema({
   creator: { type: ObjectId, ref: "user" },
   content: { type: String, default: "" },
-  timestamp: Date,
 });
 
 // compile model from schema
