@@ -8,6 +8,26 @@
     width: 100%;
     overflow: auto;
 }
+
+.name-display{
+    position:absolute;
+    font-size: 1.9em;
+    left: -5vw; 
+    top:4vh;
+    background-color: var(--ltblue);
+    padding-left: 8rem;
+    padding-top: 1rem;    
+    height: 3rem;
+    width: 28vw;
+    border-radius: 70px;
+}
+.name-display:hover{
+    cursor: pointer;
+}
+.arrowdown{
+    height:1.5rem;
+    margin-left: 13rem;
+}
 #ellipse-viewbox{
     position: fixed;
     padding-top: 0%;

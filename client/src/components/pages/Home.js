@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import "./Home.css";
 import doggo from "../../assets/dog_normal.svg";
+import arrow from "../../assets/arrow.svg";
+import { navigate, Router } from "@reach/router";
+import Navbar from "../modules/Navbar";
+
+
+
 
 class Home extends Component {
     constructor(props) {
@@ -16,9 +22,17 @@ class Home extends Component {
   render() {
     return (
       <>
+              <Navbar
+
+        />
       <div className="home-background">
         <div className="home-content">
-          <button className = "reflect-button">reflect</button>
+          <div className="name-display" >
+            <span >Jessica Xu</span>
+            <img src={arrow} className="arrowdown"/>
+          </div>
+
+          <button className = "reflect-button" onClick={() => navigate('/newentry')}>reflect</button>
           <p id="date">01/15/2021</p>
         </div>
         <div className= "container"> </div>

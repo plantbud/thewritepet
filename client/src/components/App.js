@@ -58,10 +58,6 @@ class App extends Component {
     if(this.state.userId) {
       return(
         <>
-        <Navbar
-            handleLogin={this.handleLogin}
-            handleLogout={this.handleLogout}
-        />
         <Router>
           <Landing
             path="/"
@@ -86,10 +82,6 @@ class App extends Component {
     } else {
       return (
         <>
-             <Navbar
-            handleLogin={this.handleLogin}
-            handleLogout={this.handleLogout}
-        />
           <Router>
           <Landing
             path="/"
