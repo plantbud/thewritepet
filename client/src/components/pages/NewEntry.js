@@ -1,10 +1,16 @@
 import React from "react";
 import ReactDOM from 'react-dom';
-import {Editor, EditorState} from 'draft-js';
+import {
+  Editor, 
+  EditorState,
+  RichUtils,
+  getDefaultKeyBinding
+} from 'draft-js';
 import 'draft-js/dist/Draft.css';
  
 import "./NewEntry.css";
- 
+import sleepy from "../../assets/dog_sleep.svg"
+
 class NewEntry extends React.Component {
     constructor(props) {
       super(props);
@@ -19,8 +25,8 @@ class NewEntry extends React.Component {
  
   render() {
     return (
-    <div >
-        <div>
+    <div className="newEntry-background">
+        <div className="journal-box">
           {/* <Toolbar
             editorState={this.state.editorState}
             setInlineStyle={this.setInlineStyle}
@@ -31,6 +37,10 @@ class NewEntry extends React.Component {
             toggleInlineStyle={this.toggleInlineStyle}
             toggleBlockType={this.toggleBlockType}
           /> */}
+          <p className="dateTime-display ">01/16/2021</p>
+          <h1 className="title">january 16, 2021</h1>
+          <img src={sleepy} className="petImage"/>
+          <div className="box blueFloor">hellooooo</div>
           <div>
             <Editor
               editorState={this.state.editorState}
