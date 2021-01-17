@@ -3,7 +3,7 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 
 const JournalEntrySchema = new mongoose.Schema({
   creator: { type: ObjectId, ref: "user" },
-  value: { type: String, default: "" },
+  content: { type: String, default: "" },
   timestamp: Date,
 });
 
