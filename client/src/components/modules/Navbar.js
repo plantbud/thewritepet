@@ -3,18 +3,18 @@ import { Link } from "@reach/router";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
 import "./Navbar.css";
 
-const GOOGLE_CLIENT_ID = "121479668229-t5j82jrbi9oejh7c8avada226s75bopn.apps.googleusercontent.com";
+const GOOGLE_CLIENT_ID = "1047242304905-banhh0inijubl1kiqctqsgn7ht8dg2cn.apps.googleusercontent.com";
 
 class Navbar extends Component{
     constructor(props) {
         super(props);
         this.state={
-            display: "none",
-            open: false,
+/*            display: "none",
+            open: false,*/
         };
     }
 
-    handleButtonClick = () => {
+    /*handleButtonClick = () => {
         this.setState({ open: !this.state.open });
       };
     
@@ -24,15 +24,15 @@ class Navbar extends Component{
             open: false,
           });
         }
-      };
+      };*/
 
       componentDidMount() {
-        document.addEventListener("mousedown", this.handleClickOutside);
+        //document.addEventListener("mousedown", this.handleClickOutside);
       }
     
-      componentWillUnmount() {
+    /*  componentWillUnmount() {
         document.removeEventListener("mousedown", this.handleClickOutside);
-      }
+      }*/
     
       render() {
         return (
@@ -40,26 +40,20 @@ class Navbar extends Component{
             {this.props.userId ? (
                 <GoogleLogout
                 clientId={GOOGLE_CLIENT_ID}
-                buttonText="Logout"
+                buttonText="navbar logout"
                 onLogoutSuccess={this.props.handleLogout}
                 onFailure={(err) => console.log(err)}
-                render={(renderProps) => (
-                <button onClick = {renderProps.onClick} className="landing-button">Navbar Logout</button>
-                )}
             />
             ) : (
             <GoogleLogin
                 clientId={GOOGLE_CLIENT_ID}
-                buttonText="Login"
+                buttonText="navbar login"
                 onSuccess={this.props.handleLogin}
                 onFailure={(err) => console.log(err)}
-                render={(renderProps) => (
-                <button onClick = {renderProps.onClick} className="landing-button">Navbar Login</button>
-                )}
             />
             )}
-            </>
             
+            </>
         );
       }
     }

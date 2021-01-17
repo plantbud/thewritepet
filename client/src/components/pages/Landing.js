@@ -10,7 +10,7 @@ import cloud3 from "../../assets/cloud_med2.svg";
 import cloud4 from "../../assets/cloud_smol.svg";
 
 //TODO: REPLACE WITH YOUR OWN CLIENT_ID
-const GOOGLE_CLIENT_ID = "121479668229-t5j82jrbi9oejh7c8avada226s75bopn.apps.googleusercontent.com";
+const GOOGLE_CLIENT_ID = "1047242304905-banhh0inijubl1kiqctqsgn7ht8dg2cn.apps.googleusercontent.com";
 
 class Landing extends Component {
   constructor(props) {
@@ -50,7 +50,7 @@ class Landing extends Component {
             onLogoutSuccess={this.props.handleLogout}
             onFailure={(err) => console.log(err)}
             render={(renderProps) => (
-              <button onClick = {renderProps.onClick} className="landing-button">Logout</button>
+              <button onClick = {renderProps.onClick} className="landing-button">logout</button>
             )}
           />
         ) : (
