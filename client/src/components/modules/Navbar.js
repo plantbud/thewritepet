@@ -45,23 +45,13 @@ class Navbar extends Component{
                 <ul><Link to="/timeline" className="NavBar-link">TIMELINE</Link></ul>
                 <ul><Link to="/addlater" className="NavBar-link">SWITCH PET</Link></ul>
                 <ul>
-                  {this.props.userId ? (
                   <GoogleLogout
                     clientId={GOOGLE_CLIENT_ID}
-                    buttonText="Logout"
+                    buttonText="LOGOUT"
                     onLogoutSuccess={this.props.handleLogout}
                     onFailure={(err) => console.log(err)}
-                    className="NavBar-link"
+                    className="NavBar-logout"
                     />
-                  ) : (
-                  <GoogleLogin
-                    clientId={GOOGLE_CLIENT_ID}
-                    buttonText="Login"
-                    onSuccess={this.props.handleLogin}
-                    onFailure={(err) => console.log(err)}
-                    className="NavBar-link"
-                    />
-                  )}
                 </ul>
                 
               </div>

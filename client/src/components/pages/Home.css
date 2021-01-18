@@ -74,46 +74,11 @@
     border: 5px solid #ff9987;
     cursor: pointer;
 }
-.container{
-    background: url('../../assets/doggowalk.svg') ; 
-    background-size: cover;
-    width:240px;
-    height:210px;
-    bottom: 10vh;
-    left: 60vw;
-    padding: 0;
-    display: block;
-    margin: 0;
-    position: fixed;
-    animation: petwalk 11s steps(18) infinite;
+.con{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-@keyframes petwalk{
-    0%{
-        left: 60vw;
-        bottom: 10vh;
-    }
-    25%{
-        bottom: 11vh;
-    }
-    50%{
-        left:20vw;    
-        bottom: 10vh;
-    }
-    75%{
-        bottom: 11vh;
-    }
-    100% {
-        left: 60vw;
-        bottom: 10vh;
-        background-position: -4320px;
-      }
-}
-@keyframes translatee{
-    0%{
-        left: 80vw;
-    }
-    100%{
-        left: 10vw;
-    }
+.cons:hover{
+    cursor: pointer;
 }

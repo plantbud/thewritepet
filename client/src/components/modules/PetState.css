@@ -1,0 +1,68 @@
+.Petstate {
+    font-size: 40px;
+    text-align: center;
+    top:10vh;
+    margin-top: 0;
+    
+  }
+  .sad{
+    background: url('../../assets/dog_sad.svg') ; 
+    background-repeat: no-repeat;
+    width:220px;
+    height:200px;
+    bottom: 10vh;
+    left: 60vw;
+    position: fixed;
+  }
+  .normal{
+    background: url('../../assets/dog_normal.svg') ; 
+    background-repeat: no-repeat;
+    width:220px;
+    height:200px;
+    bottom: 10vh;
+    left: 60vw;
+    position: fixed;
+  }
+  .happy{
+    background: url('../../assets/doggowalk.svg') ; 
+    background-size: cover;
+    width:240px;
+    height:210px;
+    bottom: 10vh;
+    left: 60vw;
+    padding: 0;
+    display: block;
+    margin: 0;
+    position: fixed;
+    animation: petwalk 11s steps(18) infinite;
+}
+
+@keyframes petwalk{
+    0%{
+        left: 60vw;
+        bottom: 10vh;
+    }
+    25%{
+        bottom: 11vh;
+    }
+    50%{
+        left:20vw;    
+        bottom: 10vh;
+    }
+    75%{
+        bottom: 11vh;
+    }
+    100% {
+        left: 60vw;
+        bottom: 10vh;
+        background-position: -4320px;
+      }
+}
+@keyframes translatee{
+    0%{
+        left: 80vw;
+    }
+    100%{
+        left: 10vw;
+    }
+}

@@ -45,6 +45,14 @@ router.post("/initsocket", (req, res) => {
 // | write your API methods below!|
 // |------------------------------|
 
+router.post("/user/consistency", auth.ensureLoggedIn, (req,res) => {
+  User.findOne({
+    _id: req.user._id,}).then((user) => {
+      user.consistency = req.body.consistency;
+      user.save().then((updatedUser) => res.send(updatedUser));
+    });
+});
+
 router.get("/journalentries", auth.ensureLoggedIn, (req,res) => {
   Journalentry.find({}).then((journalentries) => res.send(journalentries));
 });

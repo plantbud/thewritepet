@@ -30,3 +30,7 @@
 .NavBar-link.NavBar-login {
   opacity: 1;
 }
+.Navbar-logout{
+  background-image: none;
+  background: none;
+}
