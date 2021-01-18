@@ -15,7 +15,7 @@ import sleepy from "../../assets/dog_sleep.svg"
 import HomeButton from "../modules/HomeButton";
 import { navigate, Router } from "@reach/router";
 import journalentry from "../../../../server/models/journalentry";
-import { get } from "../../utilities";
+import { get, post } from "../../utilities";
 
 class Entry extends React.Component {
     constructor(props) {
@@ -40,10 +40,16 @@ class Entry extends React.Component {
         })
       })
     }
+    submitEntry = () => {
+      post("/api/journalentries").then(result =>{
+        console.log(result)
+      })
+    }
 
   render() {
     return (
     <div className="newEntry-background">
+      <button onClick = {this.submitEntry}>SUbmit entry</button>
       <div>{JSON.stringify(this.state.entries)}</div>
         <HomeButton onClick={() => navigate('/home')}/>
         <div className="journal-box">

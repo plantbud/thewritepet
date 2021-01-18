@@ -60,7 +60,7 @@ router.get("/journalentries", auth.ensureLoggedIn, (req,res) => {
 router.post("/journalentries", auth.ensureLoggedIn, (req, res) =>{
   const newEntry = new Journalentry({
     creator: req.user._id,
-    content: "aaaaa",
+    content: req.body.content,
 
   });
   newEntry.save().then((journalentries) => res.send(journalentries))
