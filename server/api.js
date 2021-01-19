@@ -59,7 +59,7 @@ router.post("/user/consistency", auth.ensureLoggedIn, (req,res) => {
 });
 
 router.get("/journalentrieschanged", auth.ensureLoggedIn, (req,res) => {
-  Journalentry.find({}).then((journalentries) => res.send(journalentries));
+  Journalentry.find({creator: req.user._id,}).then((journalentries) => res.send(journalentries));
 });
 
 router.post("/journalentries", auth.ensureLoggedIn, (req, res) =>{
