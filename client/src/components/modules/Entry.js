@@ -146,7 +146,7 @@ class Entry extends Component {
           <p className="dateTime-display ">01/16/2021</p>
           <h1 className="title">january 16, 2021</h1>
           <img src={sleepy} className="petImage"/>
-          <div className="box blueFloor">hellooooo</div>
+          {/* <div className="box blueFloor">hellooooo</div> */}
           <div>
             <Editor
               editorState={this.state.editorState}
@@ -156,7 +156,7 @@ class Entry extends Component {
               keyBindingFn={this.mapKeyBindings}
               // blockRenderMap={extendedBlockRenderMap}
               // blockStyleFn={(block) => this.getBlockStyle(block, customStyleMap)}
-              placeholder="Pls"
+              placeholder="how are you feeling?"
             />
           </div>
         </div>

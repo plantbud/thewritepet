@@ -7,3 +7,40 @@
     width: 100%;
     overflow: auto;
 }
+
+.title{
+    margin-top:2vh;
+    margin-left: 2vw
+}
+
+.reminder{
+    margin-left: 3vw;
+}
+
+.entry-card{
+    background-color: var(--ltblue);
+    border-radius: 1em;
+    padding: 1%;
+    margin: 1vh 2vw;
+}
+
+.entry-title{
+    margin: .3em;
+    display: inline-block;
+}
+
+.entry-content{
+    margin: .5em;
+}
+
+.title-pic{
+    height: 20px;
+    display: inline-block;
+    margin-left: .5vh;
+}
+
+.pet-pic{
+    position:absolute;
+    top: 80vh;
+    height:10vh;
+}
