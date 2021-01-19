@@ -45,7 +45,7 @@ class Home extends Component {
           }}> Decrease Consistency </button>
       </div>
 
-          <PetState petState={this.state.petState}/>
+      <PetState petState={this.state.petState}/>
 
       <Navbar/>
       <HomeButton />

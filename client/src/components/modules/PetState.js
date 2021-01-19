@@ -1,7 +1,5 @@
 import React, {Component} from "react";
 import "./PetState.css";
-import doggo from "../../assets/dog_normal.svg";
-import saddodoggo from "../../assets/dog_sad.svg";
 
 class PetState extends Component {
     constructor(props) {

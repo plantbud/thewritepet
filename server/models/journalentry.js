@@ -1,11 +1,10 @@
 const mongoose = require("mongoose");
 const ObjectId = mongoose.Schema.Types.ObjectId;
 
-const Tag = new mongoose.Schema({
+const Journalentry = new mongoose.Schema({
   creator: { type: ObjectId, ref: "user" },
-  content: { type: String, default: "" },
-  tags: {type: ObjectId, ref: "tag"},
+  entries: { type: String, default: "" },
 });
 
 // compile model from schema
-module.exports = mongoose.model("tags", Tag);
+module.exports = mongoose.model("journalentry", Journalentry);

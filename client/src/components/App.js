@@ -67,6 +67,9 @@ class App extends Component {
           />
           <Home
             path="/home"
+            handleLogin={this.handleLogin}
+            handleLogout={this.handleLogout}
+            userId={this.state.userId}
           />
           <NewEntry
             path="/newentry"

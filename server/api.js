@@ -44,7 +44,12 @@ router.post("/initsocket", (req, res) => {
 // |------------------------------|
 // | write your API methods below!|
 // |------------------------------|
-
+/*Journalentry.deleteMany({})
+  .then((err) => { 
+    if(err) return console.log("no delete"); 
+  console.log("delted")
+  });*/
+  
 router.post("/user/consistency", auth.ensureLoggedIn, (req,res) => {
   User.findOne({
     _id: req.user._id,}).then((user) => {
@@ -53,15 +58,14 @@ router.post("/user/consistency", auth.ensureLoggedIn, (req,res) => {
     });
 });
 
-router.get("/journalentries", auth.ensureLoggedIn, (req,res) => {
+router.get("/journalentrieschanged", auth.ensureLoggedIn, (req,res) => {
   Journalentry.find({}).then((journalentries) => res.send(journalentries));
 });
 
 router.post("/journalentries", auth.ensureLoggedIn, (req, res) =>{
   const newEntry = new Journalentry({
     creator: req.user._id,
-    content: req.body.content,
-
+    entries: req.body.entries,
   });
   newEntry.save().then((journalentries) => res.send(journalentries))
 });
