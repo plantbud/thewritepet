@@ -3,8 +3,9 @@ import "./Home.css";
 import arrow from "../../assets/arrow.svg";
 import { navigate, Router } from "@reach/router";
 import Navbar from "../modules/Navbar";
-import HomeButton from "../modules/HomeButton";
 import PetState from "../modules/PetState.js"
+import { get } from "../../utilities";
+import moment from "moment"; 
 
 
 class Home extends Component {
@@ -19,7 +20,10 @@ class Home extends Component {
 
   componentDidMount() {
     // remember -- api calls go here!
-  }
+    get(`/api/user`, { userid: this.props.userId }).then((user) => this.setState({ user: user }));
+    console.log(moment().format("MM/DD/YYYY"));
+    }
+
   incrementPetState = () => {
     this.setState({
       petState: this.state.petState + 1,
@@ -34,6 +38,9 @@ class Home extends Component {
   };
 
   render() {
+    if (!this.state.user) {
+      return <div> Loading! </div>;
+    }
     return (
       <>
       <div className="con">
@@ -46,17 +53,16 @@ class Home extends Component {
       </div>
 
       <PetState petState={this.state.petState}/>
+      <Navbar handleLogout={this.handleLogout} userId={this.props.userId}/>
 
-      <Navbar/>
-      <HomeButton />
       <div className="home-background">
         <div className="home-content">
           <div className="name-display" >
-            <span >Jessica Xu</span>
+            <span >{this.state.user.name}</span>
             <img src={arrow} className="arrowdown"/>
           </div>
           <button className = "reflect-button" onClick={() => navigate('/newentry')}>reflect</button>
-          <p id="date">01/15/2021</p>
+          <p id="date">{moment().format("MM/DD/YYYY")}</p>
         </div>
         <svg viewBox="0 0 200 50" id = "ellipse-viewbox" xmlns="http://www.w3.org/2000/svg">
           <ellipse id="home-ellipse" cx="100" cy="50" rx="150" ry="20"/>

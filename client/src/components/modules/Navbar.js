@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "@reach/router";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
 import "./Navbar.css";
+import { get, post } from "../../utilities";
 
 const GOOGLE_CLIENT_ID = "1047242304905-banhh0inijubl1kiqctqsgn7ht8dg2cn.apps.googleusercontent.com";
 
@@ -36,6 +37,7 @@ class Navbar extends Component{
       }
     
       render() {
+
         return (
           <>
             <nav className="NavBar-container">
@@ -45,7 +47,13 @@ class Navbar extends Component{
                 <ul><Link to="/timeline" className="NavBar-link">TIMELINE</Link></ul>
                 <ul><Link to="/addlater" className="NavBar-link">SWITCH PET</Link></ul>
                 <ul>
-                  <Link to="/" className="NavBar-link">LOGOUT</Link>
+                  <GoogleLogout
+                  clientId={GOOGLE_CLIENT_ID}
+                  buttonText="logout"
+                  onLogoutSuccess={this.state.handleLogout}
+                  onFailure={(err) => console.log(err)}
+                  />
+      
                 </ul>
                 
               </div>

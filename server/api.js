@@ -50,13 +50,11 @@ router.post("/initsocket", (req, res) => {
   console.log("delted")
   });*/
   
-router.post("/user/consistency", auth.ensureLoggedIn, (req,res) => {
-  User.findOne({
-    _id: req.user._id,}).then((user) => {
-      user.consistency = req.body.consistency;
-      user.save().then((updatedUser) => res.send(updatedUser));
+  router.get("/user", (req, res) => {
+    User.findById(req.query.userid).then((user) => {
+      res.send(user);
     });
-});
+  });
 
 router.get("/journalentrieschanged", auth.ensureLoggedIn, (req,res) => {
   Journalentry.find({creator: req.user._id,}).then((journalentries) => res.send(journalentries));
