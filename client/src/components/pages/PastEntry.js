@@ -22,13 +22,17 @@ class PastEntry extends Component {
       // Initialize Default State
       this.state = {
         entries: [],
+        editorState: EditorState.createEmpty(), 
       };
   }
 
   componentDidMount() {
     get("/api/journalentrieschanged").then((entryObjs) => {
+      /*const contentStateParsed = JSON.parse(this.entryObjs.entries);
+      const convertedContentState = convertFromRaw(contentStateParsed);*/
       this.setState({
-        entries: entryObjs
+        entries: entryObjs,
+       //editorState: EditorState.createWithContent(convertedContentState),
       });
     });
   }
@@ -36,6 +40,10 @@ class PastEntry extends Component {
   render() {
     return (
       <>
+       { /*<Editor
+              editorState={this.state.editorState}
+              placeholder="How was your day?"
+       />*/ }
       <div className="background-timeline">
         <h1 className="title">Entry Timeline</h1>
         <p className="reminder">take some time to reflect on how much you and your pet have grown</p>

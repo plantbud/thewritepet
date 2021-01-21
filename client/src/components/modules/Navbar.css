@@ -18,6 +18,18 @@
   font-size: 2em;
   color:var(--darkblue);
 }
+.NavBar-logout{
+  border-width: 0;
+  padding: 0;
+  background-color: var(--ltblue);
+  font-size: 2em;
+  font-family: "Roboto";
+  color:var(--darkblue);
+}
+.NavBar-logout:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
 
 .NavBar-link:visited {
   text-decoration: none;

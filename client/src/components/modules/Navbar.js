@@ -50,8 +50,11 @@ class Navbar extends Component{
                   <GoogleLogout
                   clientId={GOOGLE_CLIENT_ID}
                   buttonText="logout"
-                  onLogoutSuccess={this.state.handleLogout}
+                  onLogoutSuccess={this.props.handleLogout}
                   onFailure={(err) => console.log(err)}
+                  render={(renderProps) => (
+                    <button onClick = {renderProps.onClick} className="NavBar-logout">LOGOUT</button>
+                  )}
                   />
       
                 </ul>

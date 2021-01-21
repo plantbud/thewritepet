@@ -16,6 +16,8 @@ import HomeButton from "../modules/HomeButton";
 import { navigate, Router } from "@reach/router";
 import journalentry from "../../../../server/models/journalentry";
 import { get, post } from "../../utilities";
+import moment from "moment"; 
+
 
 class Entry extends Component {
     constructor(props) {
@@ -27,7 +29,7 @@ class Entry extends Component {
  
       this.onChange = (editorState) => {
         const contentState = editorState.getCurrentContent(); 
-        //console.log('content state', convertToRaw(contentState));
+        console.log('content state', (contentState));
         this.setState({
           editorState: editorState,
           isSaved: false,
@@ -55,7 +57,7 @@ class Entry extends Component {
 
       const rawContentState = convertToRaw(editorState.getCurrentContent());
       let contentStateString = JSON.stringify(rawContentState);
-      console.log("sahhh" + contentStateString);
+      console.log("ahhh" + contentStateString);
 
       const entrychange = {
         entries: contentStateString, 
@@ -144,7 +146,7 @@ class Entry extends Component {
             toggleBlockType={this.toggleBlockType}
           /> */}
           <p className="dateTime-display ">01/16/2021</p>
-          <h1 className="title">january 16, 2021</h1>
+          <h1 className="title">{moment().format("LL")}</h1>
           <img src={sleepy} className="petImage"/>
           {/* <div className="box blueFloor">hellooooo</div> */}
           <div>

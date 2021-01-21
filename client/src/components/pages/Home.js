@@ -15,6 +15,7 @@ class Home extends Component {
       this.state = {
         user: undefined, 
         petState: 0, 
+        navdisplay: false, 
       };
   }
 
@@ -37,12 +38,18 @@ class Home extends Component {
     } 
   };
 
+  handleButtonClick = () => {
+    this.setState({ navdisplay: !this.state.navdisplay });
+  };
+
   render() {
     if (!this.state.user) {
       return <div> Loading! </div>;
     }
     return (
       <>
+      <button onClick = { () => {this.handleButtonClick();}}> navtest</button>
+
       <div className="con">
       <button className="cons" onClick={() => {
           this.incrementPetState();
@@ -52,12 +59,11 @@ class Home extends Component {
           }}> Decrease Consistency </button>
       </div>
 
-      <PetState petState={this.state.petState}/>
-      <Navbar handleLogout={this.handleLogout} userId={this.props.userId}/>
+      {this.state.navdisplay && (<Navbar handleLogout={this.props.handleLogout} userId={this.props.userId}/>)}
 
       <div className="home-background">
         <div className="home-content">
-          <div className="name-display" >
+          <div className="name-display" onClick = { () => {this.handleButtonClick();}} >
             <span >{this.state.user.name}</span>
             <img src={arrow} className="arrowdown"/>
           </div>
@@ -68,6 +74,8 @@ class Home extends Component {
           <ellipse id="home-ellipse" cx="100" cy="50" rx="150" ry="20"/>
         </svg>
       </div>
+      <PetState petState={this.state.petState}/>
+
       </>
     );
   }

@@ -33,6 +33,7 @@
     padding-bottom: .1em;
     border-bottom: solid var(--darkblue);
     border-bottom-width: 1px;
+    text-transform: lowercase;
 }
 
 .dateTime-display{

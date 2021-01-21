@@ -20,6 +20,7 @@
     height: 3rem;
     width: 28vw;
     border-radius: 70px;
+    z-index: 100000;
 }
 .name-display:hover{
     cursor: pointer;
