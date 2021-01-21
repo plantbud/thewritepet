@@ -9,11 +9,8 @@ import PastEntry from "./pages/PastEntry.js";
 import "../utilities.css";
 
 import { socket } from "../client-socket.js";
-import Navbar from "./modules/Navbar";
-
 import { get, post } from "../utilities";
-import { Route } from "react-router-dom";
-
+import moment from "moment"; 
 /**
  * Define the "App" component as a class.
  */
@@ -23,6 +20,9 @@ class App extends Component {
     super(props);
     this.state = {
       userId: undefined,
+      data: null, 
+      dateObject: moment().local(),
+      consistentcy: 0, 
     };
   }
 
@@ -32,6 +32,7 @@ class App extends Component {
         // they are registed in the database, and currently logged in.
         this.setState({ 
           userId: user._id, 
+          consistentcy: user.consistency, 
         });
       }
     });
@@ -55,6 +56,35 @@ class App extends Component {
     });
   };
 
+  getDateData = async (date) => {
+    // update data state
+    const params = {
+      day: date.format(),
+    };
+    const newData = await post("/api/day", params);
+    this.setState({
+      data: newData,
+    });
+  };
+
+  setToOldDate = (date) => {
+    this.setState({
+      dateObject: date,
+    });
+    this.getDateData(date);
+  };
+
+  viewToday = () => {
+    this.setState({
+      dateObject: moment().local(),
+    });
+  };
+  incrementConsistent = () => {
+    this.setState({
+      consistency: this.state.consistentcy + 1,
+    });
+  };
+
   render() {
     if(this.state.userId) {
       return(
@@ -65,10 +95,17 @@ class App extends Component {
             handleLogin={this.handleLogin}
             handleLogout={this.handleLogout}
             userId={this.state.userId}
+            consistency = {this.state.consistentcy}
           />
           <Redirect from="/" to="/home" />
           <NewEntry
             path="/newentry"
+            dateObject = {this.state.dateObject}
+            data = {this.state.data}
+            consistency = {this.state.consistentcy}
+            increaseConsistent = {this.incrementConsistent}
+            userId={this.state.userId}
+
           />
           <PastEntry
             path="/timeline"

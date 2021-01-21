@@ -12,6 +12,7 @@ const express = require("express");
 // import models so we can interact with the database
 const User = require("./models/user");
 const Journalentry = require("./models/journalentry.js");
+const Day = require("./models/day.js");
 // import authentication library
 const auth = require("./auth");
 
@@ -53,6 +54,48 @@ router.post("/initsocket", (req, res) => {
   router.get("/user", (req, res) => {
     User.findById(req.query.userid).then((user) => {
       res.send(user);
+    });
+  });
+
+  router.get("/user/consists", (req, res) => {
+    User.findById(req.query.userid).then((user) => {
+      res.send(user.consistency);
+    });
+  });
+
+  router.post("/user/consistency", auth.ensureLoggedIn, (req, res) => {
+    User.findOne({_id: req.user._id,}).then((user) => {
+      user.push({consistency: req.body.consistency});
+      user.save().then((updated) => {res.send(updated.user);
+      });
+    });
+  });
+
+  router.post("/day", (req, res) => {
+    let response = {
+      notes: null,
+    };
+    const startOfDay = moment(req.body.day).local().startOf("day");
+    const endOfDay = moment(req.body.day).local().endOf("day");
+
+    Journalentry.findOne({
+      creator: req.user._id,
+      timeCreated: {
+        $gte: startOfDay.format(),
+        $lte: endOfDay.format(),
+      },
+    }).then((n) => {
+      // if it doesn't exist, create it!
+      if (n) response.notes = n;
+      else {
+        newJournalentry = new Journalentry({
+          creator: req.user._id,
+          timeCreated: startOfDay,
+        });
+        newJournalentry.save();
+        response["notes"] = newJournalentry;
+      }
+      res.send(response);
     });
   });
 
