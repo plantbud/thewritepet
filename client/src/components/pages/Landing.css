@@ -34,6 +34,7 @@
     font-family: "Mulish";
     font-weight: bolder;
     font-size: 1.2rem;
+    outline: none !important;
 }
 .landing-button:hover{
     background-color: var(--pink);
@@ -47,10 +48,43 @@
     height: 50vh;
     background-color: var(--primary);
     border-radius: 30px;
+    outline: none !important;
   }
   .Overlay {
     
   }
+
+.modal-content{
+    margin: .2em;
+}
+
+.modal-close-button{
+    background-color: transparent;
+    outline: none !important;
+    border: none;
+    position: absolute;
+    height: 3vh;
+    margin-top: 1vh;
+    margin-left: 20vw;
+    display:inline-block;
+}
+
+.modal-close-button:hover{
+    color: var(--pink);
+    cursor: pointer;
+}
+
+.beans{
+    height:1em;
+    display: inline-block;
+}
+
+.names{
+    display: inline-block;
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
 .cloud1{
     height:22vh;
     position: fixed;

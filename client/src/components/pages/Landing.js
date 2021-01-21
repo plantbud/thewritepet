@@ -8,6 +8,7 @@ import cloud1 from "../../assets/cloud_big.svg";
 import cloud2 from "../../assets/cloud_med1.svg";
 import cloud3 from "../../assets/cloud_med2.svg";
 import cloud4 from "../../assets/cloud_smol.svg";
+import beans from "../../assets/toebean.svg";
 
 //TODO: REPLACE WITH YOUR OWN CLIENT_ID
 const GOOGLE_CLIENT_ID = "1047242304905-banhh0inijubl1kiqctqsgn7ht8dg2cn.apps.googleusercontent.com";
@@ -64,10 +65,21 @@ class Landing extends Component {
             )}
           />
         )}
-          <button className = "landing-button" onClick={this.handleOpenModal}>about</button>
+          <button className = "landing-button about-button" onClick={this.handleOpenModal} >about</button>
           <Modal isOpen={this.state.showModal} className="Modal" overlayClassName="Overlay"> 
-          <button onClick={this.handleCloseModal}>X</button>
-          <p>Modal text infor stuff </p>
+          
+          <p className="modal-content">
+            <p style={{display: "inline-block"}}>welcome to the write pet!</p>
+            <button className="modal-close-button" onClick={this.handleCloseModal}>X</button>
+            <p>
+              when you sign up, you will adopt a virtual pet that you can only care for by journalling consistently.
+              so, you take care of yourself by taking care of your pet.
+            </p>
+            <p>happy journaling!</p>
+            <img src={beans} className="beans"/>
+            <p className="names">jess + sarah</p>
+            <img src={beans} className="beans"/>
+          </p>
           </Modal>
         </div>
       </>
