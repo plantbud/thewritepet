@@ -25,6 +25,7 @@ class Entry extends Component {
       this.state = {
         editorState: EditorState.createEmpty(), 
         isSaved: true,
+        consistency: 0, 
       };
  
       this.onChange = (editorState) => {
@@ -38,8 +39,16 @@ class Entry extends Component {
     }
     
   componentDidMount(){
+    /*if(this.props.data.notes.value) {
+      console.log("??");
+    }*/
+
+
     get("/api/journalentrieschanged").then((entryObjs) => {
-      /*const contentStateParsed = JSON.parse(this.journalentries.entries);
+      console.log("idk " + entryObjs);
+
+/*      const contentStateParsed = JSON.parse(this.entryObjs);
+      console.log("prased " + contentStateParsed);
       const convertedContentState = convertFromRaw(contentStateParsed);
       this.setState({
         editorState: EditorState.createWithContent(convertedContentState),
@@ -130,6 +139,11 @@ class Entry extends Component {
     }, 1000);
 
   render() {
+    if( !this.state.editorState){
+      return(
+        <h3>loading</h3>
+      )
+    }
     return (
     <div className="newEntry-background">
       <button className = "submit-entry" onClick= { () => this.submitEntry(this.state.editorState)}>Submit entry</button>
