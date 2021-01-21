@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { navigate, Router } from "@reach/router";
+import { navigate, Router, Redirect } from "@reach/router";
 import NotFound from "./pages/NotFound.js";
 import Landing from "./pages/Landing.js";
 import Home from "./pages/Home.js";
@@ -12,6 +12,7 @@ import { socket } from "../client-socket.js";
 import Navbar from "./modules/Navbar";
 
 import { get, post } from "../utilities";
+import { Route } from "react-router-dom";
 
 /**
  * Define the "App" component as a class.
@@ -59,18 +60,13 @@ class App extends Component {
       return(
         <>
         <Router>
-          <Landing
-            path="/"
-            handleLogin={this.handleLogin}
-            handleLogout={this.handleLogout}
-            userId={this.state.userId}
-          />
           <Home
             path="/home"
             handleLogin={this.handleLogin}
             handleLogout={this.handleLogout}
             userId={this.state.userId}
           />
+          <Redirect from="/" to="/home" />
           <NewEntry
             path="/newentry"
           />
