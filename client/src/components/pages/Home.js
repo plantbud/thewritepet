@@ -43,12 +43,10 @@ class Home extends Component {
   };
 
   render() {
-    if (!this.state.user) {
-      return <div> Loading! </div>;
-    }
+
     return (
       <>
-      <button onClick = { () => {this.handleButtonClick();}}> navtest</button>
+      {/*<button onClick = { () => {this.handleButtonClick();}}> navtest</button>*/}
 
       <div className="con">
       <button className="cons" onClick={() => {
@@ -59,14 +57,12 @@ class Home extends Component {
           }}> Decrease Consistency </button>
       </div>
 
-      {this.state.navdisplay && (<Navbar handleLogout={this.props.handleLogout} userId={this.props.userId}/>)}
-
+      {/*this.state.navdisplay && (<Navbar handleLogout={this.props.handleLogout} userId={this.props.userId}/>)*/}
+      
+      <Navbar handleLogout={this.props.handleLogout} userId={this.props.userId} user={this.props.user}/>
       <div className="home-background">
         <div className="home-content">
-          <div className="name-display" onClick = { () => {this.handleButtonClick();}} >
-            <span >{this.state.user.name}</span>
-            <img src={arrow} className="arrowdown"/>
-          </div>
+
           <button className = "reflect-button" onClick={() => navigate('/newentry')}>reflect</button>
           <p id="date">{moment().format("MM/DD/YYYY")}</p>
         </div>
