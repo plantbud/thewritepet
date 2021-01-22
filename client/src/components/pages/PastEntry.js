@@ -28,16 +28,31 @@ class PastEntry extends Component {
 
   componentDidMount() {
     get("/api/journalentrieschanged").then((entryObjs) => {
-      /*const contentStateParsed = JSON.parse(this.entryObjs.entries);
-      const convertedContentState = convertFromRaw(contentStateParsed);*/
+      // const contentStateParsed = JSON.parse(this.entryObjs.entries);
+      // const convertedContentState = convertFromRaw(contentStateParsed);
+      // const entries = entryObjs.map((o) => JSON.parse(o.entries));
+      // console.log(entries); 
+
+      // this.setState({
+      //   entries: entryObjs,
+      //   editorState: EditorState.createWithContent(convertFromRaw(entries[0])),
+      // }); 
+      
+      console.log(entryObjs); 
+      const entries = entryObjs.map((o) => (o.entries));
+      console.log(entries); 
+      const idk = entries[0];
+      console.log(idk);
+
       this.setState({
         entries: entryObjs,
-        editorState: EditorState.createWithContent(convertFromRaw((entryObjs.entries))),
+        editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(idk))),
       });
     });
   }
 
   render() {
+    console.log("editorstate" + this.state.editorState);
     return (
       <>
        { /*<Editor

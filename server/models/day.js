@@ -6,7 +6,7 @@ const DaySchema = new mongoose.Schema({
   day: Number,
   month: Number,
   year: Number,
-  notes: { type: String, default: "" },
+  entries: { type: String, default: "" },
 });
 
 // compile model from schema

@@ -32,10 +32,10 @@ class App extends Component {
         // they are registed in the database, and currently logged in.
         this.setState({ 
           userId: user._id, 
-          consistentcy: user.consistency, 
         });
       }
     });
+    this.getDateData(this.state.dateObject);
   }
 
   handleLogin = (res) => {
@@ -46,6 +46,8 @@ class App extends Component {
       post("/api/initsocket", { socketid: socket.id });
     }).then(() => {
       navigate("/home");
+    }).then(() => {
+      this.getDateData(this.state.dateObject);
     });
   };
 
@@ -98,10 +100,21 @@ class App extends Component {
             consistency = {this.state.consistentcy}
           />
           <Redirect from="/" to="/home" />
+          {this.state.data ? (
+                  <NewEntry
+                    path="/newentry"
+                    dateObject={this.state.dateObject}
+                    data={this.state.data}
+                  />
+                ) : (
+                  <NotFound path="/newentry" />
+                )}
+                
           <NewEntry
             path="/newentry"
             dateObject = {this.state.dateObject}
             data = {this.state.data}
+            setToOldDate= {this.setToOldDate}
             consistency = {this.state.consistentcy}
             increaseConsistent = {this.incrementConsistent}
             userId={this.state.userId}
