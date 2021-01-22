@@ -105,12 +105,39 @@ router.get("/journalentrieschanged", auth.ensureLoggedIn, (req,res) => {
 });
 
 router.post("/journalentries", auth.ensureLoggedIn, (req, res) =>{
-  const newEntry = new Journalentry({
+  const startOfDay = moment(req.body.day).local().startOf("day");
+  const endOfDay = moment(req.body.day).local().endOf("day");
+
+  Journalentry.findOne({
     creator: req.user._id,
-    entries: req.body.entries,
+    timeCreated: {
+      $gte: startOfDay.format(),
+      $lte: endOfDay.format(),
+    },
+  }).then((n) => {
+    // if it doesn't exist, create it!
+    if (n) {
+      n.entries = req.body.entries;
+      n.save().then((updated) => {res.send(updated.entires);});
+    }
+    else {
+      newJournalentry = new Journalentry({
+        creator: req.user._id,
+        entries: req.body.entries,
+        timeCreated: startOfDay,
+      });
+      newJournalentry.save().then((journalentries) => res.send(journalentries));
+    }
   });
-  newEntry.save().then((journalentries) => res.send(journalentries))
+
+  // const newEntry = new Journalentry({
+  //   creator: req.user._id,
+  //   entries: req.body.entries,
+  // });
+  // newEntry.save().then((journalentries) => res.send(journalentries))
+
 });
+
 /*
 router.post("/journalentries", auth.ensureLoggedIn, (req, res) =>{
   const startOfDay = moment(req.body.day).local().startOf("day").format();

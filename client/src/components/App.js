@@ -88,6 +88,7 @@ class App extends Component {
   };
 
   render() {
+    console.log("data " + this.state.data);
     if(this.state.userId) {
       return(
         <>
@@ -111,7 +112,7 @@ class App extends Component {
                 )}
                 
           <NewEntry
-            path="/newentry"
+            path="/newentryy"
             dateObject = {this.state.dateObject}
             data = {this.state.data}
             setToOldDate= {this.setToOldDate}

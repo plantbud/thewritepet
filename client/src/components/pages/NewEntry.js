@@ -17,7 +17,9 @@ class NewEntry extends React.Component {
   async componentDidMount() {
     // remember -- api calls go here!
     console.log("data newentry " + this.props.data.entries);
-    console.log(typeof(this.props.data.entries));
+    console.log("data newentry type "+typeof(this.props.data.entries));
+    console.log("date " + this.props.dateObject);
+    console.log("date type "+typeof(this.props.dateObject));
 
     if (this.props.oldYear && this.props.oldMonth && this.props.oldDay) {
       const dateToView = moment()
