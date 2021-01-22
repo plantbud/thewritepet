@@ -38,8 +38,8 @@ class Landing extends Component {
     return (
       <>
         <img src={cloud1} className="cloud1"/>
-        {/* <img src={cloud2} className="cloud"/>
-        <img src={cloud3} className="cloud"/> */}
+        <img src={cloud2} className="cloud2"/>
+        {/* <img src={cloud3} className="cloud3"/> */}
         <div className = "landing">
         
           <h2 className="landing-title">take a deep breath</h2>
@@ -76,9 +76,11 @@ class Landing extends Component {
               so, you take care of yourself by taking care of your pet.
             </p>
             <p>happy journaling!</p>
-            <img src={beans} className="beans"/>
-            <p className="names">jess + sarah</p>
-            <img src={beans} className="beans"/>
+            <div>
+              <img src={beans} className="beans"/>
+              <p className="names">jess + sarah</p>
+              <img src={beans} className="beans"/>
+            </div>
           </p>
           </Modal>
         </div>

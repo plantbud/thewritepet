@@ -56,6 +56,8 @@
 
 .modal-content{
     margin: .2em;
+    display:flex;
+    flex-direction: column;
 }
 
 .modal-close-button{
@@ -66,7 +68,7 @@
     height: 3vh;
     margin-top: 1vh;
     margin-left: 20vw;
-    display:inline-block;
+    /* display:inline-block; */
 }
 
 .modal-close-button:hover{
@@ -76,11 +78,11 @@
 
 .beans{
     height:1em;
-    display: inline-block;
+    /* display: inline-block; */
 }
 
 .names{
-    display: inline-block;
+    /* display: inline-block; */
     margin-left: .5em;
     margin-right: .5em;
 }
@@ -94,15 +96,48 @@
     display: block;
     margin: 0;   
     z-index: -1;
-    animation: cloudMovement 15s infinite;
+    animation: cloud1Movement 25s steps(400) infinite;
 }
 
-@keyframes cloudMovement{
+.cloud2{
+    height:40vh;
+    position: fixed;
+    bottom: 60vh;
+    right: 0vw;
+    padding: 0;
+    display: block;
+    margin: 0;   
+    z-index: -6;
+    /* animation: cloud2Movement 40s steps(400) infinite; */
+}
+
+.cloud3{
+    height:28vh;
+    position: fixed;
+    bottom: 10vh;
+    left: 80vw;
+    padding: 0;
+    display: block;
+    margin: 0;   
+    z-index: -1;
+    animation: cloud1Movement 2s steps(400) infinite;
+}
+
+@keyframes cloud1Movement{
     0% {
         transform: translate();
         left: -20vw;
     }
+    25%{
+        left:15vw;
+    }
+    50% {
+        left: 50vw;
+    }
+    75% {
+        left: 85 vw;
+    }
     100% {
-        left: 100vw;
+        left: 120vw;
       }
 }
