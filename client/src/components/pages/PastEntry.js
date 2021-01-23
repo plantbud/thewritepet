@@ -86,7 +86,7 @@ class PastEntry extends Component {
         <div className="entry-content">{JSON.stringify(this.state.entries)}</div>
         <Editor
               editorState={this.state.editorState}
-              placeholder="how are you feeling?"
+              placeholder="No entry"
             />
 
         { /* <div className="entry-card">

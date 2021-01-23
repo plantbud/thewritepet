@@ -20,8 +20,6 @@ class App extends Component {
     super(props);
     this.state = {
       userId: undefined,
-      data: null, 
-      dateObject: moment().local(),
       consistentcy: 0, 
     };
   }
@@ -35,7 +33,6 @@ class App extends Component {
         });
       }
     });
-    this.getDateData(this.state.dateObject);
   }
 
   handleLogin = (res) => {
@@ -58,29 +55,6 @@ class App extends Component {
     });
   };
 
-  getDateData = async (date) => {
-    // update data state
-    const params = {
-      day: date.format(),
-    };
-    const newData = await post("/api/day", params);
-    this.setState({
-      data: newData,
-    });
-  };
-
-  setToOldDate = (date) => {
-    this.setState({
-      dateObject: date,
-    });
-    this.getDateData(date);
-  };
-
-  viewToday = () => {
-    this.setState({
-      dateObject: moment().local(),
-    });
-  };
   incrementConsistent = () => {
     this.setState({
       consistency: this.state.consistentcy + 1,
@@ -101,18 +75,9 @@ class App extends Component {
             consistency = {this.state.consistentcy}
           />
           <Redirect from="/" to="/home" />
-          {this.state.data ? (
-                  <NewEntry
-                    path="/newentry"
-                    dateObject={this.state.dateObject}
-                    data={this.state.data}
-                  />
-                ) : (
-                  <NotFound path="/newentry" />
-                )}
-                
+          
           <NewEntry
-            path="/newentryy"
+            path="/newentry"
             dateObject = {this.state.dateObject}
             data = {this.state.data}
             setToOldDate= {this.setToOldDate}

@@ -66,32 +66,12 @@ class Entry extends Component {
       });
 
     }
-    /*
-    componentDidUpdate(prevProps, prevState) {
-      if (this.props.data !== prevProps.data) {
-        if (this.props.data.journalentries.entries) {
-          const contentStateParsed = JSON.parse(this.props.data.journalentries.entries);
-          const convertedContentState = convertFromRaw(contentStateParsed);
-          console.log("content state string parsed" + contentStateParse);
-          this.setState({
-            editorState: EditorState.createWithContent(convertedContentState),
-          });
-        } else {
-          console.log("content state string empty" );
 
-          this.setState({
-            editorState: EditorState.createEmpty(),
-          });
-        }
-      }
-    }
-*/
     handleSave = debounce((editorState) => {
       const currentContentState = this.state.editorState.getCurrentContent();
       const newContentState = editorState.getCurrentContent();
   
       if (currentContentState == newContentState) {
-        // There was a change in the content
         const rawContentState = convertToRaw(editorState.getCurrentContent());
         let contentStateString = JSON.stringify(rawContentState);
         console.log("content state string stringified" + contentStateString)
@@ -108,12 +88,8 @@ class Entry extends Component {
 
         post("/api/journalentries", entrychange).then((journalentries) => {
           console.log("params" + entrychange)
-          //const convertedContentState = convertFromRaw(notes);
-          //const editorStateWithContent = EditorState.createWithContent(convertedContentState);
           this.setState({
-            // editorState: EditorState.forceSelection(editorStateWithContent, currentSelection),
             isSaved: true,
-            //journalentries: editorStateWithContent,
           });
         });
       } else {
@@ -165,13 +141,6 @@ class Entry extends Component {
           </span>
         </div>
       </div>
-  //   return (
-  //     <>
-  //     <div>Journaling page</div>
-  //     <Editor editorState={this.state.editorState} onChange={this.onChange}>hello<Editor/>
-  //     </>
-  //   );
-  // }
   );
     }
 }

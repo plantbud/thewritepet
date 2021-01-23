@@ -72,34 +72,6 @@ router.post("/initsocket", (req, res) => {
     });
   });
 
-  router.post("/day", (req, res) => {
-    let response = {
-      entries: null,
-    };
-    const startOfDay = moment(req.body.day).local().startOf("day");
-    const endOfDay = moment(req.body.day).local().endOf("day");
-
-    Journalentry.findOne({
-      creator: req.user._id,
-      timeCreated: {
-        $gte: startOfDay.format(),
-        $lte: endOfDay.format(),
-      },
-    }).then((n) => {
-      // if it doesn't exist, create it!
-      if (n) {response.entries = n;}
-      else {
-        newJournalentry = new Journalentry({
-          creator: req.user._id,
-          timeCreated: startOfDay,
-        });
-        newJournalentry.save();
-        response["entries"] = newJournalentry;
-      }
-      res.send(response);
-    });
-  });
-
 router.get("/journalentrieschanged", auth.ensureLoggedIn, (req,res) => {
   let starting = moment(req.query.timestamp).local().startOf("day");
   let ending = moment(req.query.timestamp).local().endOf("day");
@@ -151,34 +123,13 @@ router.post("/journalentries", auth.ensureLoggedIn, (req, res) =>{
       newJournalentry.save().then((journalentries) => res.send(journalentries));
     }
   });
-
   // const newEntry = new Journalentry({
   //   creator: req.user._id,
   //   entries: req.body.entries,
   //   timeCreated: startOfDay
   // });
   // newEntry.save().then((journalentries) => res.send(journalentries))
-
 });
-
-/*
-router.post("/journalentries", auth.ensureLoggedIn, (req, res) =>{
-  const startOfDay = moment(req.body.day).local().startOf("day").format();
-  const endOfDay = moment(req.body.day).local().endOf("day").format();
-
-  Journalentry.findOne({
-    creator: req.user._id, 
-    timestamp: {
-      $gte: startOfDay,
-      $lte: endOfDay,
-    },
-  }).then((journalentry) => {
-    journalentry.entries = req.body.entries; 
-    journalentry.save().then((updated) => {
-      res.send(updated.entries);
-    }); 
-  });
-});*/
 
 router.get("/tags", auth.ensureLoggedIn, (req,res) => {
   const startOfDay = moment(req.body.day).local().startOf("day");
