@@ -14,7 +14,6 @@ import "./Entry.css";
 import sleepy from "../../assets/dog_sleep.svg"
 import HomeButton from "../modules/HomeButton";
 import { navigate, Router } from "@reach/router";
-import journalentry from "../../../../server/models/journalentry";
 import { get, post } from "../../utilities";
 import moment from "moment"; 
 
@@ -39,37 +38,21 @@ class Entry extends Component {
     }
     
   componentDidMount(){
-    /*if(this.props.data.notes.value) {
-      console.log("??");
-    }*/
-
-
     get("/api/journalentriesday").then((entryObjs) => {
       console.log("idk " + entryObjs.entries);
-
-      console.log(entryObjs); 
-      //const entries = entryObjs.map((o) => (o.entries));
-      //console.log(entries); 
-      //const idk = entries[0];
-      //console.log(idk);
-
       this.setState({
         entries: entryObjs,
         editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(entryObjs.entries))),
       });
     })
-    
     }
     
     submitEntry = (editorState) => {
       const currentContentState = this.state.editorState.getCurrentContent();
       const newContentState = editorState.getCurrentContent();
-      console.log("tes1" + currentContentState)
-      console.log("sfsajhjh" + newContentState)
 
       const rawContentState = convertToRaw(editorState.getCurrentContent());
       let contentStateString = JSON.stringify(rawContentState);
-      console.log("ahhh" + contentStateString);
 
       const entrychange = {
         entries: contentStateString, 
@@ -118,7 +101,6 @@ class Entry extends Component {
           const rawEmptyContentState = convertToRaw(EditorState.createEmpty().getCurrentContent());
           contentStateString = JSON.stringify(rawEmptyContentState);
           console.log("not content content state" + contentStateString)
-
         }
         const entrychange = {
           entries: contentStateString, 
@@ -132,13 +114,11 @@ class Entry extends Component {
             // editorState: EditorState.forceSelection(editorStateWithContent, currentSelection),
             isSaved: true,
             //journalentries: editorStateWithContent,
-
           });
         });
       } else {
         console.log("false alarm!");
-        // The change was triggered by a change in focus/selection
-      } // const currentSelection = this.state.editorState.getSelection();
+      } 
     }, 1000);
 
   render() {

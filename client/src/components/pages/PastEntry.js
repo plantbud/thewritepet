@@ -12,6 +12,9 @@ import {
 import 'draft-js/dist/Draft.css';
 import HomeButton from "../modules/HomeButton";
 import { navigate, Router } from "@reach/router";
+import Calendar from "react-calendar";
+import 'react-calendar/dist/Calendar.css';
+import moment from "moment"; 
 
 import doge from "../../assets/dog_normal.svg";
 import beans from "../../assets/toebean.svg";
@@ -19,64 +22,56 @@ import beans from "../../assets/toebean.svg";
 class PastEntry extends Component {
     constructor(props) {
       super(props);
-      // Initialize Default State
       this.state = {
         entries: [],
         editorState: EditorState.createEmpty(), 
+        dateObj: moment(), 
       };
   }
 
   componentDidMount() {
-    get("/api/journalentrieschanged").then((entryObjs) => {
-      // const contentStateParsed = JSON.parse(this.entryObjs.entries);
-      // const convertedContentState = convertFromRaw(contentStateParsed);
-      // const entries = entryObjs.map((o) => JSON.parse(o.entries));
-      // console.log(entries); 
+    console.log("umm" + this.state.dateObj);
+    console.log("umm type "+ typeof(this.state.dateObj.format()));
+    console.log("does this worrk " + moment(this.state.dateObj).local().startOf("day"));
+    console.log("does this worrk " + moment(this.state.dateObj).local().endOf("day"));
 
-      // this.setState({
-      //   entries: entryObjs,
-      //   editorState: EditorState.createWithContent(convertFromRaw(entries[0])),
-      // }); 
-      
-      console.log(entryObjs); 
-      const entries = entryObjs.map((o) => (o.entries));
-      console.log(entries); 
-      const idk = entries[0];
-      console.log(idk);
-
+    get("/api/journalentrieschanged", { timestamp: this.state.dateObj }).then((entryObjs) => {
       this.setState({
         entries: entryObjs,
-        editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(idk))),
+        editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(entryObjs.entries))),
+
       });
     });
   }
+  onSelect = (e) => {
+    console.log("changing date " + this.state.dateObj);
+    this.setState({dateObj: e});
+  }
 
   render() {
-    console.log("editorstate" + this.state.editorState);
+    console.log("string " + this.state.entries);
     return (
       <>
-       { /*<Editor
-              editorState={this.state.editorState}
-              placeholder="How was your day?"
-       />*/ }
-       <Editor
-              editorState={this.state.editorState}
-              placeholder="How was your day?"
-       />
-      <div className="background-timeline">
+     <div className="background-timeline">
         <h1 className="title">Entry Timeline</h1>
         <p className="reminder">take some time to reflect on how much you and your pet have grown</p>
         <HomeButton onClick={() => navigate('/home')}/>
-        <div className="entry-card">
+        <Calendar onClickDay= {this.onSelect} ></Calendar>
+        <div className="entry-content">{JSON.stringify(this.state.entries)}</div>
+        <Editor
+              editorState={this.state.editorState}
+              placeholder="how are you feeling?"
+            />
+
+        { /* <div className="entry-card">
           <div>
             <h2 className="entry-title">01/19/2021</h2>
             <img src={beans} className="title-pic"/>
           </div>
-          <div className="entry-content">{JSON.stringify(this.state.entries)}</div>
+              </div> 
+        */}
           <img src={doge} className="pet-pic"/>
         </div>
-        
-      </div>
       </>
     );
   }
