@@ -43,8 +43,6 @@ class App extends Component {
       post("/api/initsocket", { socketid: socket.id });
     }).then(() => {
       navigate("/home");
-    }).then(() => {
-      this.getDateData(this.state.dateObject);
     });
   };
 
@@ -62,7 +60,6 @@ class App extends Component {
   };
 
   render() {
-    console.log("data " + this.state.data);
     if(this.state.userId) {
       return(
         <>
@@ -75,16 +72,12 @@ class App extends Component {
             consistency = {this.state.consistentcy}
           />
           <Redirect from="/" to="/home" />
-          
+
           <NewEntry
             path="/newentry"
-            dateObject = {this.state.dateObject}
-            data = {this.state.data}
-            setToOldDate= {this.setToOldDate}
+            userId={this.state.userId}
             consistency = {this.state.consistentcy}
             increaseConsistent = {this.incrementConsistent}
-            userId={this.state.userId}
-
           />
           <PastEntry
             path="/timeline"

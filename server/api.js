@@ -58,12 +58,6 @@ router.post("/initsocket", (req, res) => {
     });
   });
 
-  router.get("/user/consists", (req, res) => {
-    User.findById(req.query.userid).then((user) => {
-      res.send(user.consistency);
-    });
-  });
-
   router.post("/user/consistency", auth.ensureLoggedIn, (req, res) => {
     User.findOne({_id: req.user._id,}).then((user) => {
       user.push({consistency: req.body.consistency});

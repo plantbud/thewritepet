@@ -19,7 +19,7 @@ class NewEntry extends React.Component {
   render() {
     return (
       <>
-    <Entry ></Entry> 
+    <Entry userId={this.props.userId}></Entry> 
       </>
       );
     }

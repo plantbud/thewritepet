@@ -24,12 +24,11 @@ class Entry extends Component {
       this.state = {
         editorState: EditorState.createEmpty(), 
         isSaved: true,
-        consistency: 0, 
+        consist: 0, 
       };
  
       this.onChange = (editorState) => {
         const contentState = editorState.getCurrentContent(); 
-        console.log('content state', (contentState));
         this.setState({
           editorState: editorState,
           isSaved: false,
@@ -45,57 +44,24 @@ class Entry extends Component {
         editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(entryObjs.entries))),
       });
     })
+    get("/api/user", { userid: this.props.userId }).then((user) => this.setState({ consist: user.consistency }));
     }
     
     submitEntry = (editorState) => {
-      const currentContentState = this.state.editorState.getCurrentContent();
-      const newContentState = editorState.getCurrentContent();
-
       const rawContentState = convertToRaw(editorState.getCurrentContent());
       let contentStateString = JSON.stringify(rawContentState);
 
       const entrychange = {
         entries: contentStateString, 
       };
-
       post("/api/journalentries", entrychange).then((journalentries) => {
         console.log("change entrys" + entrychange)
         this.setState({
           isSaved: true,
         });
       });
-
+      console.log("consist before " + this.state.consist);
     }
-
-    handleSave = debounce((editorState) => {
-      const currentContentState = this.state.editorState.getCurrentContent();
-      const newContentState = editorState.getCurrentContent();
-  
-      if (currentContentState == newContentState) {
-        const rawContentState = convertToRaw(editorState.getCurrentContent());
-        let contentStateString = JSON.stringify(rawContentState);
-        console.log("content state string stringified" + contentStateString)
-        console.log("type " + typeof(contentStateString));
-
-        if (!editorState.getCurrentContent().hasText()) {
-          const rawEmptyContentState = convertToRaw(EditorState.createEmpty().getCurrentContent());
-          contentStateString = JSON.stringify(rawEmptyContentState);
-          console.log("not content content state" + contentStateString)
-        }
-        const entrychange = {
-          entries: contentStateString, 
-        };
-
-        post("/api/journalentries", entrychange).then((journalentries) => {
-          console.log("params" + entrychange)
-          this.setState({
-            isSaved: true,
-          });
-        });
-      } else {
-        console.log("false alarm!");
-      } 
-    }, 1000);
 
   render() {
     if( !this.state.editorState){

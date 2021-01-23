@@ -21,8 +21,7 @@ class Home extends Component {
 
   componentDidMount() {
     // remember -- api calls go here!
-    get(`/api/user`, { userid: this.props.userId }).then((user) => this.setState({ user: user }));
-    console.log(moment().format("MM/DD/YYYY"));
+    get("/api/user", { userid: this.props.userId }).then((user) => this.setState({ user: user }));
     }
 
   incrementPetState = () => {
@@ -43,11 +42,8 @@ class Home extends Component {
   };
 
   render() {
-
     return (
       <>
-      {/*<button onClick = { () => {this.handleButtonClick();}}> navtest</button>*/}
-
       <div className="con">
       <button className="cons" onClick={() => {
           this.incrementPetState();
@@ -55,14 +51,10 @@ class Home extends Component {
           <button className="cons" onClick={() => {
           this.decreasePetState();
           }}> Decrease Consistency </button>
-      </div>
-
-      {/*this.state.navdisplay && (<Navbar handleLogout={this.props.handleLogout} userId={this.props.userId}/>)*/}
-      
+      </div>      
       <Navbar handleLogout={this.props.handleLogout} userId={this.props.userId} user={this.props.user}/>
       <div className="home-background">
         <div className="home-content">
-
           <button className = "reflect-button" onClick={() => navigate('/newentry')}>reflect</button>
           <p id="date">{moment().format("MM/DD/YYYY")}</p>
         </div>
