@@ -106,7 +106,14 @@ router.get("/journalentrieschanged", auth.ensureLoggedIn, (req,res) => {
   Journalentry.findOne({
     creator: req.user._id, timeCreated: {
       $gte: starting.format(),
-      $lte: ending.format(),},}).then((journalentries) => res.send(journalentries));
+      $lte: ending.format(),},}).then((journalentries) => {
+        if (journalentries) {
+          res.send(journalentries);
+        }
+        else {
+          res.send({});
+        }
+      });
 });
 
 router.get("/journalentriesday", auth.ensureLoggedIn, (req,res) => {

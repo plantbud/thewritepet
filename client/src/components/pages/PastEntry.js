@@ -36,16 +36,42 @@ class PastEntry extends Component {
     console.log("does this worrk " + moment(this.state.dateObj).local().endOf("day"));
 
     get("/api/journalentrieschanged", { timestamp: this.state.dateObj }).then((entryObjs) => {
-      this.setState({
-        entries: entryObjs,
-        editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(entryObjs.entries))),
-
-      });
+      if (entryObjs.entries) {
+        this.setState({
+          entries: entryObjs, 
+          editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(entryObjs.entries))),
+        });
+      } else {
+        console.log("content state string empty" );
+        this.setState({
+          editorState: EditorState.createEmpty(),
+        });
+      }
     });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.dateObj !== prevState.dataObj) {
+      console.log("did upaate" + this.state.dateObj);
+    }
   }
   onSelect = (e) => {
     console.log("changing date " + this.state.dateObj);
-    this.setState({dateObj: e});
+    this.setState({dateObj: e}, () => {    get("/api/journalentrieschanged", { timestamp: this.state.dateObj }).then((entryObjs) => {
+      console.log(entryObjs);
+      if (entryObjs.entries) {
+        this.setState({
+          entries: entryObjs, 
+          editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(entryObjs.entries))),
+        });
+      } else {
+        console.log("content state string empty" );
+        this.setState({
+          editorState: EditorState.createEmpty(),
+        });
+      }
+    });})
+
   }
 
   render() {
