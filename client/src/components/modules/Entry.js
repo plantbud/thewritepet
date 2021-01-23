@@ -44,16 +44,19 @@ class Entry extends Component {
     }*/
 
 
-    get("/api/journalentrieschanged").then((entryObjs) => {
-      console.log("idk " + entryObjs);
+    get("/api/journalentriesday").then((entryObjs) => {
+      console.log("idk " + entryObjs.entries);
 
-/*      const contentStateParsed = JSON.parse(this.entryObjs);
-      console.log("prased " + contentStateParsed);
-      const convertedContentState = convertFromRaw(contentStateParsed);
+      console.log(entryObjs); 
+      //const entries = entryObjs.map((o) => (o.entries));
+      //console.log(entries); 
+      //const idk = entries[0];
+      //console.log(idk);
+
       this.setState({
-        editorState: EditorState.createWithContent(convertedContentState),
-        entries: EditorState.createWithContent(convertedContentState), 
-      });*/
+        entries: entryObjs,
+        editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(entryObjs.entries))),
+      });
     })
     
     }
