@@ -81,6 +81,32 @@
     bottom: 10vh;
     left: 60vw;
     position: fixed;
+}.chin-j{
+    background: url('../../assets/chin_journal.svg') ; 
+    background-repeat: no-repeat;
+    height:25vh;
+    bottom: 10vh;
+    width: 60vw;
+    left: 60vw;
+    position: fixed;
+}
+.worm-j{
+    background: url('../../assets/worm_normal.svg') ; 
+    background-repeat: no-repeat;
+    height:25vh;
+    bottom: 10vh;
+    width: 60vw;
+    left: 60vw;
+    position: fixed;
+}
+.whale-j{
+    background: url('../../assets/whale_normal.svg') ; 
+    background-repeat: no-repeat;
+    width: 40vw;
+    height:60vh;
+    bottom: 10vh;
+    left: 60vw;
+    position: fixed;
 }
 
 /* does not work yet and idk why */

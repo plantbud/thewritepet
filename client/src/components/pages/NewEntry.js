@@ -27,7 +27,13 @@ class NewEntry extends React.Component {
       pet = <div className="cat-j"></div>
   } else if(this.state.petter =="2"){
       pet = <div className="dino-j"></div>
-  }
+  }else if(this.state.petter =="3"){
+    pet = <div className="chin-j"></div>
+} else if(this.state.petter =="4"){
+    pet = <div className="whale-j"></div>
+}else if(this.state.petter =="5"){
+  pet = <div className="worm-j"></div>
+} 
     return (
       <>
     <Entry userId={this.props.userId}></Entry> 

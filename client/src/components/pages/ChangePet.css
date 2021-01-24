@@ -1,7 +1,14 @@
 .pet{
     height: 20vh;
 }
-
+.pet:hover{
+    height: 22vh;
+    cursor: pointer;
+}
 .petDino{
     height: 40vh;
+}
+.petDino:hover{
+    height:42vh;
+    cursor: pointer;
 }

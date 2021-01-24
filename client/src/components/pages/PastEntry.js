@@ -87,7 +87,13 @@ class PastEntry extends Component {
         pet = <div className="cat"></div>
     } else if(this.state.petter =="2"){
         pet = <div className="dino"></div>
-    }
+    }else if(this.state.petter =="3"){
+      pet = <div className="chin"></div>
+  } else if(this.state.petter =="4"){
+      pet = <div className="whale"></div>
+  }else if(this.state.petter =="5"){
+    pet = <div className="worm"></div>
+} 
     return (
       <>
      <div className="background-timeline">

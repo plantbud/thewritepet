@@ -44,6 +44,24 @@ class PetState extends Component {
       }else if(consistency <8){
         pet = <div className="normal-dino"></div>
       }
+    }else if(this.state.petter =="3"){
+      if(consistency<3){
+        pet = <div className="sad-chin"></div>
+      }else if(consistency <8){
+        pet = <div className="normal-chin"></div>
+      }
+    }else if(this.state.petter =="4"){
+      if(consistency<3){
+        pet = <div className="sad-whale"></div>
+      }else if(consistency <8){
+        pet = <div className="normal-whale"></div>
+      }
+    }else if(this.state.petter =="5"){
+      if(consistency<3){
+        pet = <div className="sad-worm"></div>
+      }else if(consistency <8){
+        pet = <div className="normal-worm"></div>
+      }
     }
     
 
