@@ -4,6 +4,7 @@ import GoogleLogin, { GoogleLogout } from "react-google-login";
 import "./Navbar.css";
 import { get, post } from "../../utilities";
 import arrow from "../../assets/arrow.svg";
+import Loading from "../pages/Loading.js";
 
 
 const GOOGLE_CLIENT_ID = "1047242304905-banhh0inijubl1kiqctqsgn7ht8dg2cn.apps.googleusercontent.com";
@@ -11,7 +12,6 @@ const GOOGLE_CLIENT_ID = "1047242304905-banhh0inijubl1kiqctqsgn7ht8dg2cn.apps.go
 class Navbar extends Component{
     constructor(props) {
         super(props);
-        this.container = React.createRef();
         this.state={
           user: undefined, 
           open: false,
@@ -21,28 +21,14 @@ class Navbar extends Component{
     handleButtonClick = () => {
         this.setState({ open: !this.state.open });
       };
-    
-    handleClickOutside = (event) => {
-        if (this.container.current && !this.container.current.contains(event.target)) {
-          this.setState({
-            open: false,
-          });
-        }
-      };
 
       componentDidMount() {
         get(`/api/user`, { userid: this.props.userId }).then((user) => this.setState({ user: user }));
-
-        document.addEventListener("mousedown", this.handleClickOutside);
-      }
-    
-      componentWillUnmount() {
-        document.removeEventListener("mousedown", this.handleClickOutside);
       }
     
       render() {
         if (!this.state.user) {
-          return <div> Loading! </div>;
+          return <Loading/>;
         }
         let display = "show"
         if(open) {
@@ -61,7 +47,7 @@ class Navbar extends Component{
             <nav className="NavBar-container show">
               <div className="NavBar-linkContainer ">
                 <ul><Link to="/home" className="NavBar-link">HOME</Link></ul>
-                <ul><Link to="/addlater" className="NavBar-link">PET STATUS</Link></ul>
+                <ul><Link to="/profile" className="NavBar-link">PET PROFILE</Link></ul>
                 <ul><Link to="/timeline" className="NavBar-link">TIMELINE</Link></ul>
                 <ul><Link to="/switch" className="NavBar-link">SWITCH PET</Link></ul>
                 <ul>
@@ -98,8 +84,6 @@ class Navbar extends Component{
               </div>
             </nav>
             )}
-
-
             </>
         );
       }

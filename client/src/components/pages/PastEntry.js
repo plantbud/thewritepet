@@ -73,25 +73,23 @@ class PastEntry extends Component {
         });
       }
     });})
-
   }
 
   render() {
     let pet = null;
-    console.log("petter " + this.state.petter);
     if(this.state.petter == "0"){
-        pet = <div className="doggo"></div>
+      pet = <div className="doggo"></div>
     } else if(this.state.petter =="1"){
-        pet = <div className="cat"></div>
+      pet = <div className="cat"></div>
     } else if(this.state.petter =="2"){
-        pet = <div className="dino"></div>
-    }else if(this.state.petter =="3"){
+      pet = <div className="dino"></div>
+    } else if(this.state.petter =="3"){
       pet = <div className="chin"></div>
-  } else if(this.state.petter =="4"){
+    } else if(this.state.petter =="4"){
       pet = <div className="whale"></div>
-  }else if(this.state.petter =="5"){
-    pet = <div className="worm"></div>
-} 
+    } else if(this.state.petter =="5"){
+      pet = <div className="worm"></div>
+    } 
     return (
       <>
      <div className="background-timeline">
@@ -99,19 +97,10 @@ class PastEntry extends Component {
         <p className="reminder">take some time to reflect on how much you and your pet have grown</p>
         <HomeButton onClick={() => navigate('/home')}/>
         <Calendar onClickDay= {this.onSelect} ></Calendar>
-        <div className="entry-content">{JSON.stringify(this.state.entries)}</div>
         <Editor
               editorState={this.state.editorState}
               placeholder="No entry"
             />
-
-        { /* <div className="entry-card">
-          <div>
-            <h2 className="entry-title">01/19/2021</h2>
-            <img src={beans} className="title-pic"/>
-          </div>
-              </div> 
-        */}
           {pet}
         </div>
       </>

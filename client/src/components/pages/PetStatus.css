@@ -1,0 +1,53 @@
+.doggo-p{
+    background: url('../../assets/dog_normal.svg') ; 
+    background-repeat: no-repeat;
+    height:25vh;
+    bottom: 10vh;
+    width: 60vw;
+    left: 60vw;
+    position: fixed;
+}
+.cat-p{
+    background: url('../../assets/kitty_journal.svg') ; 
+    background-repeat: no-repeat;
+    height:25vh;
+    bottom: 10vh;
+    width: 60vw;
+    left: 60vw;
+    position: fixed;
+}
+.dino-p{
+    background: url('../../assets/dino_journal.svg') ; 
+    background-repeat: no-repeat;
+    width: 40vw;
+    height:60vh;
+    bottom: 10vh;
+    left: 60vw;
+    position: fixed;
+}.chin-p{
+    background: url('../../assets/chin_journal.svg') ; 
+    background-repeat: no-repeat;
+    height:25vh;
+    bottom: 10vh;
+    width: 60vw;
+    left: 60vw;
+    position: fixed;
+}
+.worm-p{
+    background: url('../../assets/worm_normal.svg') ; 
+    background-repeat: no-repeat;
+    height:25vh;
+    bottom: 10vh;
+    width: 60vw;
+    left: 60vw;
+    position: fixed;
+}
+.whale-p{
+    background: url('../../assets/whale_normal.svg') ; 
+    background-repeat: no-repeat;
+    width: 40vw;
+    height:60vh;
+    bottom: 10vh;
+    left: 60vw;
+    position: fixed;
+}

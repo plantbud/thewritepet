@@ -81,17 +81,16 @@
     background-repeat: no-repeat;
     width:650px;
     height:400px;
-    bottom: 0vh;
+    bottom: -5vh;
     left: 50vw;
     position: fixed;
   }
   .happy-dino{
     background: url('../../assets/dino_walk.svg') ; 
     background-size: cover;
-    width:450px;
-    height:310px;
-    bottom: 10vh;
-    left: 60vw;
+    width:650px;
+    height:450px;
+    bottom: 5vh;
     padding: 0;
     display: block;
     margin: 0;
@@ -113,7 +112,7 @@
     background-repeat: no-repeat;
     width:220px;
     height:200px;
-    bottom: 10vh;
+    bottom: 0vh;
     left: 60vw;
     position: fixed;
   }
@@ -138,23 +137,21 @@
     bottom: 5vh;
     left: 60vw;
     position: fixed;
-    
   }
 .sad-whale{
     background: url('../../assets/whale_sad.svg') ; 
     background-repeat: no-repeat;
     width:550px;
     height:400px;
-    bottom: 5vh;
+    bottom: 0vh;
     left: 60vw;
     position: fixed;
   }
   .happy-whale{
     background: url('../../assets/whale_walk.svg') ; 
     background-size: cover;
-    width:380px;
-    height:260px;
-    bottom: 10vh;
+    width:600px;
+    height:400px;
     left: 60vw;
     padding: 0;
     display: block;
@@ -218,34 +215,30 @@
   @keyframes whalewalk{
     0%{
         left: 60vw;
-        bottom: 10vh;
+        bottom: 6vh;
     }
     25%{
-        bottom: 11vh;
+        bottom: 7vh;
     }
     50%{
         left:20vw;    
-        bottom: 10vh;
+        bottom: 6vh;
     }
     75%{
-        bottom: 11vh;
+        bottom: 7vh;
     }
     100% {
         left: 60vw;
-        bottom: 10vh;
-        background-position: -9120px;
+        bottom: 6vh;
+        background-position: -14400px;
       }
 }
   @keyframes chinwalk{
     0%{
         left: 60vw;
     }
-    25%{
-    }
     50%{
         left:20vw;    
-    }
-    75%{
     }
     100% {
         left: 60vw;
@@ -254,18 +247,14 @@
 }
   @keyframes dinowalk{
     0%{
-        left: 60vw;
-    }
-    25%{
+        left: 50vw;
     }
     50%{
-        left:20vw;    
-    }
-    75%{
+        left:10vw;    
     }
     100% {
-        left: 60vw;
-        background-position: -10800px;
+        left: 50vw;
+        background-position: -15600px;
       }
 }
   @keyframes catwalk{
@@ -293,12 +282,8 @@
     0%{
         left: 60vw;
     }
-    25%{
-    }
     50%{
         left:20vw;    
-    }
-    75%{
     }
     100% {
         left: 60vw;

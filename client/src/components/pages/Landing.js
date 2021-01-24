@@ -67,7 +67,6 @@ class Landing extends Component {
         )}
           <button className = "landing-button about-button" onClick={this.handleOpenModal} >about</button>
           <Modal isOpen={this.state.showModal} className="Modal" overlayClassName="Overlay"> 
-          
           <p className="modal-content">
             <p style={{display: "inline-block"}}>welcome to the write pet!</p>
             <button className="modal-close-button" onClick={this.handleCloseModal}>X</button>

@@ -4,8 +4,6 @@ import "./NewEntry.css";
 import moment from "moment"; 
 import { get, post } from "../../utilities";
 
-
-
 class NewEntry extends React.Component {
     constructor(props) {
       super(props);
@@ -18,7 +16,6 @@ class NewEntry extends React.Component {
     get("/api/user", { userid: this.props.userId }).then((user) => this.setState({ petter: user.petType }));
   }
 
-
   render() {
     let pet = null; 
     if(this.state.petter == "0"){
@@ -27,13 +24,13 @@ class NewEntry extends React.Component {
       pet = <div className="cat-j"></div>
   } else if(this.state.petter =="2"){
       pet = <div className="dino-j"></div>
-  }else if(this.state.petter =="3"){
-    pet = <div className="chin-j"></div>
-} else if(this.state.petter =="4"){
-    pet = <div className="whale-j"></div>
-}else if(this.state.petter =="5"){
-  pet = <div className="worm-j"></div>
-} 
+  } else if(this.state.petter =="3"){
+      pet = <div className="chin-j"></div>
+  } else if(this.state.petter =="4"){
+      pet = <div className="whale-j"></div>
+  } else if(this.state.petter =="5"){
+      pet = <div className="worm-j"></div>
+  } 
     return (
       <>
     <Entry userId={this.props.userId}></Entry> 

@@ -1,0 +1,18 @@
+.bgg{
+    background-color: var(--ltblue);
+    z-index: -2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    align-items: center;
+}
+.textload{
+    color: var(--darkblue);
+    font-size: 3em;
+    text-emphasis: none;
+    text-align: center;
+    padding-top: 40vh;    
+}

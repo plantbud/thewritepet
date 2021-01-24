@@ -6,7 +6,7 @@ import Navbar from "../modules/Navbar";
 import PetState from "../modules/PetState.js"
 import { get } from "../../utilities";
 import moment from "moment"; 
-
+import Loading from "./Loading.js";
 
 class Home extends Component {
     constructor(props) {
@@ -50,9 +50,11 @@ class Home extends Component {
     }
 
   incrementPetState = () => {
+    if(this.state.petState<2){
     this.setState({
       petState: this.state.petState + 1,
     });
+  }
   };
   decreasePetState = () => {
     if(this.state.petState>0){
@@ -62,12 +64,7 @@ class Home extends Component {
     } 
   };
 
-  handleButtonClick = () => {
-    this.setState({ navdisplay: !this.state.navdisplay });
-  };
-
   render() {
-    console.log("Petmood" + this.state.petState);
     return (
       <>
       <div className="con">
