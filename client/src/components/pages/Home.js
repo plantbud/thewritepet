@@ -21,7 +21,32 @@ class Home extends Component {
 
   componentDidMount() {
     // remember -- api calls go here!
-    get("/api/user", { userid: this.props.userId }).then((user) => this.setState({ user: user }));
+    const dayBefore = moment().subtract(1, 'days').startOf('day');
+    const dayNow = moment().local().startOf('day');
+    get("/api/user", { userid: this.props.userId }).then((user) => this.setState({ user: user}));
+    get("/api/journalentrieschanged", { timestamp: dayBefore}).then((entryBefore) => {
+      if(entryBefore.entries){
+        this.setState({
+          petState: 1,
+        }, () => { get("/api/journalentrieschanged", { timestamp: dayNow }).then((entryObjs) => {
+          if (entryObjs.entries) {
+            this.setState({
+              petState:2, 
+              });
+            } 
+        });});
+      }else{
+        this.setState({
+          petState: 0,
+        }, () => { get("/api/journalentrieschanged", { timestamp: dayNow }).then((entryObjs) => {
+          if (entryObjs.entries) {
+            this.setState({
+              petState: 1, 
+              });
+            } 
+        });});
+      }
+    });
     }
 
   incrementPetState = () => {
@@ -42,6 +67,7 @@ class Home extends Component {
   };
 
   render() {
+    console.log("Petmood" + this.state.petState);
     return (
       <>
       <div className="con">

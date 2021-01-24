@@ -5,6 +5,7 @@ const UserSchema = new mongoose.Schema({
   googleid: String,
   consistency: {type: Number, default: 0},
   petType: { type: String, default: "doggo" },
+  petMood: {type: Number, default: 1}, 
 });
 
 // compile model from schema

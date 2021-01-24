@@ -61,15 +61,13 @@ class PastEntry extends Component {
   }
   onSelect = (e) => {
     console.log("changing date " + this.state.dateObj);
-    this.setState({dateObj: e}, () => {    get("/api/journalentrieschanged", { timestamp: this.state.dateObj }).then((entryObjs) => {
-      console.log(entryObjs);
+    this.setState({dateObj: e}, () => { get("/api/journalentrieschanged", { timestamp: this.state.dateObj }).then((entryObjs) => {
       if (entryObjs.entries) {
         this.setState({
           entries: entryObjs, 
           editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(entryObjs.entries))),
         });
       } else {
-        console.log("content state string empty" );
         this.setState({
           editorState: EditorState.createEmpty(),
         });

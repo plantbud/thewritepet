@@ -16,14 +16,14 @@
   .normal{
     background: url('../../assets/dog_normal.svg') ; 
     background-repeat: no-repeat;
-    width:220px;
+    width:240px;
     height:200px;
     bottom: 10vh;
     left: 60vw;
     position: fixed;
   }
   .happy{
-    background: url('../../assets/doggowalk.svg') ; 
+    background: url('../../assets/doggowalko.svg') ; 
     background-size: cover;
     width:240px;
     height:210px;
@@ -33,7 +33,7 @@
     display: block;
     margin: 0;
     position: fixed;
-    animation: petwalk 11s steps(18) infinite;
+    animation: petwalk 11s steps(24) infinite;
 }
 .normal-cat{
     background: url('../../assets/kitty_normal.svg') ; 
@@ -43,7 +43,6 @@
     bottom: 10vh;
     left: 60vw;
     position: fixed;
-    
   }
 .sad-cat{
     background: url('../../assets/kitty_sad.svg') ; 
@@ -54,6 +53,19 @@
     left: 60vw;
     position: fixed;
   }
+  .happy-cat{
+    background: url('../../assets/cat_walk.svg') ; 
+    background-size: cover;
+    width:220px;
+    height:220px;
+    bottom: 10vh;
+    left: 60vw;
+    padding: 0;
+    display: block;
+    margin: 0;
+    position: fixed;
+    animation: catwalk 11s steps(24) infinite;
+}
   .normal-dino{
     background: url('../../assets/dino_normal.svg') ; 
     background-repeat: no-repeat;
@@ -73,6 +85,19 @@
     left: 50vw;
     position: fixed;
   }
+  .happy-dino{
+    background: url('../../assets/dino_walk.svg') ; 
+    background-size: cover;
+    width:450px;
+    height:310px;
+    bottom: 10vh;
+    left: 60vw;
+    padding: 0;
+    display: block;
+    margin: 0;
+    position: fixed;
+    animation: dinowalk 11s steps(24) infinite;
+}
   .normal-chin{
     background: url('../../assets/chin_normal.svg') ; 
     background-repeat: no-repeat;
@@ -92,6 +117,19 @@
     left: 60vw;
     position: fixed;
   }
+  .happy-chin{
+    background: url('../../assets/chin_walk.svg') ; 
+    background-size: cover;
+    width:240px;
+    height:150px;
+    bottom: 10vh;
+    left: 60vw;
+    padding: 0;
+    display: block;
+    margin: 0;
+    position: fixed;
+    animation: chinwalk 11s steps(24) infinite;
+}
   .normal-whale{
     background: url('../../assets/whale_normal.svg') ; 
     background-repeat: no-repeat;
@@ -111,6 +149,19 @@
     left: 60vw;
     position: fixed;
   }
+  .happy-whale{
+    background: url('../../assets/whale_walk.svg') ; 
+    background-size: cover;
+    width:380px;
+    height:260px;
+    bottom: 10vh;
+    left: 60vw;
+    padding: 0;
+    display: block;
+    margin: 0;
+    position: fixed;
+    animation: whalewalk 11s steps(24) infinite;
+}
   .normal-worm{
     background: url('../../assets/worm_normal.svg') ; 
     background-repeat: no-repeat;
@@ -130,7 +181,41 @@
     left: 60vw;
     position: fixed;
   }
-@keyframes petwalk{
+  .happy-worm{
+    background: url('../../assets/worm_walk.svg') ; 
+    background-size: cover;
+    width:150px;
+    height:240px;
+    bottom: 10vh;
+    left: 60vw;
+    padding: 0;
+    display: block;
+    margin: 0;
+    position: fixed;
+    animation: wormwalk 11s steps(24) infinite;
+}
+@keyframes wormwalk{
+  0%{
+      left: 60vw;
+      bottom: 10vh;
+  }
+  25%{
+      bottom: 11vh;
+  }
+  50%{
+      left:20vw;    
+      bottom: 10vh;
+  }
+  75%{
+      bottom: 11vh;
+  }
+  100% {
+      left: 60vw;
+      bottom: 10vh;
+      background-position: -3600px;
+    }
+}
+  @keyframes whalewalk{
     0%{
         left: 60vw;
         bottom: 10vh;
@@ -148,14 +233,75 @@
     100% {
         left: 60vw;
         bottom: 10vh;
-        background-position: -4320px;
+        background-position: -9120px;
       }
 }
-@keyframes translatee{
+  @keyframes chinwalk{
     0%{
-        left: 80vw;
+        left: 60vw;
     }
-    100%{
-        left: 10vw;
+    25%{
     }
+    50%{
+        left:20vw;    
+    }
+    75%{
+    }
+    100% {
+        left: 60vw;
+        background-position: -5760px;
+      }
+}
+  @keyframes dinowalk{
+    0%{
+        left: 60vw;
+    }
+    25%{
+    }
+    50%{
+        left:20vw;    
+    }
+    75%{
+    }
+    100% {
+        left: 60vw;
+        background-position: -10800px;
+      }
+}
+  @keyframes catwalk{
+    0%{
+        left: 60vw;
+        bottom: 10vh;
+    }
+    25%{
+        bottom: 11vh;
+    }
+    50%{
+        left:20vw;    
+        bottom: 10vh;
+    }
+    75%{
+        bottom: 11vh;
+    }
+    100% {
+        left: 60vw;
+        bottom: 10vh;
+        background-position: -5280px;
+      }
+}
+@keyframes petwalk{
+    0%{
+        left: 60vw;
+    }
+    25%{
+    }
+    50%{
+        left:20vw;    
+    }
+    75%{
+    }
+    100% {
+        left: 60vw;
+        background-position: -5760px;
+      }
 }

@@ -60,8 +60,8 @@ router.post("/initsocket", (req, res) => {
 
   router.post("/user/consistency", auth.ensureLoggedIn, (req, res) => {
     User.findOne({_id: req.user._id,}).then((user) => {
-      user.push({consistency: req.body.consistency});
-      user.save().then((updated) => {res.send(updated.user);
+      user.petMood = req.petMood; 
+      user.save().then((updated) => {res.send(updated.petMood);
       });
     });
   });
