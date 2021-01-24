@@ -63,7 +63,7 @@ class Navbar extends Component{
                 <ul><Link to="/home" className="NavBar-link">HOME</Link></ul>
                 <ul><Link to="/addlater" className="NavBar-link">PET STATUS</Link></ul>
                 <ul><Link to="/timeline" className="NavBar-link">TIMELINE</Link></ul>
-                <ul><Link to="/addlater" className="NavBar-link">SWITCH PET</Link></ul>
+                <ul><Link to="/switch" className="NavBar-link">SWITCH PET</Link></ul>
                 <ul>
                   <GoogleLogout
                   clientId={GOOGLE_CLIENT_ID}

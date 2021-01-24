@@ -26,6 +26,7 @@ class PastEntry extends Component {
         entries: [],
         editorState: EditorState.createEmpty(), 
         dateObj: moment(), 
+        petter: null, 
       };
   }
 
@@ -48,6 +49,9 @@ class PastEntry extends Component {
         });
       }
     });
+    get("/api/user", { userid: this.props.userId }).then((user) => this.setState({ petter: user.petType }));
+    console.log("petter " + this.state.petter);
+
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -75,7 +79,15 @@ class PastEntry extends Component {
   }
 
   render() {
-    console.log("string " + this.state.entries);
+    let pet = null;
+    console.log("petter " + this.state.petter);
+    if(this.state.petter == "0"){
+        pet = <div className="doggo"></div>
+    } else if(this.state.petter =="1"){
+        pet = <div className="cat"></div>
+    } else if(this.state.petter =="2"){
+        pet = <div className="dino"></div>
+    }
     return (
       <>
      <div className="background-timeline">
@@ -96,7 +108,7 @@ class PastEntry extends Component {
           </div>
               </div> 
         */}
-          <img src={doge} className="pet-pic"/>
+          {pet}
         </div>
       </>
     );

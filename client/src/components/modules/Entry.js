@@ -11,7 +11,6 @@ import 'draft-js/dist/Draft.css';
 import debounce from 'lodash/debounce';
 
 import "./Entry.css";
-import sleepy from "../../assets/dog_sleep.svg"
 import HomeButton from "../modules/HomeButton";
 import { navigate, Router } from "@reach/router";
 import { get, post } from "../../utilities";
@@ -86,7 +85,6 @@ class Entry extends Component {
           /> */}
           <p className="dateTime-display ">01/16/2021</p>
           <h1 className="title">{moment().format("LL")}</h1>
-          <img src={sleepy} className="petImage"/>
           {/* <div className="box blueFloor">hellooooo</div> */}
           <div>
             <Editor

@@ -5,6 +5,7 @@ import Landing from "./pages/Landing.js";
 import Home from "./pages/Home.js";
 import NewEntry from "./pages/NewEntry.js";
 import PastEntry from "./pages/PastEntry.js";
+import ChangePet from "./pages/ChangePet.js";
 
 import "../utilities.css";
 
@@ -81,7 +82,12 @@ class App extends Component {
           />
           <PastEntry
             path="/timeline"
+            userId={this.state.userId}
           />
+          <ChangePet 
+            path="/switch"
+            userId={this.state.userId}
+            />
           <NotFound default />
         </Router>
         </>

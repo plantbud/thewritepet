@@ -3,7 +3,6 @@
     text-align: center;
     top:10vh;
     margin-top: 0;
-    
   }
   .sad{
     background: url('../../assets/dog_sad.svg') ; 
@@ -36,6 +35,44 @@
     position: fixed;
     animation: petwalk 11s steps(18) infinite;
 }
+.normal-cat{
+    background: url('../../assets/kitty_normal.svg') ; 
+    background-repeat: no-repeat;
+    width:220px;
+    height:200px;
+    bottom: 10vh;
+    left: 60vw;
+    position: fixed;
+    
+  }
+.sad-cat{
+    background: url('../../assets/kitty_sad.svg') ; 
+    background-repeat: no-repeat;
+    width:220px;
+    height:200px;
+    bottom: 10vh;
+    left: 60vw;
+    position: fixed;
+  }
+  .normal-dino{
+    background: url('../../assets/dino_normal.svg') ; 
+    background-repeat: no-repeat;
+    width:550px;
+    height:400px;
+    bottom: 5vh;
+    left: 60vw;
+    position: fixed;
+    
+  }
+.sad-dino{
+    background: url('../../assets/dino_sad.svg') ; 
+    background-repeat: no-repeat;
+    width:550px;
+    height:400px;
+    bottom: 5vh;
+    left: 60vw;
+    position: fixed;
+  }
 
 @keyframes petwalk{
     0%{

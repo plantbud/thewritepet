@@ -66,6 +66,14 @@ router.post("/initsocket", (req, res) => {
     });
   });
 
+  router.post("/user/pettype", auth.ensureLoggedIn, (req, res) => {
+    User.findOne({_id: req.user._id,}).then((user) => {
+      user.petType = req.body.petType; 
+      user.save().then((updated) => {res.send(updated.petType);
+      });
+    });
+  });
+
 router.get("/journalentrieschanged", auth.ensureLoggedIn, (req,res) => {
   let starting = moment(req.query.timestamp).local().startOf("day");
   let ending = moment(req.query.timestamp).local().endOf("day");

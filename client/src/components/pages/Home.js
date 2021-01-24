@@ -62,7 +62,7 @@ class Home extends Component {
           <ellipse id="home-ellipse" cx="100" cy="50" rx="150" ry="20"/>
         </svg>
       </div>
-      <PetState petState={this.state.petState}/>
+      <PetState petState={this.state.petState} userId={this.props.userId}/>
 
       </>
     );
