@@ -6,7 +6,6 @@ import { get, post } from "../../utilities";
 import arrow from "../../assets/arrow.svg";
 import Loading from "../pages/Loading.js";
 
-
 const GOOGLE_CLIENT_ID = "1047242304905-banhh0inijubl1kiqctqsgn7ht8dg2cn.apps.googleusercontent.com";
 
 class Navbar extends Component{

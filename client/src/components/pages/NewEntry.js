@@ -3,6 +3,7 @@ import Entry from "../modules/Entry.js"
 import "./NewEntry.css";
 import moment from "moment"; 
 import { get, post } from "../../utilities";
+import Footer from "../modules/Footer.js";
 
 class NewEntry extends React.Component {
     constructor(props) {
@@ -35,6 +36,7 @@ class NewEntry extends React.Component {
       <>
     <Entry userId={this.props.userId}></Entry> 
     {pet}
+    <Footer/>
       </>
       );
     }

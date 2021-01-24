@@ -5,8 +5,6 @@ import {
   Editor,
   EditorState,
   RichUtils,
-  getDefaultKeyBinding,
-  convertToRaw,
   convertFromRaw
 } from 'draft-js';
 import 'draft-js/dist/Draft.css';
@@ -15,15 +13,13 @@ import { navigate, Router } from "@reach/router";
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
 import moment from "moment"; 
-
-import doge from "../../assets/dog_normal.svg";
 import beans from "../../assets/toebean.svg";
+import Footer from "../modules/Footer.js";
 
 class PastEntry extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        entries: [],
         editorState: EditorState.createEmpty(), 
         dateObj: moment(), 
         petter: null, 
@@ -31,40 +27,24 @@ class PastEntry extends Component {
   }
 
   componentDidMount() {
-    console.log("umm" + this.state.dateObj);
-    console.log("umm type "+ typeof(this.state.dateObj.format()));
-    console.log("does this worrk " + moment(this.state.dateObj).local().startOf("day"));
-    console.log("does this worrk " + moment(this.state.dateObj).local().endOf("day"));
-
     get("/api/journalentrieschanged", { timestamp: this.state.dateObj }).then((entryObjs) => {
       if (entryObjs.entries) {
         this.setState({
-          entries: entryObjs, 
           editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(entryObjs.entries))),
         });
       } else {
-        console.log("content state string empty" );
         this.setState({
           editorState: EditorState.createEmpty(),
         });
       }
     });
     get("/api/user", { userid: this.props.userId }).then((user) => this.setState({ petter: user.petType }));
-    console.log("petter " + this.state.petter);
-
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (this.state.dateObj !== prevState.dataObj) {
-      console.log("did upaate" + this.state.dateObj);
-    }
-  }
   onSelect = (e) => {
-    console.log("changing date " + this.state.dateObj);
     this.setState({dateObj: e}, () => { get("/api/journalentrieschanged", { timestamp: this.state.dateObj }).then((entryObjs) => {
       if (entryObjs.entries) {
         this.setState({
-          entries: entryObjs, 
           editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(entryObjs.entries))),
         });
       } else {
@@ -102,6 +82,7 @@ class PastEntry extends Component {
               placeholder="No entry"
             />
           {pet}
+          <Footer/>
         </div>
       </>
     );

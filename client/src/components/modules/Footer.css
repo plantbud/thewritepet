@@ -1,0 +1,21 @@
+.footer-image{
+    height:1.2em;
+    display: inline;
+    position: relative;
+    left:88vw;
+    top:80vh;
+}
+.footer-text{
+    font-size: 1.2em;    
+    display: inline;
+    padding-right: .5rem;
+    left:88vw;
+    top:80vh;
+    position: relative;
+}
+.fcontainer{
+    position: fixed;
+    left: 90vw; 
+    display: inline-flexbox;
+    
+}

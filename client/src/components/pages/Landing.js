@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
 import Modal from "react-modal";
+import Footer from "../modules/Footer.js";
 
 import "../../utilities.css";
 import "./Landing.css";
@@ -82,6 +83,7 @@ class Landing extends Component {
             </div>
           </p>
           </Modal>
+          <Footer/>
         </div>
       </>
     );

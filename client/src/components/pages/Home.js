@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import "./Home.css";
-import arrow from "../../assets/arrow.svg";
 import { navigate, Router } from "@reach/router";
 import Navbar from "../modules/Navbar";
 import PetState from "../modules/PetState.js"
 import { get } from "../../utilities";
 import moment from "moment"; 
-import Loading from "./Loading.js";
+import Footer from "../modules/Footer.js";
 
 class Home extends Component {
     constructor(props) {
@@ -86,7 +85,7 @@ class Home extends Component {
         </svg>
       </div>
       <PetState petState={this.state.petState} userId={this.props.userId}/>
-
+      <Footer/>
       </>
     );
   }

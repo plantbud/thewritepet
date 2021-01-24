@@ -6,7 +6,6 @@
 | This file defines the routes for your server.
 |
 */
-
 const express = require("express");
 const moment = require("moment");
 // import models so we can interact with the database
@@ -34,7 +33,6 @@ router.get("/whoami", (req, res) => {
     User.findOne({
       _id: req.user._id,}).then((user) => {res.send(user);});
   }
-  //res.send(req.user);
 });
 
 router.post("/initsocket", (req, res) => {
@@ -55,14 +53,6 @@ router.post("/initsocket", (req, res) => {
   router.get("/user", (req, res) => {
     User.findById(req.query.userid).then((user) => {
       res.send(user);
-    });
-  });
-
-  router.post("/user/consistency", auth.ensureLoggedIn, (req, res) => {
-    User.findOne({_id: req.user._id,}).then((user) => {
-      user.petMood = req.petMood; 
-      user.save().then((updated) => {res.send(updated.petMood);
-      });
     });
   });
 

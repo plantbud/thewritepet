@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import "./PetStatus.css";
 import {get} from "../../utilities"
 import HomeButton from "../modules/HomeButton";
+import Footer from "../modules/Footer.js";
 
-class PastEntry extends Component {
+class PetStatus extends Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -37,10 +38,11 @@ class PastEntry extends Component {
         <h1 className="title">pet profile</h1>
         <HomeButton onClick={() => navigate('/home')}/>
           {pet}
+          <Footer/>
         </div>
       </>
     );
   }
 }
 
-export default PastEntry;
+export default PetStatus;
