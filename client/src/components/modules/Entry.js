@@ -70,7 +70,7 @@ class Entry extends Component {
     }
     return (
     <div className="newEntry-background">
-      <button className = "submit-entry" onClick= { () => this.submitEntry(this.state.editorState)}>Submit entry</button>
+      <button className = "submit-entry" onClick= { () => this.submitEntry(this.state.editorState)}>submit</button>
         <HomeButton onClick={() => navigate('/home')}/>
         <div className="journal-box">
           {/* <Toolbar
@@ -83,7 +83,7 @@ class Entry extends Component {
             toggleInlineStyle={this.toggleInlineStyle}
             toggleBlockType={this.toggleBlockType}
           /> */}
-          <p className="dateTime-display ">01/16/2021</p>
+         {/*<p className="dateTime-display ">01/16/2021</p> */} 
           <h1 className="title">{moment().format("LL")}</h1>
           {/* <div className="box blueFloor">hellooooo</div> */}
           <div>
