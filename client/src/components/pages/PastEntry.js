@@ -12,6 +12,8 @@ import HomeButton from "../modules/HomeButton";
 import { navigate, Router } from "@reach/router";
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
+import "./Calen.css";
+
 import moment from "moment"; 
 import beans from "../../assets/toebean.svg";
 import Footer from "../modules/Footer.js";
@@ -73,14 +75,17 @@ class PastEntry extends Component {
     return (
       <>
      <div className="background-timeline">
-        <h1 className="title">Entry Timeline</h1>
+     <img src={beans} className="beansimage"/>
+
         <p className="reminder">take some time to reflect on how much you and your pet have grown</p>
         <HomeButton onClick={() => navigate('/home')}/>
         <Calendar onClickDay= {this.onSelect} ></Calendar>
-        <Editor
+        <div className="entrybox">
+            <Editor
               editorState={this.state.editorState}
               placeholder="No entry"
             />
+        </div>
           {pet}
           <Footer/>
         </div>

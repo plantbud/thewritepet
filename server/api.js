@@ -11,7 +11,6 @@ const moment = require("moment");
 // import models so we can interact with the database
 const User = require("./models/user");
 const Journalentry = require("./models/journalentry.js");
-const Day = require("./models/day.js");
 const Tag = require("./models/tag.js");
 // import authentication library
 const auth = require("./auth");

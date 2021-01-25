@@ -7,6 +7,12 @@
     width: 100%;
     overflow: auto;
 }
+.entrybox{
+    background-color: var(--ltblue);
+    border-radius: 1.5em;
+    padding: 2%;
+    margin: 4vh 10vw;
+}
 
 .title{
     margin-top:2vh;
@@ -14,6 +20,7 @@
 }
 
 .reminder{
+    padding-top: 1em;
     margin-left: 3vw;
 }
 
@@ -38,7 +45,13 @@
     display: inline-block;
     margin-left: .5vh;
 }
+.beansimage{
+    height:2em;
+    position: absolute;
+    left:5vw;
+    top:8vh;
 
+}
 .doggo{
     background: url('../../assets/dog_normal.svg') ; 
     background-repeat: no-repeat;
@@ -51,11 +64,10 @@
 .cat{
     background: url('../../assets/kitty_normal.svg') ; 
     background-repeat: no-repeat;
-    height:25vh;
-    bottom: 10vh;
-    width: 60vw;
-    left: 60vw;
-    position: fixed;
+    height:20vh;
+    margin-left: 2vw;
+    margin-bottom: 1vh;
+    position: relative;
 }
 .dino{
     background: url('../../assets/dino_normal.svg') ; 
