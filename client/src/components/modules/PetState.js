@@ -73,7 +73,7 @@ class PetState extends Component {
     return (
       <>
       <div>
-        <h1 className="Petstate">Consistency:</h1>
+        <h1 className="Petstate">Pet Mood:</h1>
         <h1 className="Petstate">{this.props.petState}</h1>
         {pet}
       </div>

@@ -1,4 +1,5 @@
 .footer{
+    color:var(--darkblue);
     font-size:1.5rem;
     height: 2.5vh;
     padding-left: .5vw;

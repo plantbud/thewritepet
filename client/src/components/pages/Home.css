@@ -49,6 +49,7 @@
     letter-spacing: 0.3rem;
     box-sizing: border-box;
     box-shadow: 0 .5rem 0 .2rem var(--ltblue);
+    z-index: 99999999;
   }
 .reflect-button:hover{
     background-color: var(--pink);
