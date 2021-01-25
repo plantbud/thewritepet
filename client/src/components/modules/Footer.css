@@ -1,21 +1,12 @@
-.footer-image{
-    height:2.1vh;
+.footer{
+    font-size:1.5rem;
+    height: 2.5vh;
+    padding-left: .5vw;
     display: inline;
-    left:95.5vw;
-    position: fixed;
-    top:95vh;
-}
-.footer-text{
-    font-size: 1.2em;    
-    display: inline;
-    padding-right: .5rem;
-    left:88vw;
-    position: fixed;
-    top:95vh;
 }
 .fcontainer{
-    position: fixed;
-    left: 90vw; 
-    display: inline-flexbox;
-    
+    position: absolute;
+    padding-right: 1rem;
+    right:0vw;
+    top:95vh;
 }

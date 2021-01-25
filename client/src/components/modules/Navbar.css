@@ -1,11 +1,38 @@
+.name-display{
+  color: var(--darkblue);
+  position: fixed;;
+  left: -5vw; 
+  top: 4vh;
+  background-color: var(--ltblue);
+  padding-top: 1rem;    
+  padding-bottom: 1rem;
+  padding-right: 2rem;
+  border-radius: 4rem;
+}
+.name-display:hover{
+  cursor: pointer;
+}
+.namecard{
+  display: inline;
+  font-size: 1.9rem;
+  height:1.2rem;
+  margin-left: 7rem;
+}
+.arrowdown{
+  transform: rotate(180deg);
+}
+.arrowup{
+}
+
 .NavBar-container {
   background-color: var(--ltblue);
   position:fixed;
-  top:15vh;
-  left:-5vw;
-  height: 25rem;
-  width: 35vw;
-  border-radius: 70px;
+  left: -5vw; 
+  top: 4vh;
+  margin-top:6rem;
+  height: 18rem;
+  width: 25rem;
+  border-radius: 3rem;
 }
 .show {
   transform: translate3d(0vw,0,0);

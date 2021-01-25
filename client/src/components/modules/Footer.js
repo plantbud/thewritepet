@@ -14,9 +14,9 @@ class Footer extends Component{
     render() {
         return (
             <>
-            <div className="fconainter">
-                <div className="footer-text">the write pet</div>
-                <img src={sprout} className="footer-image"/>
+            <div className="fcontainer">
+                <div className="footer">the write pet</div>
+                <img src={sprout} className="footer"/>
             </div>
             </>
         );

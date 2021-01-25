@@ -65,14 +65,12 @@ class App extends Component {
             handleLogin={this.handleLogin}
             handleLogout={this.handleLogout}
             userId={this.state.userId}
-            consistency = {this.state.consistentcy}
           />
           <Redirect from="/" to="/home" />
 
           <NewEntry
             path="/newentry"
             userId={this.state.userId}
-            consistency = {this.state.consistentcy}
           />
           <PetStatus
             path="/profile"

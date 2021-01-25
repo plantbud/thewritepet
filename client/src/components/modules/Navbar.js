@@ -29,7 +29,7 @@ class Navbar extends Component{
         if (!this.state.user) {
           return <Loading/>;
         }
-        let display = "show"
+        let display = "show";
         if(open) {
           display = "show"
         } else{
@@ -38,14 +38,13 @@ class Navbar extends Component{
         return (
           <>
             <div className="name-display" onClick = { () => {this.handleButtonClick();}}>
-            <span >{this.state.user.name}</span>
-            <img src={arrow} className="arrowdown"/>
+            <span className="namecard">{this.state.user.name}</span>
+            {this.state.open ? ( <img src={arrow} className= "namecard arrowup"/>): (<img src={arrow} className= "namecard arrowdown"/>)}
             </div>
 
             {this.state.open ? (
             <nav className="NavBar-container show">
               <div className="NavBar-linkContainer ">
-                <ul><Link to="/home" className="NavBar-link">HOME</Link></ul>
                 <ul><Link to="/profile" className="NavBar-link">PET PROFILE</Link></ul>
                 <ul><Link to="/timeline" className="NavBar-link">TIMELINE</Link></ul>
                 <ul><Link to="/switch" className="NavBar-link">SWITCH PET</Link></ul>
