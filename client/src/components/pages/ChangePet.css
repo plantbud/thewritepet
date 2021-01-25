@@ -1,5 +1,29 @@
+.bggg{
+    background-color: var(--primary);
+    z-index: -2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+.choosetitle{
+    font-size: 2em;
+    font-family: "Mulish";
+    text-align: center;
+    margin-top: 1rem;
+}
+.petcontainer{
+    margin-top: 7vh;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .pet{
     height: 20vh;
+    margin: 5vh 5vw;
 }
 .pet:hover{
     height: 22vh;
@@ -7,8 +31,15 @@
 }
 .petDino{
     height: 40vh;
+    margin: 5vh 5vw;
 }
 .petDino:hover{
     height:42vh;
     cursor: pointer;
+}
+.toebeans{
+    position:absolute;
+    height: 5vh;
+    left:58vw;
+    top:2vh;
 }

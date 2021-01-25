@@ -1,19 +1,61 @@
+.containert{
+    text-align: center;
+    margin-top: 2rem;
+}
+.petprofile{
+    position: relative;
+    border: solid;    
+    border-width: 5px;
+    border-radius: 2em;
+    border-color: var(--darkblue);
+    left:15vw;
+    top:5vh;
+    width:70vw;
+    height:75vh;
+}
+.infocontainer{
+    margin-top: 2em;
+    margin-left: 2em;
+}
+.info{
+    padding: 1em;
+    font-size: 2em;
+}
+.petcontain{
+    background-color: var(--ltblue);
+    position:fixed; 
+    bottom: 12vh;
+    left: 63vw;
+    padding:10vw;
+    border-radius: 3em;
+}
+.titlep{
+    font-family: "Mulish";
+    font-size: 2.5em;
+    background-color: var(--ltblue);
+    border-radius: 2em;
+    width:fit-content;
+    padding:.5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    display:inline;
+}
 .doggo-p{
     background: url('../../assets/dog_normal.svg') ; 
     background-repeat: no-repeat;
     height:25vh;
-    bottom: 10vh;
+    bottom: 15vh;
     width: 60vw;
-    left: 60vw;
+    left: 65vw;
     position: fixed;
 }
 .cat-p{
     background: url('../../assets/kitty_journal.svg') ; 
     background-repeat: no-repeat;
     height:25vh;
-    bottom: 10vh;
+    bottom: 15vh;
     width: 60vw;
-    left: 60vw;
+    left: 68vw;
     position: fixed;
 }
 .dino-p{
@@ -21,25 +63,25 @@
     background-repeat: no-repeat;
     width: 40vw;
     height:60vh;
-    bottom: 10vh;
+    bottom: 0vh;
     left: 60vw;
     position: fixed;
 }.chin-p{
     background: url('../../assets/chin_journal.svg') ; 
     background-repeat: no-repeat;
     height:25vh;
-    bottom: 10vh;
+    bottom: 15vh;
     width: 60vw;
-    left: 60vw;
+    left: 66vw;
     position: fixed;
 }
 .worm-p{
     background: url('../../assets/worm_normal.svg') ; 
     background-repeat: no-repeat;
     height:25vh;
-    bottom: 10vh;
+    bottom: 15vh;
     width: 60vw;
-    left: 60vw;
+    left: 70vw;
     position: fixed;
 }
 .whale-p{
@@ -47,7 +89,7 @@
     background-repeat: no-repeat;
     width: 40vw;
     height:60vh;
-    bottom: 10vh;
+    bottom: -8vh;
     left: 60vw;
     position: fixed;
 }

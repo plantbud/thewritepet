@@ -7,8 +7,9 @@ import dino from "../../assets/dino_normal.svg";
 import chin from "../../assets/chin_normal.svg";
 import whale from "../../assets/whale_normal.svg";
 import worm from "../../assets/worm_normal.svg";
+import beans from "../../assets/toebean.svg";
 import HomeButton from "../modules/HomeButton";
-import { navigate, Router } from "@reach/router";
+import { navigate } from "@reach/router";
 import Footer from "../modules/Footer.js";
 
 class ChangePet extends React.Component {
@@ -72,16 +73,21 @@ class ChangePet extends React.Component {
   render() {
     return (
       <>
-      <div>change</div>
+      <div className="bggg">
+      <div className="choosetitle">select your pet</div>
       <HomeButton onClick={() => navigate('/home')}/>
-      <img src={doggo} className="pet" onClick= { () => this.switchDoggo(this.state.pet)}/>
+      <div className="petcontainer">
+      <img src={doggo} className="pet" onClick= { () => this.switchDoggo(this.state.pet)} />
       <img src={catto} className="pet" onClick= { () => this.switchCatto(this.state.pet)}/>
-      <img src={dino} className="petDino" onClick= { () => this.switchDino(this.state.pet)}/>
       <img src={chin} className="pet" onClick= { () => this.switchChin(this.state.pet)}/>
-      <img src={whale} className="petDino" onClick= { () => this.switchWhale(this.state.pet)}/>
       <img src={worm} className="pet" onClick= { () => this.switchWorm(this.state.pet)}/>
-      <Footer/>
+      <img src={dino} className="petDino" onClick= { () => this.switchDino(this.state.pet)}/>
+      <img src={whale} className="petDino" onClick= { () => this.switchWhale(this.state.pet)}/>
+      <img src={beans} className="toebeans" />
 
+      </div>
+      <Footer/>
+      </div>
       </>
       );
     }

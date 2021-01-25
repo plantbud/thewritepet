@@ -77,7 +77,6 @@ class App extends Component {
           <PetStatus
             path="/profile"
             userId={this.state.userId}
-            consistency = {this.state.consistentcy}
           />
           <PastEntry
             path="/timeline"
