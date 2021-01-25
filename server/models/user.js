@@ -4,7 +4,7 @@ const UserSchema = new mongoose.Schema({
   name: String,
   googleid: String,
   consistency: {type: Number, default: 0},
-  petType: { type: String, default: "doggo" },
+  petType: { type: String, default: "0" },
   petMood: {type: Number, default: 1}, 
 });
 

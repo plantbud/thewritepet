@@ -23,7 +23,7 @@ class PastEntry extends Component {
       super(props);
       this.state = {
         editorState: EditorState.createEmpty(), 
-        dateObj: moment(), 
+        dateObj: moment().local(), 
         petter: null, 
       };
   }
