@@ -38,7 +38,8 @@ class Entry extends Component {
     }
     
   componentDidMount(){
-    const timing = {timestamp: moment().local().startOf("day")};
+    const currentTime = moment().local();
+    const timing = {timestamp: currentTime};
     get("/api/journalentriesday", timing).then((entryObjs) => {
       this.setState({
         editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(entryObjs.entries))),
