@@ -64,8 +64,8 @@ router.post("/initsocket", (req, res) => {
   });
 
 router.get("/journalentrieschanged", auth.ensureLoggedIn, (req,res) => {
-  let starting = moment(req.query.timestamp).startOf("day").format();
-  let ending = moment(req.query.timestamp).endOf("day").format();
+  let starting = moment(req.query.timestamp).local().startOf("day").format();
+  let ending = moment(req.query.timestamp).local().endOf("day").format();
   Journalentry.findOne({
     creator: req.user._id, timeCreated: {
       $gte: starting,
@@ -80,14 +80,14 @@ router.get("/journalentrieschanged", auth.ensureLoggedIn, (req,res) => {
 });
 
 router.get("/journalentriesday", auth.ensureLoggedIn, (req,res) => {
-  const startOfDay = moment(req.body.day).local().startOf("day");
-  const endOfDay = moment(req.body.day).local().endOf("day");
+  const startOfDay = moment(req.body.timestamp).startOf("day").format();
+  const endOfDay = moment(req.body.timestamp).endOf("day").format();
 
   Journalentry.findOne({
     creator: req.user._id,
     timeCreated: {
-    $gte: startOfDay.format(),
-    $lte: endOfDay.format(),},}).then((journalentries) => res.send(journalentries));
+    $gte: startOfDay,
+    $lte: endOfDay,},}).then((journalentries) => res.send(journalentries));
 });
 
 router.post("/journalentries", auth.ensureLoggedIn, (req, res) =>{
@@ -103,8 +103,6 @@ router.post("/journalentries", auth.ensureLoggedIn, (req, res) =>{
   }).then((n) => {
     if (n) {
       n.entries = req.body.entries;
-      n.tags = req.body.tags._id;
-      console.log("body tag" + req.body.tags._id);
       n.save().then((updated) => {res.send(updated.entries);});
     }
     else {
@@ -112,7 +110,6 @@ router.post("/journalentries", auth.ensureLoggedIn, (req, res) =>{
         creator: req.user._id,
         entries: req.body.entries,
         timeCreated: startOfDay,
-        tags: req.body.tags._id,
       });
       newJournalentry.save().then((journalentries) => res.send(journalentries));
     }
@@ -126,8 +123,8 @@ router.post("/journalentries", auth.ensureLoggedIn, (req, res) =>{
 });
 
 router.get("/tags", auth.ensureLoggedIn, (req,res) => {
-  const startOfDay = moment(req.body.day).local().startOf("day");
-  const endOfDay = moment(req.body.day).local().endOf("day");
+  const startOfDay = moment(req.body.timestamp).startOf("day");
+  const endOfDay = moment(req.body.timestamp).endOf("day");
   Tag.find({timeCreated: {
     $gte: startOfDay.toDate(), 
     $lt: endOfDay.toDate()},

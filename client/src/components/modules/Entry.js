@@ -38,10 +38,9 @@ class Entry extends Component {
     }
     
   componentDidMount(){
-    get("/api/journalentriesday").then((entryObjs) => {
-      console.log("idk " + entryObjs.entries);
+    const timing = {timestamp: moment().local().startOf("day")};
+    get("/api/journalentriesday", timing).then((entryObjs) => {
       this.setState({
-        entries: entryObjs,
         editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(entryObjs.entries))),
       });
     })
@@ -54,7 +53,7 @@ class Entry extends Component {
 
       const entrychange = {
         entries: contentStateString, 
-        timestamp: moment().local().startOf('day'),
+        timestamp: moment().local(),
       };
       post("/api/journalentries", entrychange).then((journalentries) => {
         console.log("change entrys" + entrychange)

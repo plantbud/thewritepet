@@ -35,7 +35,6 @@ class NewEntry extends React.Component {
   } 
     return (
       <>
-      <Tag userId={this.props.userId}></Tag>
     <Entry userId={this.props.userId}></Entry> 
     {pet}
     <Footer/>

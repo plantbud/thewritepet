@@ -20,16 +20,15 @@ class Home extends Component {
 
   componentDidMount() {
     // remember -- api calls go here!
-    const dayBefore = moment().local().subtract(1, 'days').startOf('day');
-    const dayNow = moment().local().startOf('day');
-    console.log('yes' + dayBefore.format() + dayNow.format());
+    const dayBefore = {timestamp: moment().local().subtract(1, 'days').startOf('day')};
+    const dayNow = {timestamp: moment().local().startOf('day')};
 
     get("/api/user", { userid: this.props.userId }).then((user) => this.setState({ user: user}));
-    get("/api/journalentrieschanged", { timestamp: dayBefore}).then((entryBefore) => {
+    get("/api/journalentrieschanged", dayBefore).then((entryBefore) => {
       if(entryBefore.entries){
         this.setState({
           petState: 1,
-        }, () => { get("/api/journalentrieschanged", { timestamp: dayNow }).then((entryObjs) => {
+        }, () => { get("/api/journalentrieschanged", dayNow).then((entryObjs) => {
           if (entryObjs.entries) {
             this.setState({
               petState:2, 
@@ -40,7 +39,7 @@ class Home extends Component {
         console.log("am i here");
         this.setState({
           petState: 0,
-        }, () => { get("/api/journalentrieschanged", { timestamp: dayNow }).then((entryObjs) => {
+        }, () => { get("/api/journalentrieschanged", dayNow ).then((entryObjs) => {
           console.log("ahhhh");
           if (entryObjs.entries) {
             console.log("hellooo");
