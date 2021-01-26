@@ -13,7 +13,7 @@ import { navigate, Router } from "@reach/router";
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
 import "./Calen.css";
-
+import Loading from "./Loading.js";
 import moment from "moment"; 
 import beans from "../../assets/toebean.svg";
 import Footer from "../modules/Footer.js";
@@ -59,7 +59,12 @@ class PastEntry extends Component {
 
   render() {
     let pet = null;
-    if(this.state.petter == "0"){
+    if(!this.state.petter){
+      return(
+        <Loading/>
+      );
+    }
+    else if(this.state.petter == "0"){
       pet = <div className="doggo"></div>
     } else if(this.state.petter =="1"){
       pet = <div className="cat"></div>
@@ -78,7 +83,7 @@ class PastEntry extends Component {
      <img src={beans} className="beansimage"/>
 
         <p className="reminder">take some time to reflect on how much you and your pet have grown</p>
-        <HomeButton onClick={() => navigate('/home')}/>
+        <HomeButton/>
         <Calendar onClickDay= {this.onSelect} ></Calendar>
         <div className="entrybox">
             <Editor

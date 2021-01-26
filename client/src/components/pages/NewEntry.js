@@ -5,6 +5,7 @@ import Tag from "../modules/Tag.js";
 import moment from "moment"; 
 import { get, post } from "../../utilities";
 import Footer from "../modules/Footer.js";
+import Loading from "./Loading.js";
 
 class NewEntry extends React.Component {
     constructor(props) {
@@ -20,7 +21,12 @@ class NewEntry extends React.Component {
 
   render() {
     let pet = null; 
-    if(this.state.petter == "0"){
+    if(!this.state.petter){
+      return(
+        <Loading/>
+      );
+    }
+    else if(this.state.petter == "0"){
       pet = <div className="doggo-j"></div>
   } else if(this.state.petter =="1"){
       pet = <div className="cat-j"></div>

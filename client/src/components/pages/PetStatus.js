@@ -3,6 +3,7 @@ import "./PetStatus.css";
 import {get} from "../../utilities"
 import HomeButton from "../modules/HomeButton";
 import Footer from "../modules/Footer.js";
+import Loading from "../pages/Loading.js";
 
 class PetStatus extends Component {
     constructor(props) {
@@ -20,7 +21,10 @@ class PetStatus extends Component {
     let profilename = null; 
     let petinfo = null; 
     let pet = null;
-    if(this.state.petter == "0"){
+    if(!this.state.petter){
+      return(<Loading/>);
+    }
+    else if(this.state.petter == "0"){
       profilename = <div className="titlep">chocolate</div>
       pet = <div className="doggo-p"></div>
       petinfo = 
@@ -87,12 +91,11 @@ class PetStatus extends Component {
         <h2 className= "info">fun fact: has a green thumb</h2>
       </div>
   } 
-
     return (
       <>
-     <div className="background-timeline">
-       <div className ="containert">  {profilename}</div>
-        <HomeButton onClick={() => navigate('/home')}/>
+     <div className="profile-background">
+       <div className ="containert"> {profilename}</div>
+        <HomeButton id="pinkhome"/>
         <div className = "petprofile">
           <div className="petcontain">{pet}</div>
           <div className="petinfocontain">

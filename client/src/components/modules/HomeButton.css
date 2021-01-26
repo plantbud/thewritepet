@@ -12,4 +12,5 @@
 }
 .homebutton:hover{
     cursor: pointer;
+    background-color: var(--pink);
 }

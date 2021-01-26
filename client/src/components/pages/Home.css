@@ -37,7 +37,7 @@
     background-color: var(--aqua);
     font-family: "Mulish";
     color: white;
-    border: .4rem solid #3F8898;
+    border: .35rem solid #3F8898;
     position: relative; 
     left: calc(50vw - 9rem);
     top:35vh;

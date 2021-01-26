@@ -67,7 +67,6 @@ class App extends Component {
             userId={this.state.userId}
           />
           <Redirect from="/" to="/home" />
-
           <NewEntry
             path="/newentry"
             userId={this.state.userId}

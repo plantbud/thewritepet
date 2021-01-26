@@ -11,12 +11,13 @@ import beans from "../../assets/toebean.svg";
 import HomeButton from "../modules/HomeButton";
 import { navigate } from "@reach/router";
 import Footer from "../modules/Footer.js";
+import Loading from "./Loading.js";
 
 class ChangePet extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-          pet: "", 
+          pet: null, 
       };
     }
  
@@ -71,6 +72,11 @@ class ChangePet extends React.Component {
   }
 
   render() {
+    if(!this.state.pet){
+      return(
+        <Loading/>
+      );
+    }
     return (
       <>
       <div className="bggg">

@@ -9,15 +9,12 @@ import {
 } from 'draft-js';
 import 'draft-js/dist/Draft.css';
 import debounce from 'lodash/debounce';
-
-import "./Tag.js";
-
+import Loading from "../pages/Loading.js";
 import "./Entry.css";
 import HomeButton from "../modules/HomeButton";
 import { navigate, Router } from "@reach/router";
 import { get, post } from "../../utilities";
 import moment from "moment"; 
-
 
 class Entry extends Component {
     constructor(props) {
@@ -25,11 +22,9 @@ class Entry extends Component {
       this.state = {
         editorState: EditorState.createEmpty(), 
         isSaved: true,
-        consist: 0, 
       };
  
       this.onChange = (editorState) => {
-        const contentState = editorState.getCurrentContent(); 
         this.setState({
           editorState: editorState,
           isSaved: false,
@@ -45,13 +40,11 @@ class Entry extends Component {
         editorState: EditorState.createWithContent(convertFromRaw(JSON.parse(entryObjs.entries))),
       });
     })
-    get("/api/user", { userid: this.props.userId }).then((user) => this.setState({ consist: user.consistency }));
     }
     
   submitEntry = (editorState) => {
       const rawContentState = convertToRaw(editorState.getCurrentContent());
       let contentStateString = JSON.stringify(rawContentState);
-      console.log("hello" + moment().local().format());
       const dayStart = moment().local().startOf("day").format();
       const dayEnd = moment().local().endOf("day").format();
 
@@ -68,14 +61,9 @@ class Entry extends Component {
     }
 
   render() {
-    if( !this.state.editorState){
-      return(
-        <h3>loading</h3>
-      )
-    }
     return (
     <div className="newEntry-background">
-        <HomeButton onClick={() => navigate('/home')}/>
+        <HomeButton/>
         <div className="journal-box">
           {/* <Toolbar
             editorState={this.state.editorState}
@@ -91,9 +79,7 @@ class Entry extends Component {
          <div className="submitcontainer">
          <button className = "submit-entry" onClick= { () => this.submitEntry(this.state.editorState)}>submit</button>
          <h1 className="titleentry">{moment().format("LL")}</h1>
-          
          </div>
-          
           {/* <div className="box blueFloor">hellooooo</div> */}
           <div>
             <Editor
