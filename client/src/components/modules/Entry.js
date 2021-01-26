@@ -10,6 +10,8 @@ import {
 import 'draft-js/dist/Draft.css';
 import debounce from 'lodash/debounce';
 
+import "./Tag.js";
+
 import "./Entry.css";
 import HomeButton from "../modules/HomeButton";
 import { navigate, Router } from "@reach/router";
@@ -60,6 +62,7 @@ class Entry extends Component {
         });
       });
       console.log("consist before " + this.state.consist);
+      
     }
 
   render() {

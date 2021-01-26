@@ -1,6 +1,7 @@
 import React from "react";
-import Entry from "../modules/Entry.js"
+import Entry from "../modules/Entry.js";
 import "./NewEntry.css";
+import Tag from "../modules/Tag.js";
 import moment from "moment"; 
 import { get, post } from "../../utilities";
 import Footer from "../modules/Footer.js";
@@ -34,6 +35,7 @@ class NewEntry extends React.Component {
   } 
     return (
       <>
+      <Tag userId={this.props.userId}></Tag>
     <Entry userId={this.props.userId}></Entry> 
     {pet}
     <Footer/>
