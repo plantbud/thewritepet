@@ -47,22 +47,20 @@ class Entry extends Component {
     get("/api/user", { userid: this.props.userId }).then((user) => this.setState({ consist: user.consistency }));
     }
     
-    submitEntry = (editorState) => {
+  submitEntry = (editorState) => {
       const rawContentState = convertToRaw(editorState.getCurrentContent());
       let contentStateString = JSON.stringify(rawContentState);
+      console.log("hello" + moment().local().format());
 
       const entrychange = {
         entries: contentStateString, 
         timestamp: moment().local(),
       };
       post("/api/journalentries", entrychange).then((journalentries) => {
-        console.log("change entrys" + entrychange)
         this.setState({
           isSaved: true,
         });
       });
-      console.log("consist before " + this.state.consist);
-      
     }
 
   render() {

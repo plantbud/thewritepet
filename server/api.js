@@ -64,8 +64,8 @@ router.post("/initsocket", (req, res) => {
   });
 
 router.get("/journalentrieschanged", auth.ensureLoggedIn, (req,res) => {
-  let starting = moment(req.query.timestamp).local().startOf("day").format();
-  let ending = moment(req.query.timestamp).local().endOf("day").format();
+  let starting = moment(req.query.timestamp).startOf("day").format();
+  let ending = moment(req.query.timestamp).endOf("day").format();
   Journalentry.findOne({
     creator: req.user._id, timeCreated: {
       $gte: starting,
