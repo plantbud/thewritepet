@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import "./Home.css";
-import arrow from "../../assets/arrow.svg";
 import { navigate, Router } from "@reach/router";
 import Navbar from "../modules/Navbar";
 import PetState from "../modules/PetState.js"
 import { get } from "../../utilities";
 import moment from "moment"; 
-
+import Footer from "../modules/Footer.js";
 
 class Home extends Component {
     constructor(props) {
@@ -21,13 +20,45 @@ class Home extends Component {
 
   componentDidMount() {
     // remember -- api calls go here!
-    get("/api/user", { userid: this.props.userId }).then((user) => this.setState({ user: user }));
+    const dayBefore = moment().local().subtract(1, 'days').startOf('day');
+    const dayNow = moment().local().startOf('day');
+    console.log('yes' + dayBefore.format() + dayNow.format());
+
+    get("/api/user", { userid: this.props.userId }).then((user) => this.setState({ user: user}));
+    get("/api/journalentrieschanged", { timestamp: dayBefore}).then((entryBefore) => {
+      if(entryBefore.entries){
+        this.setState({
+          petState: 1,
+        }, () => { get("/api/journalentrieschanged", { timestamp: dayNow }).then((entryObjs) => {
+          if (entryObjs.entries) {
+            this.setState({
+              petState:2, 
+              });
+            } 
+        });});
+      }else{
+        console.log("am i here");
+        this.setState({
+          petState: 0,
+        }, () => { get("/api/journalentrieschanged", { timestamp: dayNow }).then((entryObjs) => {
+          console.log("ahhhh");
+          if (entryObjs.entries) {
+            console.log("hellooo");
+            this.setState({
+              petState: 1, 
+              });
+            } 
+        });});
+      }
+    });
     }
 
   incrementPetState = () => {
+    if(this.state.petState<2){
     this.setState({
       petState: this.state.petState + 1,
     });
+  }
   };
   decreasePetState = () => {
     if(this.state.petState>0){
@@ -35,10 +66,6 @@ class Home extends Component {
         petState: this.state.petState - 1,
       });
     } 
-  };
-
-  handleButtonClick = () => {
-    this.setState({ navdisplay: !this.state.navdisplay });
   };
 
   render() {
@@ -62,8 +89,8 @@ class Home extends Component {
           <ellipse id="home-ellipse" cx="100" cy="50" rx="150" ry="20"/>
         </svg>
       </div>
-      <PetState petState={this.state.petState}/>
-
+      <PetState petState={this.state.petState} userId={this.props.userId}/>
+      <Footer/>
       </>
     );
   }

@@ -22,18 +22,18 @@
     color: white;
     border-width: 0;
     position: relative; 
-    left: calc(50vw - 150px);
+    left: 40vw;
     align-items: center;
     align-content: center;
-    width: 300px;
-    height: 50px;
-    margin-top: 10px;
-    border-radius: 25px;
+    width: 20vw;
+    height: 6vh;
+    margin-top: 1vh;
+    border-radius: 3vw;
     text-align: center;
     display:block;
     font-family: "Mulish";
     font-weight: bolder;
-    font-size: 1.2rem;
+    font-size: 1.2em;
     outline: none !important;
 }
 .landing-button:hover{

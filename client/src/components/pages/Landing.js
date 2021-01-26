@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
 import Modal from "react-modal";
+import Footer from "../modules/Footer.js";
 
 import "../../utilities.css";
 import "./Landing.css";
@@ -67,7 +68,6 @@ class Landing extends Component {
         )}
           <button className = "landing-button about-button" onClick={this.handleOpenModal} >about</button>
           <Modal isOpen={this.state.showModal} className="Modal" overlayClassName="Overlay"> 
-          
           <p className="modal-content">
             <p style={{display: "inline-block"}}>welcome to the write pet!</p>
             <button className="modal-close-button" onClick={this.handleCloseModal}>X</button>
@@ -83,6 +83,7 @@ class Landing extends Component {
             </div>
           </p>
           </Modal>
+          <Footer/>
         </div>
       </>
     );

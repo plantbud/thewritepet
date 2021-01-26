@@ -5,6 +5,8 @@ import Landing from "./pages/Landing.js";
 import Home from "./pages/Home.js";
 import NewEntry from "./pages/NewEntry.js";
 import PastEntry from "./pages/PastEntry.js";
+import ChangePet from "./pages/ChangePet.js";
+import PetStatus from "./pages/PetStatus.js";
 
 import "../utilities.css";
 
@@ -53,12 +55,6 @@ class App extends Component {
     });
   };
 
-  incrementConsistent = () => {
-    this.setState({
-      consistency: this.state.consistentcy + 1,
-    });
-  };
-
   render() {
     if(this.state.userId) {
       return(
@@ -69,19 +65,25 @@ class App extends Component {
             handleLogin={this.handleLogin}
             handleLogout={this.handleLogout}
             userId={this.state.userId}
-            consistency = {this.state.consistentcy}
           />
           <Redirect from="/" to="/home" />
 
           <NewEntry
             path="/newentry"
             userId={this.state.userId}
-            consistency = {this.state.consistentcy}
-            increaseConsistent = {this.incrementConsistent}
+          />
+          <PetStatus
+            path="/profile"
+            userId={this.state.userId}
           />
           <PastEntry
             path="/timeline"
+            userId={this.state.userId}
           />
+          <ChangePet 
+            path="/switch"
+            userId={this.state.userId}
+            />
           <NotFound default />
         </Router>
         </>

@@ -6,13 +6,11 @@
 | This file defines the routes for your server.
 |
 */
-
 const express = require("express");
 const moment = require("moment");
 // import models so we can interact with the database
 const User = require("./models/user");
 const Journalentry = require("./models/journalentry.js");
-const Day = require("./models/day.js");
 const Tag = require("./models/tag.js");
 // import authentication library
 const auth = require("./auth");
@@ -34,7 +32,6 @@ router.get("/whoami", (req, res) => {
     User.findOne({
       _id: req.user._id,}).then((user) => {res.send(user);});
   }
-  //res.send(req.user);
 });
 
 router.post("/initsocket", (req, res) => {
@@ -58,10 +55,10 @@ router.post("/initsocket", (req, res) => {
     });
   });
 
-  router.post("/user/consistency", auth.ensureLoggedIn, (req, res) => {
+  router.post("/user/pettype", auth.ensureLoggedIn, (req, res) => {
     User.findOne({_id: req.user._id,}).then((user) => {
-      user.push({consistency: req.body.consistency});
-      user.save().then((updated) => {res.send(updated.user);
+      user.petType = req.body.petType; 
+      user.save().then((updated) => {res.send(updated.petType);
       });
     });
   });

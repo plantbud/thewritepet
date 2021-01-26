@@ -1,0 +1,62 @@
+.bggg{
+    background-color: var(--primary);
+    z-index: -2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+.selecttitle{
+    color:var(--darkblue);
+    position: fixed;
+    display: inline-flex;
+    height: 2.5rem;
+    font-size: 2em;
+    font-family: "Mulish";
+    margin-top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    top:.5rem;
+}
+.toebeans{
+    height:2.5rem;
+}
+.choosetitle{
+    padding-right: 1rem;
+}
+.petcontainer{
+    margin-top: 5rem;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.pet{
+    height: 20vh;
+    margin: 5vh 5vw;
+    opacity:60%;
+}
+.pet:hover{
+    height: 22vh;
+    cursor: pointer;
+    opacity: 100%;
+}
+.petDino{
+    height: 40vh;
+    margin: 5vh 5vw;
+    opacity:60%;
+}
+.petDino:hover{
+    height:42vh;
+    cursor: pointer;
+    opacity:100%;
+}
+.chosen{
+    opacity: 100%;
+    background-image: url("../../assets/circle.svg");
+    background-repeat: no-repeat;
+    background-position: cover;
+    background-size:auto;
+}

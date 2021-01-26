@@ -13,7 +13,6 @@ import debounce from 'lodash/debounce';
 import "./Tag.js";
 
 import "./Entry.css";
-import sleepy from "../../assets/dog_sleep.svg"
 import HomeButton from "../modules/HomeButton";
 import { navigate, Router } from "@reach/router";
 import { get, post } from "../../utilities";
@@ -74,9 +73,7 @@ class Entry extends Component {
     }
     return (
     <div className="newEntry-background">
-      <button className = "submit-entry" onClick= { () => 
-        this.submitEntry(this.state.editorState)
-        }>Submit entry</button>
+      <button className = "submit-entry" onClick= { () => this.submitEntry(this.state.editorState)}>submit</button>
         <HomeButton onClick={() => navigate('/home')}/>
         <div className="journal-box">
           {/* <Toolbar
@@ -89,9 +86,8 @@ class Entry extends Component {
             toggleInlineStyle={this.toggleInlineStyle}
             toggleBlockType={this.toggleBlockType}
           /> */}
-          <p className="dateTime-display ">01/16/2021</p>
+         {/*<p className="dateTime-display ">01/16/2021</p> */} 
           <h1 className="title">{moment().format("LL")}</h1>
-          <img src={sleepy} className="petImage"/>
           {/* <div className="box blueFloor">hellooooo</div> */}
           <div>
             <Editor

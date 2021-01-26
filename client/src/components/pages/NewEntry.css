@@ -1,69 +1,54 @@
-.newEntry-background{
-    background-color: var(--primary);
-    z-index: -2;
+.doggo-j{
+    background: url('../../assets/dog_sleep.svg') ; 
+    background-repeat: no-repeat;
+    height:25vh;
+    bottom: 10vh;
+    width: 60vw;
+    left: 60vw;
     position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    overflow: auto;
 }
-
-.journal-box{
-    background-color: var(--white);
-    z-index: 50;
-    border: solid;
-    border-color: var(--darkblue);
-    margin-top: 20vh;
-    margin-bottom: 2vh;
-    margin-left: 3vw;
-    margin-right: 3vw;
-    padding: 3vh 5vw;
-    top: 8%;
-    height: 70%;
-    width: 70vw;
-    border-radius: 25px;
-    border-color: var(--aqua);
+.cat-j{
+    background: url('../../assets/kitty_journal.svg') ; 
+    background-repeat: no-repeat;
+    height:25vh;
+    top: 70vh;
+    width: 60vw;
+    left: 85vw;
+    position: fixed;
 }
-
-.title{
-    margin-bottom: 3vh;
-    font-family: "Mulish";
-    font-weight: 300;
-    padding-bottom: .1em;
-    border-bottom: solid var(--darkblue);
-    border-bottom-width: 1px;
+.dino-j{
+    background: url('../../assets/dino_journal.svg') ; 
+    background-repeat: no-repeat;
+    width: 40vw;
+    height:60vh;
+    bottom: 10vh;
+    left: 60vw;
+    position: fixed;
 }
-
-.dateTime-display{
-    position:absolute;
-    left: -7vw; 
-    top:-25vh;
-    background-color: var(--ltblue);
-    padding-left: 8rem;
-    padding-top: 10rem;   
-    height: 10rem;
-    width: 15rem;
-    border-radius: 70%;
-    z-index: -1;
+.chin-j{
+    background: url('../../assets/chin_journal.svg') ; 
+    background-repeat: no-repeat;
+    height:25vh;
+    bottom: 10vh;
+    width: 60vw;
+    left: 60vw;
+    position: fixed;
 }
-
-.petImage{
-    z-index: 100;
-    width: 10vw;
-    position:absolute;
-    top:90vh;
-    left: 87vw;
+.worm-j{
+    background: url('../../assets/worm_normal.svg') ; 
+    background-repeat: no-repeat;
+    height:25vh;
+    bottom: 10vh;
+    width: 60vw;
+    left: 60vw;
+    position: fixed;
 }
-
-/* does not work yet and idk why */
-.blue-floor{
-    position:absolute;
-    background-color: var(--ltblue);
-    padding-top: 0%;
-    padding-bottom:0%;
-    margin: 0;
-    height:10vh;
-    width: 100%;
-    z-index: 500;
+.whale-j{
+    background: url('../../assets/whale_normal.svg') ; 
+    background-repeat: no-repeat;
+    width: 40vw;
+    height:60vh;
+    bottom: 10vh;
+    left: 60vw;
+    position: fixed;
 }
