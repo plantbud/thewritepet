@@ -8,41 +8,60 @@
     width: 100%;
     overflow: auto;
 }
-#pinkhome.homebutton{
-    color: var(--pink);
+.homebuttonpink {
+    right:-5vw;
+    top:5vh;
+    position:fixed;
+    height:4vh;
+    background-color: var(--aqua);
+    padding-bottom:15px;
+    padding-top:15px;
+    padding-right:8vw;
+    padding-left:2vw;
+    border-radius: 60px;
+}
+.homebuttonpink:hover{
+    cursor: pointer;
     background-color: var(--pink);
 }
 .containert{
+    color: var(--darkblue);
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+    font-size: 1rem;
 }
 .petprofile{
     background-color: var(--primary);
     position: relative;
     border: solid;    
-    border-width: 5px;
+    border-width: .3rem;
     border-radius: 2em;
     border-color: var(--darkblue);
     left:15vw;
-    top:5vh;
+    margin-top: 10vh;    
     width:70vw;
-    height:75vh;
+    height:80vh;
 }
 .infocontainer{
-    margin-top: 2em;
-    margin-left: 2em;
+    margin-top: 2rem;
+    margin-left: 3rem;
 }
 .info{
+    color: var(--darkblue);
     padding: 1em;
-    font-size: 2em;
+    font-size: 3.5vh;
 }
 .petcontain{
     background-color: var(--ltblue);
-    position:fixed; 
-    bottom: 12vh;
-    left: 63vw;
-    padding:10vw;
+    width: 20vw;
+    height:20vw;
+    position: relative;; 
+    bottom: 33vh;
+    left: 47vw;
     border-radius: 3em;
+    margin:0;
+    display: flex;
+    justify-content: center;
 }
 .titlep{
     font-family: "Mulish";
@@ -59,52 +78,54 @@
     background: url('../../assets/dog_normal.svg') ; 
     background-repeat: no-repeat;
     height:25vh;
-    bottom: 15vh;
-    width: 60vw;
-    left: 65vw;
-    position: fixed;
+    width: 25vh;
+    top:10vh;
+    position: relative;
 }
 .cat-p{
     background: url('../../assets/kitty_journal.svg') ; 
     background-repeat: no-repeat;
     height:25vh;
-    bottom: 15vh;
-    width: 60vw;
-    left: 68vw;
-    position: fixed;
+    width: 25vh;
+    left:1vw;
+    top:8vh;
+    position: relative;
 }
 .dino-p{
     background: url('../../assets/dino_journal.svg') ; 
     background-repeat: no-repeat;
-    width: 40vw;
-    height:60vh;
-    bottom: 0vh;
-    left: 60vw;
-    position: fixed;
+    height:40vh;
+    width: 40vh;
+    top:1vh;
+    position: relative;
 }.chin-p{
     background: url('../../assets/chin_journal.svg') ; 
     background-repeat: no-repeat;
     height:25vh;
-    bottom: 15vh;
-    width: 60vw;
-    left: 66vw;
-    position: fixed;
+    width: 25vh;
+    top:6vh;
+    position: relative;
 }
 .worm-p{
     background: url('../../assets/worm_normal.svg') ; 
     background-repeat: no-repeat;
     height:25vh;
-    bottom: 15vh;
-    width: 60vw;
-    left: 70vw;
-    position: fixed;
+    width: 25vh;
+    left:3vw;
+    top:8vh;
+    position: relative;
 }
 .whale-p{
     background: url('../../assets/whale_normal.svg') ; 
     background-repeat: no-repeat;
-    width: 40vw;
-    height:60vh;
-    bottom: -8vh;
-    left: 60vw;
-    position: fixed;
+    height:30vh;
+    width: 30vh;
+    top:10vh;
+    position: relative;
+}
+.beanss{
+    height:5vh;
+    position:absolute;
+    left:64vw;
+    bottom:70vh;
 }

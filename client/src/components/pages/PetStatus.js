@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import "./PetStatus.css";
 import {get} from "../../utilities"
-import HomeButton from "../modules/HomeButton";
+import { navigate, Router } from "@reach/router";
 import Footer from "../modules/Footer.js";
 import Loading from "../pages/Loading.js";
+import homeb from "../../assets/home.svg"
+import beans from "../../assets/toebean.svg";
 
 class PetStatus extends Component {
     constructor(props) {
@@ -77,7 +79,7 @@ class PetStatus extends Component {
         <h2 className= "info">favorite food: lettuce</h2>
         <h2 className= "info">hobby: snowboarding</h2>
         <h2 className= "info">worry: not being allowed on rollarcoasters</h2>
-        <h2 className= "info">fun fact: holds multiple speedrun records for Mario</h2>
+        <h2 className= "info">fun fact: famous speedrunner/streamer</h2>
       </div>
   } else if(this.state.petter =="5"){
       profilename = <div className="titlep">sir</div>
@@ -94,13 +96,14 @@ class PetStatus extends Component {
     return (
       <>
      <div className="profile-background">
-       <div className ="containert"> {profilename}</div>
-        <HomeButton id="pinkhome"/>
+       <img src={homeb} className="homebuttonpink" onClick={() => navigate('/home')}/>
         <div className = "petprofile">
-          <div className="petcontain">{pet}</div>
+        <div className ="containert"> {profilename}</div>
+        <img src={beans} className="beanss"/>
           <div className="petinfocontain">
             {petinfo}
           </div>
+          <div className="petcontain">{pet}</div>
           </div>
 
           <Footer/>
