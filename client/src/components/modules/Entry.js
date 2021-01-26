@@ -51,10 +51,13 @@ class Entry extends Component {
       const rawContentState = convertToRaw(editorState.getCurrentContent());
       let contentStateString = JSON.stringify(rawContentState);
       console.log("hello" + moment().local().format());
+      const dayStart = moment().local().startOf("day").format();
+      const dayEnd = moment().local().endOf("day").format();
 
       const entrychange = {
         entries: contentStateString, 
-        timestamp: moment().local(),
+        startOfDay: dayStart,
+        endOfDay: dayEnd, 
       };
       post("/api/journalentries", entrychange).then((journalentries) => {
         this.setState({

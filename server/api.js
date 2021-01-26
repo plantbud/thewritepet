@@ -91,14 +91,11 @@ router.get("/journalentriesday", auth.ensureLoggedIn, (req,res) => {
 });
 
 router.post("/journalentries", auth.ensureLoggedIn, (req, res) =>{
-  const startOfDay = moment(req.body.timestamp).startOf("day").format();
-  const endOfDay = moment(req.body.timestamp).endOf("day").format();
-
   Journalentry.findOne({
     creator: req.user._id,
     timeCreated: {
-      $gte: startOfDay,
-      $lte: endOfDay,
+      $gte: req.body.startOfDay,
+      $lte: req.body.endOfDay,
     },
   }).then((n) => {
     if (n) {
@@ -109,7 +106,7 @@ router.post("/journalentries", auth.ensureLoggedIn, (req, res) =>{
       newJournalentry = new Journalentry({
         creator: req.user._id,
         entries: req.body.entries,
-        timeCreated: startOfDay,
+        timeCreated: req.body.startOfDay,
       });
       newJournalentry.save().then((journalentries) => res.send(journalentries));
     }
