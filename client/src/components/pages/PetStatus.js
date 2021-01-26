@@ -4,7 +4,7 @@ import {get} from "../../utilities"
 import { navigate, Router } from "@reach/router";
 import Footer from "../modules/Footer.js";
 import Loading from "../pages/Loading.js";
-import homeb from "../../assets/home.svg"
+import homeb from "../../assets/homelight.svg"
 import beans from "../../assets/toebean.svg";
 
 class PetStatus extends Component {
