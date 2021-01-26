@@ -6,6 +6,7 @@ import PetState from "../modules/PetState.js"
 import { get } from "../../utilities";
 import moment from "moment"; 
 import Footer from "../modules/Footer.js";
+import Question from "../modules/Question.js"
 
 class Home extends Component {
     constructor(props) {
@@ -79,6 +80,7 @@ class Home extends Component {
           }}> Decrease Consistency </button>
       </div>      
       <Navbar handleLogout={this.props.handleLogout} userId={this.props.userId} user={this.props.user}/>
+      <Question/>
       <div className="home-background">
         <div className="home-content">
           <button className = "reflect-button" onClick={() => navigate('/newentry')}>reflect</button>

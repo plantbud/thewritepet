@@ -1,0 +1,15 @@
+.question{
+    background-color: var(--ltblue);
+    height:4vh;
+    position:fixed;
+    top: 4vh;
+    right:-3vw;
+    padding:1vh;
+    padding-right:5vw;
+    padding-left: 2vw;
+    border-radius: 2em;
+}
+.question:hover{
+    cursor: pointer;
+    background-color: var(--pink);
+}

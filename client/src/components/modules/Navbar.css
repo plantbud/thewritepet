@@ -1,6 +1,6 @@
 .name-display{
   color: var(--darkblue);
-  position: fixed;;
+  position: fixed;
   left: -5vw; 
   top: 4vh;
   background-color: var(--ltblue);
@@ -20,6 +20,7 @@
 }
 .arrowdown{
   transform: rotate(180deg);
+  margin-bottom: .5vh;
 }
 .arrowup{
 }

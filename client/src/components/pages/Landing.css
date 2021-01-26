@@ -50,14 +50,19 @@
     border-radius: 30px;
     outline: none !important;
   }
-  .Overlay {
-    
+  .about-title {
+      font-family: "Mulish";
+      font-size: 1.5rem;
+      color: var(--darkblue);
+      margin-bottom: 1rem;
   }
-
-.modal-content{
-    margin: .2em;
+.about-content{
+    margin: 1rem;
     display:flex;
     flex-direction: column;
+    text-align: center;
+    font-size:1.2rem;
+    color:var(--darkblue);
 }
 
 .modal-close-button{
@@ -66,9 +71,9 @@
     border: none;
     position: absolute;
     height: 3vh;
-    margin-top: 1vh;
-    margin-left: 20vw;
-    /* display:inline-block; */
+    margin-top: 1.5vh;
+    margin-left: 1.5vw;
+    left:0;
 }
 
 .modal-close-button:hover{
@@ -77,12 +82,18 @@
 }
 
 .beans{
-    height:1em;
-    /* display: inline-block; */
+    height:2rem;
+    bottom: 35vh;
+    right:25vw;
+    position:fixed;
 }
-
+.plane{
+    height:2rem;
+    top: 23vh;
+    right:32vw;
+    position:fixed;
+}
 .names{
-    /* display: inline-block; */
     margin-left: .5em;
     margin-right: .5em;
 }
