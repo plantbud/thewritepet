@@ -1,6 +1,7 @@
 import React from "react";
-import Entry from "../modules/Entry.js"
+import Entry from "../modules/Entry.js";
 import "./NewEntry.css";
+import Tag from "../modules/Tag.js";
 import moment from "moment"; 
 import { get, post } from "../../utilities";
 
@@ -19,6 +20,7 @@ class NewEntry extends React.Component {
   render() {
     return (
       <>
+      <Tag userId={this.props.userId}></Tag>
     <Entry userId={this.props.userId}></Entry> 
       </>
       );

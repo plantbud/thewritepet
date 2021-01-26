@@ -10,6 +10,8 @@ import {
 import 'draft-js/dist/Draft.css';
 import debounce from 'lodash/debounce';
 
+import "./Tag.js";
+
 import "./Entry.css";
 import sleepy from "../../assets/dog_sleep.svg"
 import HomeButton from "../modules/HomeButton";
@@ -61,6 +63,7 @@ class Entry extends Component {
         });
       });
       console.log("consist before " + this.state.consist);
+      
     }
 
   render() {
@@ -71,7 +74,9 @@ class Entry extends Component {
     }
     return (
     <div className="newEntry-background">
-      <button className = "submit-entry" onClick= { () => this.submitEntry(this.state.editorState)}>Submit entry</button>
+      <button className = "submit-entry" onClick= { () => 
+        this.submitEntry(this.state.editorState)
+        }>Submit entry</button>
         <HomeButton onClick={() => navigate('/home')}/>
         <div className="journal-box">
           {/* <Toolbar

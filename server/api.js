@@ -106,6 +106,8 @@ router.post("/journalentries", auth.ensureLoggedIn, (req, res) =>{
   }).then((n) => {
     if (n) {
       n.entries = req.body.entries;
+      n.tags = req.body.tags._id;
+      console.log("body tag" + req.body.tags._id);
       n.save().then((updated) => {res.send(updated.entries);});
     }
     else {
@@ -113,6 +115,7 @@ router.post("/journalentries", auth.ensureLoggedIn, (req, res) =>{
         creator: req.user._id,
         entries: req.body.entries,
         timeCreated: startOfDay,
+        tags: req.body.tags._id,
       });
       newJournalentry.save().then((journalentries) => res.send(journalentries));
     }
