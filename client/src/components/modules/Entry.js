@@ -54,6 +54,7 @@ class Entry extends Component {
 
       const entrychange = {
         entries: contentStateString, 
+        timestamp: moment().local().startOf('day'),
       };
       post("/api/journalentries", entrychange).then((journalentries) => {
         console.log("change entrys" + entrychange)
@@ -73,7 +74,6 @@ class Entry extends Component {
     }
     return (
     <div className="newEntry-background">
-      <button className = "submit-entry" onClick= { () => this.submitEntry(this.state.editorState)}>submit</button>
         <HomeButton onClick={() => navigate('/home')}/>
         <div className="journal-box">
           {/* <Toolbar
@@ -87,7 +87,12 @@ class Entry extends Component {
             toggleBlockType={this.toggleBlockType}
           /> */}
          {/*<p className="dateTime-display ">01/16/2021</p> */} 
-          <h1 className="title">{moment().format("LL")}</h1>
+         <div className="submitcontainer">
+         <button className = "submit-entry" onClick= { () => this.submitEntry(this.state.editorState)}>submit</button>
+         <h1 className="titleentry">{moment().format("LL")}</h1>
+          
+         </div>
+          
           {/* <div className="box blueFloor">hellooooo</div> */}
           <div>
             <Editor

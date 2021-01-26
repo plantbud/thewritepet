@@ -21,6 +21,7 @@
 
 .reminder{
     padding-top: 1em;
+    font-size: 1.2rem;
     margin-left: 3vw;
 }
 
@@ -49,57 +50,52 @@
     height:2em;
     position: absolute;
     left:5vw;
-    top:8vh;
+    top:10vh;
 
 }
 .doggo{
-    background: url('../../assets/dog_normal.svg') ; 
-    background-repeat: no-repeat;
-    height:25vh;
-    bottom: 10vh;
-    width: 60vw;
-    left: 60vw;
-    position: fixed;
-}
-.cat{
-    background: url('../../assets/kitty_normal.svg') ; 
+    background: url('../../assets/doggo_flip.svg') ; 
     background-repeat: no-repeat;
     height:20vh;
     margin-left: 2vw;
-    margin-bottom: 1vh;
+    margin-bottom: 2vh;
+    position: relative;
+}
+.cat{
+    background: url('../../assets/kitty_flip.svg') ; 
+    background-repeat: no-repeat;
+    height:20vh;
+    margin-left: 2vw;
+    margin-bottom: 2vh;
     position: relative;
 }
 .dino{
-    background: url('../../assets/dino_normal.svg') ; 
+    background: url('../../assets/dino_flip.svg') ; 
     background-repeat: no-repeat;
-    width: 40vw;
-    height:60vh;
-    bottom: 10vh;
-    left: 60vw;
-    position: fixed;
+    height:40vh;
+    margin-left: 2vw;
+    margin-bottom: 2vh;
+    position: relative;
 }.chin{
     background: url('../../assets/chin_normal.svg') ; 
     background-repeat: no-repeat;
-    height:25vh;
-    bottom: 10vh;
-    width: 60vw;
-    left: 60vw;
-    position: fixed;
+    height:20vh;
+    margin-left: 2vw;
+    margin-bottom: 2vh;
+    position: relative;
 }
 .whale{
-    background: url('../../assets/whale_normal.svg') ; 
+    background: url('../../assets/whale_flip.svg') ; 
     background-repeat: no-repeat;
-    width: 40vw;
-    height:60vh;
-    bottom: 10vh;
-    left: 60vw;
-    position: fixed;
+    height:35vh;
+    margin-left: 2vw;
+    margin-bottom: 2vh;
+    position: relative;
 }.worm{
-    background: url('../../assets/worm_normal.svg') ; 
+    background: url('../../assets/worm_flip.svg') ; 
     background-repeat: no-repeat;
-    height:25vh;
-    bottom: 10vh;
-    width: 60vw;
-    left: 60vw;
-    position: fixed;
+    height:20vh;
+    margin-left: 2vw;
+    margin-bottom: 2vh;
+    position: relative;
 }

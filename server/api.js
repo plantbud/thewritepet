@@ -64,12 +64,12 @@ router.post("/initsocket", (req, res) => {
   });
 
 router.get("/journalentrieschanged", auth.ensureLoggedIn, (req,res) => {
-  let starting = moment(req.query.timestamp).local().startOf("day");
-  let ending = moment(req.query.timestamp).local().endOf("day");
+  let starting = moment(req.query.timestamp).startOf("day").format();
+  let ending = moment(req.query.timestamp).endOf("day").format();
   Journalentry.findOne({
     creator: req.user._id, timeCreated: {
-      $gte: starting.format(),
-      $lte: ending.format(),},}).then((journalentries) => {
+      $gte: starting,
+      $lte: ending,},}).then((journalentries) => {
         if (journalentries) {
           res.send(journalentries);
         }
@@ -91,14 +91,14 @@ router.get("/journalentriesday", auth.ensureLoggedIn, (req,res) => {
 });
 
 router.post("/journalentries", auth.ensureLoggedIn, (req, res) =>{
-  const startOfDay = moment(req.body.day).local().startOf("day");
-  const endOfDay = moment(req.body.day).local().endOf("day");
+  const startOfDay = moment(req.body.timestamp).startOf("day").format();
+  const endOfDay = moment(req.body.timestamp).endOf("day").format();
 
   Journalentry.findOne({
     creator: req.user._id,
     timeCreated: {
-      $gte: startOfDay.format(),
-      $lte: endOfDay.format(),
+      $gte: startOfDay,
+      $lte: endOfDay,
     },
   }).then((n) => {
     if (n) {

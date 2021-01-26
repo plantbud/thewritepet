@@ -12,22 +12,25 @@
 .journal-box{
     background-color: var(--white);
     border: solid;
+    margin-top: 5vh;
     margin-bottom: 2vh;
     margin-left: 3vw;
     margin-right: 3vw;
     padding: 3vh 5vw;
     height: 80vh;
     width: 70vw;
-    border-radius: 25px;
+    border-radius: 3rem;
     border-color: var(--aqua);
 }
 
-.title{
+.titleentry{
     margin-bottom: 3vh;
+    margin-top: 0;
+    font-size: 2rem;
     font-family: "Mulish";
     font-weight: 300;
     padding-bottom: .1em;
-    border-bottom: solid var(--darkaqua);
+    border-bottom: solid var(--aqua);
     border-bottom-width: 1px;
     text-transform: lowercase;
 }
@@ -45,8 +48,8 @@
     z-index: -1;
 }
 .saved{
-    margin-left: 1em;
-    font-size: 2em;
+    margin-left: 2rem;
+    font-size: 2rem;
 }
 
 /* does not work yet and idk why */
@@ -65,15 +68,14 @@
     color: white;
     border-width: 0;
     position: relative; 
-    left: 72vw;
-    top:9vh; 
-    width: 10vw;
-    height: 5vh;
+    width: 12vw;
+    height: 6vh;
     border-radius: 2em;
     text-align: center;
     font-family: "Mulish";
     font-weight: bolder;
-    font-size: 1.2em;
+    font-size: 1.5rem;
+    left:60vw;
 }
 .submit-entry:hover{
     background-color: var(--pink);

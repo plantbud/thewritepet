@@ -1,54 +1,54 @@
 .doggo-j{
     background: url('../../assets/dog_sleep.svg') ; 
     background-repeat: no-repeat;
-    height:25vh;
-    bottom: 10vh;
-    width: 60vw;
-    left: 60vw;
+    height:18vh;
+    width: 50vw;
+    bottom: 5vh;
+    left: 85vw;
     position: fixed;
 }
 .cat-j{
     background: url('../../assets/kitty_journal.svg') ; 
     background-repeat: no-repeat;
     height:25vh;
-    top: 70vh;
     width: 60vw;
+    top: 70vh;
     left: 85vw;
     position: fixed;
 }
 .dino-j{
-    background: url('../../assets/dino_journal.svg') ; 
+    background: url('../../assets/dino_normal.svg') ; 
     background-repeat: no-repeat;
-    width: 40vw;
+    width: 30vw;
     height:60vh;
-    bottom: 10vh;
-    left: 60vw;
+    top: 55vh;
+    left: 84vw;
     position: fixed;
 }
 .chin-j{
     background: url('../../assets/chin_journal.svg') ; 
     background-repeat: no-repeat;
-    height:25vh;
-    bottom: 10vh;
+    height:22vh;
+    bottom: 5vh;
     width: 60vw;
-    left: 60vw;
+    left: 85vw;
     position: fixed;
 }
 .worm-j{
     background: url('../../assets/worm_normal.svg') ; 
     background-repeat: no-repeat;
     height:25vh;
-    bottom: 10vh;
+    bottom: 5vh;
     width: 60vw;
-    left: 60vw;
+    left: 88vw;
     position: fixed;
 }
 .whale-j{
     background: url('../../assets/whale_normal.svg') ; 
     background-repeat: no-repeat;
     width: 40vw;
-    height:60vh;
-    bottom: 10vh;
-    left: 60vw;
+    height:30vh;
+    top:65vh;
+    left: 85vw;
     position: fixed;
 }

@@ -5,8 +5,8 @@
     display: inline;
 }
 .fcontainer{
-    position: absolute;
-    padding-right: 1rem;
+    position: fixed;
+    padding-right: 1.5rem;
     right:0vw;
     top:95vh;
 }
