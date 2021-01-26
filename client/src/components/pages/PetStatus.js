@@ -21,24 +21,24 @@ class PetStatus extends Component {
     let petinfo = null; 
     let pet = null;
     if(this.state.petter == "0"){
-      profilename = <div className="titlep">doggo</div>
+      profilename = <div className="titlep">chocolate</div>
       pet = <div className="doggo-p"></div>
       petinfo = 
       <div className="infocontainer">
         <h2 className= "info">species: doggo</h2>
-        <h2 className= "info">favorite food: idk</h2>
-        <h2 className= "info">hobby: idk</h2>
-        <h2 className= "info">worry: idk</h2>
-        <h2 className= "info">fun fact: idk</h2>
+        <h2 className= "info">favorite food: vanilla macarons</h2>
+        <h2 className= "info">hobby: cityscape photgraphy</h2>
+        <h2 className= "info">worry: accidentally eating chocolate</h2>
+        <h2 className= "info">fun fact: makes really good cafe drinks</h2>
       </div>
   } else if(this.state.petter =="1"){
-      profilename = <div className="titlep">kitty</div>
+      profilename = <div className="titlep">peaches</div>
       pet = <div className="cat-p"></div>
       petinfo = 
       <div className="infocontainer">
         <h2 className= "info">species: kitty</h2>
-        <h2 className= "info">favorite food: fishies</h2>
-        <h2 className= "info">hobby: singing</h2>
+        <h2 className= "info">favorite food: finely aged cheddar</h2>
+        <h2 className= "info">hobby: lifestyle content creator</h2>
         <h2 className= "info">worry: getting paws dirty</h2>
         <h2 className= "info">fun fact: does not actually have nine lives</h2>
       </div>
@@ -48,10 +48,10 @@ class PetStatus extends Component {
       petinfo = 
       <div className="infocontainer">
         <h2 className= "info">species: dino</h2>
-        <h2 className= "info">favorite food: idk</h2>
-        <h2 className= "info">hobby: idk</h2>
-        <h2 className= "info">worry: idk</h2>
-        <h2 className= "info">fun fact: idk</h2>
+        <h2 className= "info">favorite food: carrots and hummus</h2>
+        <h2 className= "info">hobby: planting trees</h2>
+        <h2 className= "info">worry: global warming</h2>
+        <h2 className= "info">fun fact: shortest in their grade</h2>
       </div>
   } else if(this.state.petter =="3"){
       profilename = <div className="titlep">pork bun</div>
@@ -61,11 +61,11 @@ class PetStatus extends Component {
         <h2 className= "info">species: chinchilla</h2>
         <h2 className= "info">favorite food: oats</h2>
         <h2 className= "info">hobby: parkour</h2>
-        <h2 className= "info">worry: idk</h2>
-        <h2 className= "info">fun fact: idk</h2>
+        <h2 className= "info">worry: what to eat next</h2>
+        <h2 className= "info">fun fact: not actually made out of pork</h2>
       </div>
   } else if(this.state.petter =="4"){
-      profilename = <div className="titlep">egg</div>
+      profilename = <div className="titlep">waffles</div>
       pet = <div className="whale-p"></div>
       petinfo = 
       <div className="infocontainer">
@@ -73,7 +73,7 @@ class PetStatus extends Component {
         <h2 className= "info">favorite food: lettuce</h2>
         <h2 className= "info">hobby: snowboarding</h2>
         <h2 className= "info">worry: not being allowed on rollarcoasters</h2>
-        <h2 className= "info">fun fact: can snap really well</h2>
+        <h2 className= "info">fun fact: holds multiple speedrun records for Mario</h2>
       </div>
   } else if(this.state.petter =="5"){
       profilename = <div className="titlep">sir</div>
@@ -82,9 +82,9 @@ class PetStatus extends Component {
       <div className="infocontainer">
         <h2 className= "info">species: worm</h2>
         <h2 className= "info">favorite food: ravioli</h2>
-        <h2 className= "info">hobby: gardening</h2>
+        <h2 className= "info">hobby: line dancing</h2>
         <h2 className= "info">worry: being mistaken for spaghetti</h2>
-        <h2 className= "info">fun fact: squiggly wiggle</h2>
+        <h2 className= "info">fun fact: has a green thumb</h2>
       </div>
   } 
 
