@@ -73,7 +73,9 @@ class Landing extends Component {
           <Modal isOpen={this.state.showModal} className="Modal" overlayClassName="Overlay"> 
             <div className="modalFlex">
             <button className="modal-close-button" onClick={this.handleCloseModal}>X</button>
+            {/* <img src={plane} className="plane"/> */}
             <p className="about-content">
+            
               <p className="about-title">welcome to the write pet !</p>
 
               <p className= "abouttext list">✩ adopt and take care of a virtual pet by journaling consistently </p>
@@ -84,7 +86,7 @@ class Landing extends Component {
               </p>
               </div>
 
-              <img src={plane} className="plane"/>
+              {/* <img src={plane} className="plane"/> */}
               <img src={beans} className="beans"/>
           
           </Modal>

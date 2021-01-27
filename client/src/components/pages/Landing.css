@@ -37,7 +37,7 @@
     align-items: center;
     align-content: center;
     width: 20vw;
-    height: 6vh;
+    height: 3rem;
     margin-top: 1vh;
     border-radius: 3vw;
     text-align: center;
@@ -102,16 +102,16 @@
 
 .beans{
     height:2rem;
-    bottom: 20vh;
-    right:30vw;
-    position:fixed;
+    bottom: 3vh;
+    right:3vw;
+    position:absolute;
 }
-.plane{
+/* .plane{
     height:2rem;
-    top: 25vh;
-    right:30vw;
-    position:fixed;
-}
+    top: 7.5vh;
+    right:8vw;
+    position:absolute;
+} */
 
 .modalHeader{
     /* display:flex; */
