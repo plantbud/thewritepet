@@ -1,8 +1,6 @@
 import React from "react";
 import Entry from "../modules/Entry.js";
 import "./NewEntry.css";
-import Tag from "../modules/Tag.js";
-import moment from "moment"; 
 import { get, post } from "../../utilities";
 import Footer from "../modules/Footer.js";
 import Loading from "./Loading.js";
