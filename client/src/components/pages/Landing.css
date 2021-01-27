@@ -57,10 +57,10 @@
     top: 10vw;
     left: 50vh;
     width:50vw;
-    height: 10rem;
     background-color: var(--primary);
     border-radius: 30px;
     outline: none !important;
+    display:flex;
   }
   .about-title {
       font-family: "Mulish";
