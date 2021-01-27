@@ -1,7 +1,7 @@
 /* Fill me in :) */
 .landing{
     background-color: var(--ltblue);
-    z-index: -2;
+    z-index: -50;
     position: fixed;
     top: 0;
     left: 0;
@@ -16,6 +16,7 @@
     font-size: 3rem;
     text-justify: auto;
     margin-top: 30vh;
+    z-index: 100;
 }
 .landing-button{
     background-color: var(--aqua);
@@ -45,7 +46,7 @@
     top: 10vw;
     left: 50vh;
     width:50vw;
-    height: 50vh;
+    height: 10rem;
     background-color: var(--primary);
     border-radius: 30px;
     outline: none !important;
@@ -101,37 +102,13 @@
 .cloud1{
     height:22vh;
     position: fixed;
-    bottom: 10vh;
-    left: 80vw;
+    bottom: 28vh;
+    left: 0vw;
     padding: 0;
     display: block;
     margin: 0;   
     z-index: -1;
     animation: cloud1Movement 25s steps(400) infinite;
-}
-
-.cloud2{
-    height:40vh;
-    position: fixed;
-    bottom: 60vh;
-    right: 0vw;
-    padding: 0;
-    display: block;
-    margin: 0;   
-    z-index: -6;
-    /* animation: cloud2Movement 40s steps(400) infinite; */
-}
-
-.cloud3{
-    height:28vh;
-    position: fixed;
-    bottom: 10vh;
-    left: 80vw;
-    padding: 0;
-    display: block;
-    margin: 0;   
-    z-index: -1;
-    animation: cloud1Movement 2s steps(400) infinite;
 }
 
 @keyframes cloud1Movement{
@@ -151,4 +128,128 @@
     100% {
         left: 120vw;
       }
+}
+
+.cloud2{
+    height:40vh;
+    position: fixed;
+    bottom: 58vh;
+    left:0vw;
+    padding: 0;
+    display: block;
+    margin: 0;   
+    z-index: -1;
+    animation: cloud2Movement 60s steps(800) infinite;
+}
+
+@keyframes cloud2Movement{
+    0%, 100% {
+        transform: translate();
+        left: 0vw;
+        bottom: 58vh;
+    }
+    30%{
+        left:60vw;
+        bottom: 58vh;
+    }
+    60% {
+        left:120vw;
+        bottom: 58vh;
+    }
+    61% {
+        left: 120vw;
+        bottom: -50vh;
+    }
+    62% {
+        left: -40vw;
+        bottom:-50vh;
+    }
+    70% {
+        left: -40vw;
+        bottom: 60vh;
+    }
+}
+
+.cloud3{
+    height:28vh;
+    position: fixed;
+    bottom: 5vh;
+    right: 0vw;
+    padding: 0;
+    display: block;
+    margin: 0;   
+    z-index: -1;
+    animation: cloud3Movement 35s steps(400) infinite;
+}
+
+@keyframes cloud3Movement{
+    0%, 100% {
+        transform: translate();
+        right: 0vw;
+        bottom: 5vh;
+    }
+    30%{
+        right:60vw;
+        bottom: 5vh;
+    }
+    60% {
+        right: 120vw;
+        bottom: 5vh;
+    }
+    61% {
+        right:120vw;
+        bottom: -50vh;
+    }
+    62% {
+        right: -40vw;
+        bottom:-50vh;
+    }
+    70% {
+        right: -40vw;
+        bottom: 5vh;
+    }
+}
+
+.cloud4{
+    height:30vh;
+    position: fixed;
+    top: 25vh;
+    right: -60vw;
+    padding: 0;
+    display: block;
+    margin: 0;   
+    z-index: -1;
+    animation: cloud4Movement 30s steps(400) infinite;
+}
+
+@keyframes cloud4Movement{
+    0%, 100% {
+        transform: translate();
+        right: -60vw;
+        top: 25vh;
+    }
+    30%{
+        right:0vw;
+        top: 25vh;
+    }
+    60% {
+        right: 60vw;
+        top: 25vh;
+    }
+    90% {
+        right:120vw;
+        top: 25vh;
+    }
+    91% {
+        right: 120vw;
+        top: -30vh;
+    }
+    92% {
+        right: -60vw;
+        top: -30vh;
+    }
+    /* 93% {
+        right: -60vw;
+        top: -25vh;
+    } */
 }
