@@ -11,7 +11,6 @@ import 'draft-js/dist/Draft.css';
 import Loading from "../pages/Loading.js";
 import "./Entry.css";
 import HomeButton from "../modules/HomeButton";
-import { navigate, Router } from "@reach/router";
 import { get, post } from "../../utilities";
 import moment from "moment"; 
 
@@ -78,17 +77,12 @@ class Entry extends Component {
          <div className="submitcontainer">
          <button className = "submit-entry" onClick= { () => this.submitEntry(this.state.editorState)}>submit</button>
          <div className="header">
-           {/* <span> */}
          <span className="titleentry">{moment().format("LL")}</span>
-         {/* </span> */}
           <span className= "saved">
-            {this.state.isSaved ? "submitted" : "unsubmitted"}
+            {this.state.isSaved ? "submitted" : "not submitted"}
           </span>
-          {/* <span>
-          </span> */}
         </div>
          </div>
-          {/* <div className="box blueFloor">hellooooo</div> */}
           <div>
             <Editor
               editorState={this.state.editorState}

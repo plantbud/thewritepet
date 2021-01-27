@@ -26,7 +26,6 @@ class ChangePet extends React.Component {
   }
 
   switchDoggo = (pet) => {
-    console.log(pet);
     this.setState({pet: 0}, () => {
         const pett = JSON.stringify(this.state.pet); 
         const changer = {petType: pett,};
@@ -72,7 +71,6 @@ class ChangePet extends React.Component {
   }
 
   render() {
-
     return (
       <>
       <div className="bggg">
@@ -88,7 +86,6 @@ class ChangePet extends React.Component {
       <img src={worm} className={"pet " + ((this.state.pet=='5') ? 'chosen' : '')} onClick= { () => this.switchWorm(this.state.pet)}/>
       <img src={dino} className={"petDino " + ((this.state.pet=='2') ? 'chosen' : '')} onClick= { () => this.switchDino(this.state.pet)}/>
       <img src={whale} className={"petDino " + ((this.state.pet=='4') ? 'chosen' : '')} onClick= { () => this.switchWhale(this.state.pet)}/>
-
       </div>
       <Footer/>
       </div>

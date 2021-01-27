@@ -69,17 +69,6 @@ div.DraftEditor-root{
     margin-bottom:1rem;
 }
 
-/* does not work yet and idk why */
-.blue-floor{
-    position:absolute;
-    background-color: var(--ltblue);
-    padding-top: 0%;
-    padding-bottom:0%;
-    margin: 0;
-    height:10vh;
-    width: 100%;
-    z-index: 500;
-}
 .submit-entry{
     background-color: var(--aqua);
     color: white;

@@ -23,7 +23,6 @@ class Home extends Component {
   }
 
  async componentDidMount() {
-    console.log("before mounting" + this.state.petmood);
     // remember -- api calls go here!
     const dayBefore = {timestamp: moment().local().subtract(1, 'days').startOf('day')};
     const dayNow = {timestamp: moment().local().startOf('day')};
@@ -84,7 +83,7 @@ class Home extends Component {
 
   render() {
     let pet = null;
-    let mood = null; 
+    // let mood = null; 
     if(!this.state.petter){
       return(
         <Loading/>);
@@ -102,13 +101,13 @@ class Home extends Component {
     } else if(this.state.petter =="5"){
       pet = <span>sir</span>
     } 
-    if(this.state.petState===0){
-      mood = <span>disappointed</span>
-    }else if(this.state.petState===1){
-      mood = <span>content</span>
-    }else{
-      mood = <span>happy</span>
-    }
+    // if(this.state.petState===0){
+    //   mood = <span>disappointed</span>
+    // }else if(this.state.petState===1){
+    //   mood = <span>content</span>
+    // }else{
+    //   mood = <span>happy</span>
+    // }
 
     return (
       <>

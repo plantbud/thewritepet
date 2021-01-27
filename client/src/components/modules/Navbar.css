@@ -24,9 +24,6 @@
   transform: rotate(180deg);
   margin-bottom: .5vh;
 }
-.arrowup{
-}
-
 .NavBar-container {
   background-color: var(--ltblue);
   position:fixed;

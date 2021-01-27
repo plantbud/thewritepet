@@ -4,7 +4,6 @@ import { get } from "../../utilities";
 import heart from "../../assets/heart.svg";
 import heartfilled from "../../assets/heartfill.svg";
 
-
 class PetState extends Component {
     constructor(props) {
       super(props);
@@ -18,11 +17,10 @@ class PetState extends Component {
     get("/api/user", { userid: this.props.userId }).then((user) => this.setState({ petter: user.petType }));
   }
 
-
   render() {
     let consistency = this.props.petState; 
     let pet = null;
-    let hearts = null; 
+    // let hearts = null; 
 
     if(this.state.petter == "0"){
       if(consistency===0){
@@ -73,31 +71,31 @@ class PetState extends Component {
         pet = <div className="happy-worm"></div>
       }
     }
-    if(consistency===0){
-      hearts = <div>      
-        <img src={heartfilled} className="hearticon"/>
-        <img src={heart} className="hearticon"/>
-        <img src={heart} className="hearticon"/>
-        </div>
-    }else if(consistency===1){
-      hearts = <div>      
-        <img src={heartfilled} className="hearticon"/>
-        <img src={heartfilled} className="hearticon"/>
-        <img src={heart} className="hearticon"/>
-        </div>
-    }else if(consistency===2){
-      hearts = <div>      
-        <img src={heartfilled} className="hearticon"/>
-        <img src={heartfilled} className="hearticon"/>
-        <img src={heartfilled} className="hearticon"/>
-        </div>
-    } else {
-      hearts = <div>      
-        <img src={heart} className="hearticon"/>
-        <img src={heart} className="hearticon"/>
-        <img src={heart} className="hearticon"/>
-        </div>
-    }
+    // if(consistency===0){
+    //   hearts = <div>      
+    //     <img src={heartfilled} className="hearticon"/>
+    //     <img src={heart} className="hearticon"/>
+    //     <img src={heart} className="hearticon"/>
+    //     </div>
+    // }else if(consistency===1){
+    //   hearts = <div>      
+    //     <img src={heartfilled} className="hearticon"/>
+    //     <img src={heartfilled} className="hearticon"/>
+    //     <img src={heart} className="hearticon"/>
+    //     </div>
+    // }else if(consistency===2){
+    //   hearts = <div>      
+    //     <img src={heartfilled} className="hearticon"/>
+    //     <img src={heartfilled} className="hearticon"/>
+    //     <img src={heartfilled} className="hearticon"/>
+    //     </div>
+    // } else {
+    //   hearts = <div>      
+    //     <img src={heart} className="hearticon"/>
+    //     <img src={heart} className="hearticon"/>
+    //     <img src={heart} className="hearticon"/>
+    //     </div>
+    // }
 
     return (
       <>

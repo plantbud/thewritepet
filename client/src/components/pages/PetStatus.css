@@ -32,7 +32,7 @@
     font-family: "Mulish";
     font-style: normal;
     font-weight: bolder;
-    justify: center;
+    justify-content: center;
 }
 .petprofile{
     background-color: var(--primary);
