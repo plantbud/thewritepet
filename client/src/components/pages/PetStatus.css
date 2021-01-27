@@ -46,6 +46,16 @@
     width:70vw;
     height:80vh;
     display: flex;
+    /* justify-content:center;
+    align-content: center; */
+    align-items:center;
+    flex-direction:column;
+}
+
+.content-section{
+    display:flex;
+    align-self:stretch;
+    justify-content: space-around;
 }
 
 .infocontainer{
@@ -63,14 +73,15 @@
     background-color: var(--ltblue);
     width: 20vw;
     height:20vw;
-    /* position: relative; */
-    /* bottom: 33vh;
-    left: 47vw; */
     border-radius: 3em;
     margin:0;
     /* display: flex; */
-    align-self:flex-end;
+    justify-self:flex-end;
+    align-self: center;
+    align-content:space-around;
+    justify-content:space-around;
 }
+
 .titlep{
     font-family: "Mulish";
     font-size: 2.5em;
@@ -88,51 +99,44 @@
     background-repeat: no-repeat;
     height:25vh;
     width: 25vh;
-    top:10vh;
-    position: relative;
+    margin:auto;
+    margin-top:12vh;
 }
 .cat-p{
     background: url('../../assets/kitty_journal.svg') ; 
     background-repeat: no-repeat;
     height:25vh;
     width: 25vh;
-    left:1vw;
-    top:8vh;
-    position: relative;
+    margin-left: 5vw;
+    margin-top: 10vh;
 }
 .dino-p{
     background: url('../../assets/dino_journal.svg') ; 
     background-repeat: no-repeat;
     height:40vh;
-    width: 40vh;
-    top:1vh;
-    position: relative;
 }.chin-p{
     background: url('../../assets/chin_journal.svg') ; 
     background-repeat: no-repeat;
     height:25vh;
     width: 25vh;
-    top:6vh;
-    position: relative;
+    margin-left: 5vw;
+    margin-top: 10vh;
 }
 .worm-p{
     background: url('../../assets/worm_normal.svg') ; 
     background-repeat: no-repeat;
     height:25vh;
     width: 25vh;
-    /* left:3vw;
-    top:8vh; */
-    /* position: relative; */
-    justify-content: center;
-    align-content: center;
+    margin-left:6vw;
+    margin-top: 10vh;
 }
 .whale-p{
     background: url('../../assets/whale_normal.svg') ; 
     background-repeat: no-repeat;
     height:30vh;
     width: 30vh;
-    top:10vh;
-    position: relative;
+    margin:auto;
+    margin-top:12vh;
 }
 .beanss{
     height:5vh;

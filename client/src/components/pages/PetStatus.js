@@ -33,7 +33,7 @@ class PetStatus extends Component {
       <div className="infocontainer">
         <h2 className= "info">species: doggo</h2>
         <h2 className= "info">favorite food: vanilla macarons</h2>
-        <h2 className= "info">hobby: cityscape photgraphy</h2>
+        <h2 className= "info">hobby: cityscape photography</h2>
         <h2 className= "info">worry: accidentally eating chocolate</h2>
         <h2 className= "info">fun fact: makes really good cafe drinks</h2>
       </div>
@@ -78,7 +78,7 @@ class PetStatus extends Component {
         <h2 className= "info">species: whale</h2>
         <h2 className= "info">favorite food: lettuce</h2>
         <h2 className= "info">hobby: snowboarding</h2>
-        <h2 className= "info">worry: not being allowed on rollarcoasters</h2>
+        <h2 className= "info">worry: not being allowed on rollercoasters</h2>
         <h2 className= "info">fun fact: famous speedrunner/streamer</h2>
       </div>
   } else if(this.state.petter =="5"){
@@ -100,10 +100,14 @@ class PetStatus extends Component {
         <div className = "petprofile">
           <div className ="containert"> {profilename}</div>
           <img src={beans} className="beanss"/>
-          <div className="petinfocontain">
-            {petinfo}
+          <div className="content-section">
+            <div className="petinfocontain">
+              {petinfo}
+            </div>
+            <div className="petcontain">
+              {pet}
+            </div>
           </div>
-          <div className="petcontain">{pet}</div>
         </div>
 
           <Footer/>
