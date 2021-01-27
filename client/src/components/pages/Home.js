@@ -128,8 +128,7 @@ class Home extends Component {
         <h1 className="Petstate">{pet} is {mood}</h1>
         <button className = "reflect-button" onClick={() => navigate('/newentry')}>reflect</button>
         <PetState petState={this.state.petState} userId={this.props.userId}/>
-
-          {/* <p id="date">{moment().format("MM/DD/YYYY")}</p> */}
+        {/* <p id="date">{moment().format("MM/DD/YYYY")}</p> */}
         </div>
         <svg viewBox="0 0 200 50" id = "ellipse-viewbox" xmlns="http://www.w3.org/2000/svg">
           <ellipse id="home-ellipse" cx="100" cy="50" rx="150" ry="20"/>

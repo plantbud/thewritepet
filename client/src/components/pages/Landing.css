@@ -43,7 +43,8 @@
     text-align: center;
     display:block;
     font-family: "Mulish";
-    font-weight: bolder;
+    font-weight: 700;
+    letter-spacing: .1em;    
     font-size: 1.2em;
     outline: none !important;
 }

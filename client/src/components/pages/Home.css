@@ -8,6 +8,9 @@
     width: 100%;
     overflow: auto;
 }
+.home-content{
+    display:flexbox;
+}
 .Petstate {
     font-size: 4rem;
     font-family: "Roboto";
@@ -16,6 +19,7 @@
     margin-bottom: 1.5rem;
     font-style:italic;
     font-weight: lighter;
+    
   }
 #ellipse-viewbox{
     position: fixed;
@@ -58,7 +62,6 @@
     box-shadow: 0 .5rem 0 .2rem var(--ltblue);
     font-weight: 700;
     outline: none !important;
-
   }
 .reflect-button:hover{
     background-color: var(--pink);
