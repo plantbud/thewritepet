@@ -95,8 +95,8 @@
     bottom: 5vh;
     padding: 0;
     display: block;
-    margin: 0;
-    position: fixed;
+    margin-top:10vh;
+    position: relative;
     animation: dinowalk 12s steps(24) infinite;
 }
   .normal-chin{
@@ -158,7 +158,8 @@
     padding: 0;
     display: block;
     margin: 0;
-    position: fixed;
+    margin-top:9vh;
+    position: relative;
     animation: whalewalk 12s steps(24) infinite;
 }
   .normal-worm{
@@ -190,7 +191,8 @@
     padding: 0;
     display: block;
     margin: 0;
-    position: fixed;
+    margin-top:35vh;
+    position: relative;
     animation: wormwalk 12s steps(24) infinite;
 }
 @keyframes wormwalk{
@@ -217,21 +219,13 @@
   @keyframes whalewalk{
     0%{
         left: 60vw;
-        bottom: 6vh;
     }
-    25%{
-        bottom: 7vh;
-    }
+
     50%{
         left:20vw;    
-        bottom: 6vh;
-    }
-    75%{
-        bottom: 7vh;
     }
     100% {
         left: 60vw;
-        bottom: 6vh;
         background-position: -14400px;
       }
 }
