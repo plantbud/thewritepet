@@ -14,15 +14,32 @@
     margin: 4vh 10vw;
 }
 
+.title-display{
+    display: flex;
+    justify-content: center;
+}
+
 .title{
-    margin-top:2vh;
-    margin-left: 2vw
+    /* padding-top: 5vh;
+    margin-left: 2vw;
+    height: 6vh;
+    display:flex; */
+}
+
+.beansimage{
+    height:2em;
+    /* position: absolute;
+    display: flex;
+    left:5vw;
+    top:10vh; */
 }
 
 .reminder{
-    padding-top: 1em;
+    padding-top: .5em;
     font-size: 1.2rem;
     margin-left: 3vw;
+    display:flex;
+    justify-content: center;
 }
 
 .entry-card{
@@ -41,18 +58,6 @@
     margin: .5em;
 }
 
-.title-pic{
-    height: 20px;
-    display: inline-block;
-    margin-left: .5vh;
-}
-.beansimage{
-    height:2em;
-    position: absolute;
-    left:5vw;
-    top:10vh;
-
-}
 .doggo{
     background: url('../../assets/doggo_flip.svg') ; 
     background-repeat: no-repeat;

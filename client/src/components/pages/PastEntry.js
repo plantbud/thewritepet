@@ -80,8 +80,11 @@ class PastEntry extends Component {
     return (
       <>
      <div className="background-timeline">
-     <img src={beans} className="beansimage"/>
-
+       <div className="title-display">
+          <img src={beans} className="beansimage"/>
+          <h1 className="title">timeline</h1>
+          <img src={beans} className="beansimage"/>
+        </div>
         <p className="reminder">take some time to reflect on how much you and your pet have grown</p>
         <HomeButton/>
         <Calendar onClickDay= {this.onSelect} ></Calendar>
