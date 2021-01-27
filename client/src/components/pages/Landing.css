@@ -60,13 +60,20 @@
     background-color: var(--primary);
     border-radius: 30px;
     outline: none !important;
-    display:flex;
   }
+
+  .modalFlex{
+    display:flex;
+    justify-content: center;
+  }
+
   .about-title {
       font-family: "Mulish";
       font-size: 1.5rem;
       color: var(--darkblue);
       margin-bottom: 1rem;
+      /* justify-self:center; */
+      align-self:unset;
   }
 .about-content{
     margin: 1rem;
@@ -95,16 +102,23 @@
 
 .beans{
     height:2rem;
-    bottom: 35vh;
-    right:25vw;
+    bottom: 20vh;
+    right:30vw;
     position:fixed;
 }
 .plane{
     height:2rem;
-    top: 23vh;
-    right:32vw;
+    top: 25vh;
+    right:30vw;
     position:fixed;
 }
+
+.modalHeader{
+    /* display:flex; */
+    /* flex-direction:column; */
+    /* justify-content: center; */
+}
+
 .names{
     margin-left: .5em;
     margin-right: .5em;

@@ -71,16 +71,22 @@ class Landing extends Component {
         )}
           <button className = "landing-button about-button" onClick={this.handleOpenModal} >about</button>
           <Modal isOpen={this.state.showModal} className="Modal" overlayClassName="Overlay"> 
+            <div className="modalFlex">
             <button className="modal-close-button" onClick={this.handleCloseModal}>X</button>
             <p className="about-content">
               <p className="about-title">welcome to the write pet !</p>
+
               <p className= "abouttext list">✩ adopt and take care of a virtual pet by journaling consistently </p>
               <p className= "abouttext list">✩ take care of yourself by taking care of your pet :)</p>
               <p className= "abouttext">happy journaling!</p>
               <p className="names">♡ jess + sarah ♡</p>
-              <img src={beans} className="beans"/>
+              
+              </p>
+              </div>
+
               <img src={plane} className="plane"/>
-          </p>
+              <img src={beans} className="beans"/>
+          
           </Modal>
           <Footer/>
         </div>
