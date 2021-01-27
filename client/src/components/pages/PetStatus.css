@@ -29,6 +29,9 @@
     text-align: center;
     margin-top: 1.5rem;
     font-size: 1rem;
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: bolder;
 }
 .petprofile{
     background-color: var(--primary);
@@ -50,6 +53,8 @@
     color: var(--darkblue);
     padding: 1em;
     font-size: 3.5vh;
+    font-style: italic;
+    font-weight:normal;
 }
 .petcontain{
     background-color: var(--ltblue);

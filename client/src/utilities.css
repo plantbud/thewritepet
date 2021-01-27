@@ -15,7 +15,7 @@
 */
 
 /* TODO: REPLACE WITH YOUR OWN FONT! hi*/
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,100;1,300&display=swap");
 
 :root {
   --primary: #FFFEFB;
@@ -39,6 +39,7 @@ body {
   padding: 0;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
+  font-style: italic;
 }
 
 h1 {

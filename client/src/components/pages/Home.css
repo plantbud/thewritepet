@@ -8,7 +8,15 @@
     width: 100%;
     overflow: auto;
 }
-
+.Petstate {
+    font-size: 4rem;
+    font-family: "Roboto";
+    text-align: center;
+    margin-top: 12rem;
+    margin-bottom: 1.5rem;
+    font-style:italic;
+    font-weight: lighter;
+  }
 #ellipse-viewbox{
     position: fixed;
     padding-top: 0%;
@@ -40,7 +48,6 @@
     border: .35rem solid #3F8898;
     position: relative; 
     left: calc(50vw - 9rem);
-    top:35vh;
     width: 18rem;
     height: 5rem;
     border-radius: 10rem;

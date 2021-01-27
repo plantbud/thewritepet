@@ -8,6 +8,7 @@
   padding-bottom: 1rem;
   padding-right: 2rem;
   border-radius: 4rem;
+  font-style: italic;
 }
 .name-display:hover{
   cursor: pointer;
@@ -17,6 +18,7 @@
   font-size: 1.9rem;
   height:1.2rem;
   margin-left: 7rem;
+  font-style: italic;
 }
 .arrowdown{
   transform: rotate(180deg);
@@ -34,6 +36,7 @@
   height: 18rem;
   width: 25rem;
   border-radius: 3rem;
+  font-style: italic;
 }
 .show {
   transform: translate3d(0vw,0,0);
@@ -61,6 +64,7 @@
   font-size: 2em;
   font-family: "Roboto";
   color:var(--darkblue);
+  font-style: italic;
 }
 .NavBar-logout:hover{
   cursor: pointer;

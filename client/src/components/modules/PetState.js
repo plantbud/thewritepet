@@ -102,7 +102,6 @@ class PetState extends Component {
     return (
       <>
       <div>
-        <h1 className="Petstate">chocolate is happy</h1>
         {/* <h1 className="Petstate">{this.props.petState}</h1> */}
         {pet }
         {/* {hearts} */}

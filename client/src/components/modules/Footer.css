@@ -3,6 +3,8 @@
     height: 2.5vh;
     padding-left: .5vw;
     display: inline;
+    font-style: italic;
+    font-weight: 100;
 }
 .fcontainer{
     position: fixed;

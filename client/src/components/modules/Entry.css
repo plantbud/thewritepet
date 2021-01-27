@@ -38,6 +38,7 @@ div.DraftEditor-root{
     border-bottom: solid var(--aqua);
     border-bottom-width: 1px;
     text-transform: lowercase;
+    font-style: normal;
 }
 
 .dateTime-display{
@@ -55,6 +56,8 @@ div.DraftEditor-root{
 .saved{
     margin-left: 2rem;
     font-size: 2rem;
+    font-style: italic;
+    font-weight: lighter;
 }
 
 /* does not work yet and idk why */
@@ -78,7 +81,7 @@ div.DraftEditor-root{
     border-radius: 2em;
     text-align: center;
     font-family: "Mulish";
-    font-weight: bolder;
+    font-weight: bold;
     font-size: 1.5rem;
     left:60vw;
 }
