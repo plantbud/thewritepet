@@ -8,7 +8,12 @@
     width: 100%;
     overflow: auto;
 }
-
+div.DraftEditor-root{
+    overflow-y:scroll; 
+    height: 60vh;
+    height:fit-content;
+    max-height: 60vh;
+}
 .journal-box{
     background-color: var(--white);
     border: solid;

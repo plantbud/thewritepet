@@ -1,6 +1,9 @@
 import React, {Component} from "react";
 import "./PetState.css";
 import { get } from "../../utilities";
+import heart from "../../assets/heart.svg";
+import heartfilled from "../../assets/heartfill.svg";
+
 
 class PetState extends Component {
     constructor(props) {
@@ -19,6 +22,7 @@ class PetState extends Component {
   render() {
     let consistency = this.props.petState; 
     let pet = null;
+    let hearts = null; 
 
     if(this.state.petter == "0"){
       if(consistency===0){
@@ -69,14 +73,41 @@ class PetState extends Component {
         pet = <div className="happy-worm"></div>
       }
     }
+    if(consistency===0){
+      hearts = <div>      
+        <img src={heartfilled} className="hearticon"/>
+        <img src={heart} className="hearticon"/>
+        <img src={heart} className="hearticon"/>
+        </div>
+    }else if(consistency===1){
+      hearts = <div>      
+        <img src={heartfilled} className="hearticon"/>
+        <img src={heartfilled} className="hearticon"/>
+        <img src={heart} className="hearticon"/>
+        </div>
+    }else if(consistency===2){
+      hearts = <div>      
+        <img src={heartfilled} className="hearticon"/>
+        <img src={heartfilled} className="hearticon"/>
+        <img src={heartfilled} className="hearticon"/>
+        </div>
+    } else {
+      hearts = <div>      
+        <img src={heart} className="hearticon"/>
+        <img src={heart} className="hearticon"/>
+        <img src={heart} className="hearticon"/>
+        </div>
+    }
 
     return (
       <>
       <div>
-        <h1 className="Petstate">Consistency:</h1>
-        <h1 className="Petstate">{this.props.petState}</h1>
-        {pet}
+        <h1 className="Petstate">chocolate is happy</h1>
+        {/* <h1 className="Petstate">{this.props.petState}</h1> */}
+        {pet }
+        {/* {hearts} */}
       </div>
+
       </>
       );
     }

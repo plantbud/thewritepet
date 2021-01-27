@@ -1,8 +1,18 @@
 .Petstate {
-    font-size: 40px;
+    font-size: 4rem;
+    font-family: "Roboto";
     text-align: center;
-    top:10vh;
-    margin-top: 0;
+    top:50vh;
+    margin-top: 12rem;
+    font-style:italic;
+    font-weight: lighter;
+  }
+  .hearticon{
+    height:2rem;
+    position:relative;
+    top:13vh;
+    left:44vw;
+    margin:.8em;
   }
   .sad{
     background: url('../../assets/dog_sad.svg') ; 
@@ -33,7 +43,7 @@
     display: block;
     margin: 0;
     position: fixed;
-    animation: petwalk 11s steps(24) infinite;
+    animation: petwalk 12s steps(24) infinite;
 }
 .normal-cat{
     background: url('../../assets/kitty_normal.svg') ; 
@@ -64,7 +74,7 @@
     display: block;
     margin: 0;
     position: fixed;
-    animation: catwalk 11s steps(24) infinite;
+    animation: catwalk 12s steps(24) infinite;
 }
   .normal-dino{
     background: url('../../assets/dino_normal.svg') ; 
@@ -95,7 +105,7 @@
     display: block;
     margin: 0;
     position: fixed;
-    animation: dinowalk 11s steps(24) infinite;
+    animation: dinowalk 12s steps(24) infinite;
 }
   .normal-chin{
     background: url('../../assets/chin_normal.svg') ; 
@@ -127,7 +137,7 @@
     display: block;
     margin: 0;
     position: fixed;
-    animation: chinwalk 11s steps(24) infinite;
+    animation: chinwalk 12s steps(24) infinite;
 }
   .normal-whale{
     background: url('../../assets/whale_normal.svg') ; 
@@ -157,7 +167,7 @@
     display: block;
     margin: 0;
     position: fixed;
-    animation: whalewalk 11s steps(24) infinite;
+    animation: whalewalk 12s steps(24) infinite;
 }
   .normal-worm{
     background: url('../../assets/worm_normal.svg') ; 
@@ -189,7 +199,7 @@
     display: block;
     margin: 0;
     position: fixed;
-    animation: wormwalk 11s steps(24) infinite;
+    animation: wormwalk 12s steps(24) infinite;
 }
 @keyframes wormwalk{
   0%{

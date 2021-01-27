@@ -15,7 +15,7 @@
 */
 
 /* TODO: REPLACE WITH YOUR OWN FONT! hi*/
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@700&family=Roboto:ital,wght@1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
 
 :root {
   --primary: #FFFEFB;
@@ -104,3 +104,18 @@ form {
 .u-link:hover {
   color: var(--primary--dim);
 }
+::-webkit-scrollbar{
+  width: .7rem;
+
+}
+::-webkit-scrollbar-thumb{
+  background-color: lightgray;
+  border-radius: 3em;
+}
+::-webkit-scrollbar-track {
+
+}
+::-webkit-scrollbar-button{
+
+}
+

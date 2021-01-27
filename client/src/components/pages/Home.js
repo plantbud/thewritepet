@@ -71,20 +71,20 @@ class Home extends Component {
   render() {
     return (
       <>
-      <div className="con">
+      {/* <div className="con">
       <button className="cons" onClick={() => {
           this.incrementPetState();
           }}> Increase Consistency </button>
           <button className="cons" onClick={() => {
           this.decreasePetState();
           }}> Decrease Consistency </button>
-      </div>      
+      </div>       */}
       <Navbar handleLogout={this.props.handleLogout} userId={this.props.userId} user={this.props.user}/>
       <Question/>
       <div className="home-background">
         <div className="home-content">
           <button className = "reflect-button" onClick={() => navigate('/newentry')}>reflect</button>
-          <p id="date">{moment().format("MM/DD/YYYY")}</p>
+          {/* <p id="date">{moment().format("MM/DD/YYYY")}</p> */}
         </div>
         <svg viewBox="0 0 200 50" id = "ellipse-viewbox" xmlns="http://www.w3.org/2000/svg">
           <ellipse id="home-ellipse" cx="100" cy="50" rx="150" ry="20"/>

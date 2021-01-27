@@ -36,7 +36,7 @@
 .pet{
     height: 20vh;
     margin: 5vh 5vw;
-    opacity:60%;
+    opacity:50%;
 }
 .pet:hover{
     height: 22vh;
@@ -46,7 +46,7 @@
 .petDino{
     height: 40vh;
     margin: 5vh 5vw;
-    opacity:60%;
+    opacity:50%;
 }
 .petDino:hover{
     height:42vh;
@@ -55,8 +55,9 @@
 }
 .chosen{
     opacity: 100%;
-    background-image: url("../../assets/circle.svg");
-    background-repeat: no-repeat;
-    background-position: cover;
-    background-size:auto;
+    border-color: var(--ltblue);
+    border-width: .5rem;
+    border-style: solid;
+    border-radius: 1em;
+    padding:.4rem;
 }

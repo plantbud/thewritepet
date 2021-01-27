@@ -72,11 +72,7 @@ class ChangePet extends React.Component {
   }
 
   render() {
-    if(!this.state.pet){
-      return(
-        <Loading/>
-      );
-    }
+
     return (
       <>
       <div className="bggg">
