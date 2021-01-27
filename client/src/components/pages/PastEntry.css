@@ -17,13 +17,13 @@
 .title-display{
     display: flex;
     justify-content: center;
+    margin-top: 6vh;
 }
 
 .title{
-    /* padding-top: 5vh;
+    margin-right: 2vw;
     margin-left: 2vw;
-    height: 6vh;
-    display:flex; */
+    height: 8vh;
 }
 
 .beansimage{
@@ -35,11 +35,11 @@
 }
 
 .reminder{
-    padding-top: .5em;
+    padding-top: 0vh;
     font-size: 1.2rem;
-    margin-left: 3vw;
     display:flex;
     justify-content: center;
+    margin-top:.2rem;
 }
 
 .entry-card{
