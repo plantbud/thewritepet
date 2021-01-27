@@ -96,15 +96,15 @@ class PetStatus extends Component {
     return (
       <>
      <div className="profile-background">
-       <img src={homeb} className="homebuttonpink" onClick={() => navigate('/home')}/>
+        <img src={homeb} className="homebuttonpink" onClick={() => navigate('/home')}/>
         <div className = "petprofile">
-        <div className ="containert"> {profilename}</div>
-        <img src={beans} className="beanss"/>
+          <div className ="containert"> {profilename}</div>
+          <img src={beans} className="beanss"/>
           <div className="petinfocontain">
             {petinfo}
           </div>
           <div className="petcontain">{pet}</div>
-          </div>
+        </div>
 
           <Footer/>
         </div>

@@ -1,7 +1,7 @@
 /* Fill me in :) */
 .landing{
-    background-color: var(--ltblue);
-    z-index: -50;
+    /* background-color: var(--ltblue); */
+    z-index: 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -9,6 +9,16 @@
     width: 100%;
     overflow: auto;
 }
+
+.clouds{
+    background-color: var(--ltblue); 
+    z-index:-1;
+    position: relative;
+    overflow:hidden;
+    height: 100vh;
+
+}
+
 .landing-title{
     font-style: italic;
     text-align: center;

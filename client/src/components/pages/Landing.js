@@ -38,10 +38,12 @@ class Landing extends Component {
   render() {
     return (
       <>
-        <img src={cloud1} className="cloud1"/>
-        <img src={cloud2} className="cloud2"/>
-        <img src={cloud3} className="cloud3"/>
-        <img src={cloud3} className="cloud4"/>
+        <div className="clouds">
+          <img src={cloud1} className="cloud1"/>
+          <img src={cloud2} className="cloud2"/>
+          <img src={cloud3} className="cloud3"/>
+          <img src={cloud3} className="cloud4"/>
+        </div>
         <div className = "landing">
         
           <h2 className="landing-title">take a deep breath</h2>
