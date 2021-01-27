@@ -13,6 +13,13 @@
     cursor: pointer;
     background-color: var(--pink);
 }
+.question-title{
+    font-family: "Mulish";
+    font-size: 1.5rem;
+    color: var(--darkblue);
+    margin-bottom: 1rem;
+    position: relative;
+}
 .questiontext{
     text-align:left;
     margin-left: 4rem;
@@ -32,12 +39,12 @@
 .Modalq {
     position: absolute;
     top: 10vw;
-    left: 50vh;
-    width:50vw;
+    left: 33vw;
     display:flex;
     justify-items: center;
+    padding-right: 3vw;
     background-color: var(--ltblue);
-    border-radius: 30px;
+    border-radius: 2rem;
     outline: none !important;
   }
 
