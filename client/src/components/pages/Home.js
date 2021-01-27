@@ -83,6 +83,8 @@ class Home extends Component {
       <Question/>
       <div className="home-background">
         <div className="home-content">
+        <h1 className="Petstate">chocolate is happy</h1>
+
           <button className = "reflect-button" onClick={() => navigate('/newentry')}>reflect</button>
           {/* <p id="date">{moment().format("MM/DD/YYYY")}</p> */}
         </div>
