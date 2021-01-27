@@ -30,7 +30,6 @@ class Navbar extends Component{
             <div className="questions-content">
               <p className="question-title">instructions</p>
               <p className= "questiontext">✩ click reflect to start/update today's entry </p>
-              <p className= "questiontext">✩ hearts show your pet's mood</p>
               <p className= "questiontext">✩ journal for at least 2 days in a row to maximize happiness</p>
               <p className= "questiontext">✩ check pet profile to learn more about your pet</p>
               <p className= "questiontext">✩ view past entries in timeline</p>
