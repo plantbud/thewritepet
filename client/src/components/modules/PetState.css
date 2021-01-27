@@ -186,33 +186,23 @@
     background-size: cover;
     width:150px;
     height:240px;
-    bottom: 10vh;
     left: 60vw;
     padding: 0;
     display: block;
     margin: 0;
-    margin-top:35vh;
+    margin-top:25vh;
     position: relative;
     animation: wormwalk 12s steps(24) infinite;
 }
 @keyframes wormwalk{
   0%{
       left: 60vw;
-      bottom: 10vh;
-  }
-  25%{
-      bottom: 11vh;
   }
   50%{
       left:20vw;    
-      bottom: 10vh;
-  }
-  75%{
-      bottom: 11vh;
   }
   100% {
       left: 60vw;
-      bottom: 10vh;
       background-position: -3600px;
     }
 }
@@ -285,4 +275,54 @@
         left: 60vw;
         background-position: -5760px;
       }
+}
+@media (max-height: 700px) {
+  .happy-dino{
+    background: url('../../assets/dino_amble.svg') ; 
+    background-size: cover;
+    width:550px;
+    height:450px;
+    left:60vw;
+    display: block;
+    margin-top:0vh;
+    position: relative;
+    animation: dinowalk 5s steps(5) infinite;
+  }
+  @keyframes dinowalk{
+    100% {
+        background-position: -2750px;
+      }
+  }
+  .happy-whale{
+    background: url('../../assets/whale_amble.svg') ; 
+    background-size: cover;
+    width:600px;
+    height:400px;
+    left: 60vw;
+    bottom:10vh;
+    padding: 0;
+    display: block;
+    margin: 0;
+    position: relative;
+    animation: whalewalk 3s steps(5) infinite;
+}
+  @keyframes whalewalk{
+    100% {
+        background-position: -3000px;
+      }
+}
+.happy-worm{
+  background: url('../../assets/worm_walk.svg') ; 
+  background-size: cover;
+  width:150px;
+  height:240px;
+  left: 60vw;
+  padding: 0;
+  display: block;
+  margin: 0;
+  margin-top:15vh;
+  position: relative;
+  animation: wormwalk 12s steps(24) infinite;
+}
+
 }

@@ -6,17 +6,18 @@
     left: 0;
     height: 100%;
     width: 100%;
-    overflow: auto;
+    overflow:hidden;
 }
 .home-content{
     display:flexbox;
+
 }
 .Petstate {
-    font-size: 4rem;
+    font-size: 7vh;
     font-family: "Roboto";
     text-align: center;
-    margin-top: 12rem;
-    margin-bottom: 1.5rem;
+    margin-top: 22vh;
+    margin-bottom: 2vh;
     font-style:italic;
     font-weight: lighter;
     
@@ -51,12 +52,12 @@
     color: white;
     border: .35rem solid #3F8898;
     position: relative; 
-    left: calc(50vw - 9rem);
-    width: 18rem;
-    height: 5rem;
+    left: calc(50vw - 17.5vh);
+    width: 35vh;
+    height: 10vh;
     border-radius: 10rem;
     font-weight:bold;
-    font-size: 2.2rem;
+    font-size: 5vh;
     letter-spacing: 0.2rem;
     box-sizing: border-box;
     box-shadow: 0 .5rem 0 .2rem var(--ltblue);

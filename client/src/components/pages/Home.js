@@ -113,14 +113,14 @@ class Home extends Component {
 
     return (
       <>
-      {/* <div className="con">
+      <div className="con">
       <button className="cons" onClick={() => {
           this.incrementPetState();
           }}> Increase Consistency </button>
           <button className="cons" onClick={() => {
           this.decreasePetState();
           }}> Decrease Consistency </button>
-      </div>       */}
+      </div>      
       <Navbar handleLogout={this.props.handleLogout} userId={this.props.userId} user={this.props.user}/>
       <Question/>
       <div className="home-background">
