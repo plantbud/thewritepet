@@ -8,7 +8,6 @@ import {
   convertFromRaw
 } from 'draft-js';
 import 'draft-js/dist/Draft.css';
-import debounce from 'lodash/debounce';
 import Loading from "../pages/Loading.js";
 import "./Entry.css";
 import HomeButton from "../modules/HomeButton";
