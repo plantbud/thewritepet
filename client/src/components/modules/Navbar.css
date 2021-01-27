@@ -40,7 +40,6 @@
   display:block;
 }
 .show {
-  transform: translate3d(0vw,0,0);
   opacity:1;
   visibility: visible;
   animation: NavBarAppear .4s;
@@ -48,7 +47,6 @@
 
 @keyframes NavBarAppear{
     0% {
-        transform: translate();
         opacity:0;
     }
     100% {
@@ -57,15 +55,19 @@
 }
 
 .hide{
-  opacity:0;
-  /* visibility:hidden; */
+  opacity: 0;
   animation: NavBarDisappear .4s;
+  visibility:hidden;
+
+}
+.hidden{
+  opacity: 0;
+  visibility:hidden;
 }
 
 @keyframes NavBarDisappear{
     0% {
-        transform: translate();
-        opacity:1;
+      opacity: 100%; 
     }
     100% {
       opacity:0;
@@ -91,6 +93,8 @@
   font-family: "Roboto";
   color:var(--darkblue);
   font-style: italic;
+  outline: none !important;
+
 }
 .NavBar-logout:hover{
   cursor: pointer;

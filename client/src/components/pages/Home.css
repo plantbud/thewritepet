@@ -56,6 +56,9 @@
     letter-spacing: 0.2rem;
     box-sizing: border-box;
     box-shadow: 0 .5rem 0 .2rem var(--ltblue);
+    font-weight: 700;
+    outline: none !important;
+
   }
 .reflect-button:hover{
     background-color: var(--pink);
