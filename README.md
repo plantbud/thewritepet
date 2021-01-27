@@ -11,7 +11,8 @@ take care of your pet by taking care of yourself
 - Customize how often you would like reminders
 
 ## Borrowed Code 
-Notebook editor borrowed from draft.js.
+Notebook editor borrowed from draft.js. 
+Navbar hover animation from bootstrap demo (https://bootstrap-menu.com/detail-animation.html).
 
 
 ## Socket stuff

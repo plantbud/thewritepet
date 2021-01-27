@@ -37,13 +37,39 @@
   width: 25rem;
   border-radius: 3rem;
   font-style: italic;
+  display:block;
 }
 .show {
   transform: translate3d(0vw,0,0);
+  opacity:1;
+  visibility: visible;
+  animation: NavBarAppear .4s;
 }
-.hide{
-  transform: translate3d(-30vw, 0, 0);
 
+@keyframes NavBarAppear{
+    0% {
+        transform: translate();
+        opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+}
+
+.hide{
+  opacity:0;
+  /* visibility:hidden; */
+  animation: NavBarDisappear .4s;
+}
+
+@keyframes NavBarDisappear{
+    0% {
+        transform: translate();
+        opacity:1;
+    }
+    100% {
+      opacity:0;
+    }
 }
 
 .NavBar-linkContainer {

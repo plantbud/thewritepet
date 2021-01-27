@@ -64,8 +64,7 @@ class Navbar extends Component{
             ): (
               <nav className="NavBar-container hide">
               <div className="NavBar-linkContainer ">
-                <ul><Link to="/home" className="NavBar-link">HOME</Link></ul>
-                <ul><Link to="/addlater" className="NavBar-link">PET STATUS</Link></ul>
+                <ul><Link to="/addlater" className="NavBar-link">PET PROFILE</Link></ul>
                 <ul><Link to="/timeline" className="NavBar-link">TIMELINE</Link></ul>
                 <ul><Link to="/addlater" className="NavBar-link">SWITCH PET</Link></ul>
                 <ul>
