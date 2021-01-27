@@ -32,6 +32,7 @@
     font-family: "Mulish";
     font-style: normal;
     font-weight: bolder;
+    justify: center;
 }
 .petprofile{
     background-color: var(--primary);
@@ -62,13 +63,13 @@
     background-color: var(--ltblue);
     width: 20vw;
     height:20vw;
-    position: relative;; 
-    bottom: 33vh;
-    left: 47vw;
+    /* position: relative; */
+    /* bottom: 33vh;
+    left: 47vw; */
     border-radius: 3em;
     margin:0;
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    align-self:flex-end;
 }
 .titlep{
     font-family: "Mulish";
@@ -79,7 +80,8 @@
     padding:.5rem;
     padding-left: 4rem;
     padding-right: 4rem;
-    display:inline;
+    /* display:inline; */
+    align-self: center;
 }
 .doggo-p{
     background: url('../../assets/dog_normal.svg') ; 
@@ -118,9 +120,11 @@
     background-repeat: no-repeat;
     height:25vh;
     width: 25vh;
-    left:3vw;
-    top:8vh;
-    position: relative;
+    /* left:3vw;
+    top:8vh; */
+    /* position: relative; */
+    justify-content: center;
+    align-content: center;
 }
 .whale-p{
     background: url('../../assets/whale_normal.svg') ; 
