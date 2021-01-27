@@ -54,7 +54,8 @@
 }
 .Modal {
     position: absolute;
-    top: 10vw;
+    top: 10vh;
+    margin:auto;
     left: 50vh;
     width:50vw;
     background-color: var(--primary);

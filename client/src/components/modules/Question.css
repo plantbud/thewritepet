@@ -7,7 +7,7 @@
     padding:1vh;
     padding-right:5vw;
     padding-left: 2vw;
-    border-radius: 2em;
+    border-radius: 2em;  
 }
 .question:hover{
     cursor: pointer;
@@ -34,8 +34,20 @@
     top: 10vw;
     left: 50vh;
     width:50vw;
-    height: 50vh;
+    display:flex;
+    justify-items: center;
     background-color: var(--ltblue);
     border-radius: 30px;
     outline: none !important;
   }
+
+  .modal-close-button{
+    background-color: transparent;
+    outline: none !important;
+    border: none;
+    position: absolute;
+    height: 3vh;
+    margin-top: 1.5vh;
+    margin-left: 1.5vw;
+    left:0;
+}
