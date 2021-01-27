@@ -96,7 +96,7 @@ class Entry extends Component {
         </div>
         <div >
           <span className= "saved">
-            {this.state.isSaved ? "All changes saved" : "Unsaved"}
+            {this.state.isSaved ? "submitted" : "unsubmitted"}
           </span>
         </div>
       </div>
