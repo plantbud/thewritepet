@@ -18,24 +18,31 @@ class Home extends Component {
         petState: 0, 
         petter: null,
         navdisplay: false, 
-        petmood: null, 
+        petmood: undefined, 
       };
   }
 
-  componentDidMount() {
+ async componentDidMount() {
+    console.log("before mounting" + this.state.petmood);
     // remember -- api calls go here!
     const dayBefore = {timestamp: moment().local().subtract(1, 'days').startOf('day')};
     const dayNow = {timestamp: moment().local().startOf('day')};
 
     get("/api/user", { userid: this.props.userId }).then((user) => this.setState({ user: user, petter:user.petType}));
-    get("/api/journalentrieschanged", dayBefore).then((entryBefore) => {
+    await get("/api/journalentrieschanged", dayBefore).then((entryBefore) => {
       if(entryBefore.entries){
         this.setState({
           petState: 1,
         }, () => { get("/api/journalentrieschanged", dayNow).then((entryObjs) => {
           if (entryObjs.entries) {
             this.setState({
-              petState:2, 
+              petState:2,
+              petmood:<span>happy</span>,
+              });
+            }
+            if(this.state.petState===1) {
+              this.setState({
+                petmood:<span>content</span>,
               });
             } 
         });});
@@ -46,28 +53,19 @@ class Home extends Component {
           if (entryObjs.entries) {
             this.setState({
               petState: 1, 
+              petmood:<span>content</span>,
               });
+            }
+            if(this.state.petState===0) {
+              this.setState({
+                petmood:<span>disappointed</span>,
+              })
             } 
         });});
       }
     })
-    // .then(() => {
-    //   if(this.state.petState===0){
-    //     this.setState({
-    //       petmood: <span>disappointed</span>, 
-    //       });
-    //   } else if(this.state.petState===1){
-    //     this.setState({
-    //       petmood: <span>content</span>, 
-    //       });
-    //   }else{
-    //     this.setState({
-    //       petmood: <span>happy</span>, 
-    //       });
-    //   }
-    // });
     }
-
+    
   incrementPetState = () => {
     if(this.state.petState<2){
     this.setState({
@@ -75,6 +73,7 @@ class Home extends Component {
     });
   }
   };
+
   decreasePetState = () => {
     if(this.state.petState>0){
       this.setState({
@@ -113,19 +112,19 @@ class Home extends Component {
 
     return (
       <>
-      <div className="con">
+      {/* <div className="con">
       <button className="cons" onClick={() => {
           this.incrementPetState();
           }}> Increase Consistency </button>
           <button className="cons" onClick={() => {
           this.decreasePetState();
           }}> Decrease Consistency </button>
-      </div>      
+      </div>       */}
       <Navbar handleLogout={this.props.handleLogout} userId={this.props.userId} user={this.props.user}/>
       <Question/>
       <div className="home-background">
         <div className="home-content">
-        <h1 className="Petstate">{pet} is {mood}</h1>
+        <h1 className="Petstate">{pet} is {this.state.petmood}</h1>
         <button className = "reflect-button" onClick={() => navigate('/newentry')}>reflect</button>
         <PetState petState={this.state.petState} userId={this.props.userId}/>
         {/* <p id="date">{moment().format("MM/DD/YYYY")}</p> */}
