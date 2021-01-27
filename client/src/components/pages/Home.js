@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import "./Home.css";
-import { navigate, Router } from "@reach/router";
+import { navigate} from "@reach/router";
 import Navbar from "../modules/Navbar";
 import PetState from "../modules/PetState.js"
 import { get } from "../../utilities";
 import moment from "moment"; 
 import Footer from "../modules/Footer.js";
 import Question from "../modules/Question.js"
+import Loading from "./Loading.js";
 
 class Home extends Component {
     constructor(props) {
@@ -15,7 +16,9 @@ class Home extends Component {
       this.state = {
         user: undefined, 
         petState: 0, 
+        petter: null,
         navdisplay: false, 
+        petmood: null, 
       };
   }
 
@@ -24,7 +27,7 @@ class Home extends Component {
     const dayBefore = {timestamp: moment().local().subtract(1, 'days').startOf('day')};
     const dayNow = {timestamp: moment().local().startOf('day')};
 
-    get("/api/user", { userid: this.props.userId }).then((user) => this.setState({ user: user}));
+    get("/api/user", { userid: this.props.userId }).then((user) => this.setState({ user: user, petter:user.petType}));
     get("/api/journalentrieschanged", dayBefore).then((entryBefore) => {
       if(entryBefore.entries){
         this.setState({
@@ -37,20 +40,32 @@ class Home extends Component {
             } 
         });});
       }else{
-        console.log("am i here");
         this.setState({
           petState: 0,
         }, () => { get("/api/journalentrieschanged", dayNow ).then((entryObjs) => {
-          console.log("ahhhh");
           if (entryObjs.entries) {
-            console.log("hellooo");
             this.setState({
               petState: 1, 
               });
             } 
         });});
       }
-    });
+    })
+    // .then(() => {
+    //   if(this.state.petState===0){
+    //     this.setState({
+    //       petmood: <span>disappointed</span>, 
+    //       });
+    //   } else if(this.state.petState===1){
+    //     this.setState({
+    //       petmood: <span>content</span>, 
+    //       });
+    //   }else{
+    //     this.setState({
+    //       petmood: <span>happy</span>, 
+    //       });
+    //   }
+    // });
     }
 
   incrementPetState = () => {
@@ -69,6 +84,33 @@ class Home extends Component {
   };
 
   render() {
+    let pet = null;
+    let mood = null; 
+    if(!this.state.petter){
+      return(
+        <Loading/>);
+    }
+    else if(this.state.petter == "0"){
+      pet = <span>chocolate</span>
+    } else if(this.state.petter =="1"){
+      pet = <span>peaches</span>
+    } else if(this.state.petter =="2"){
+      pet = <span>nugget</span>
+    } else if(this.state.petter =="3"){
+      pet = <span>pork bun</span>
+    } else if(this.state.petter =="4"){
+      pet = <span>waffles</span>
+    } else if(this.state.petter =="5"){
+      pet = <span>sir</span>
+    } 
+    if(this.state.petState===0){
+      mood = <span>disappointed</span>
+    }else if(this.state.petState===1){
+      mood = <span>content</span>
+    }else{
+      mood = <span>happy</span>
+    }
+
     return (
       <>
       {/* <div className="con">
@@ -83,16 +125,16 @@ class Home extends Component {
       <Question/>
       <div className="home-background">
         <div className="home-content">
-        <h1 className="Petstate">chocolate is happy</h1>
+        <h1 className="Petstate">{pet} is {mood}</h1>
+        <button className = "reflect-button" onClick={() => navigate('/newentry')}>reflect</button>
+        <PetState petState={this.state.petState} userId={this.props.userId}/>
 
-          <button className = "reflect-button" onClick={() => navigate('/newentry')}>reflect</button>
           {/* <p id="date">{moment().format("MM/DD/YYYY")}</p> */}
         </div>
         <svg viewBox="0 0 200 50" id = "ellipse-viewbox" xmlns="http://www.w3.org/2000/svg">
           <ellipse id="home-ellipse" cx="100" cy="50" rx="150" ry="20"/>
         </svg>
       </div>
-      <PetState petState={this.state.petState} userId={this.props.userId}/>
       <Footer/>
       </>
     );
