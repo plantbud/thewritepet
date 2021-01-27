@@ -29,14 +29,14 @@ div.DraftEditor-root{
 }
 
 .titleentry{
-    margin-bottom: 3vh;
+    margin-bottom: 1rem;
     margin-top: 0;
     font-size: 2rem;
     font-family: "Mulish";
     font-weight: 300;
     padding-bottom: .1em;
-    border-bottom: solid var(--aqua);
-    border-bottom-width: 1px;
+    /* border-bottom: solid var(--aqua);
+    border-bottom-width: 1px; */
     text-transform: lowercase;
     font-style: normal;
 }
@@ -52,12 +52,21 @@ div.DraftEditor-root{
     width: 15rem;
     border-radius: 70%;
     z-index: -1;
+    display:inline-block;
 }
 .saved{
     margin-left: 2rem;
-    font-size: 2rem;
+    font-size: .8rem;
     font-style: italic;
     font-weight: lighter;
+    display:inline-block;
+    
+}
+
+.header{
+    border-bottom: solid var(--aqua);
+    border-bottom-width: 1px;
+    margin-bottom:1rem;
 }
 
 /* does not work yet and idk why */
@@ -84,7 +93,8 @@ div.DraftEditor-root{
     font-weight: 700;
     letter-spacing: .05em;
     font-size: 1.5rem;
-    left:60vw;
+    left: 58vw;
+    top:2vh;
     outline: none !important;
 
 }

@@ -77,7 +77,16 @@ class Entry extends Component {
          {/*<p className="dateTime-display ">01/16/2021</p> */} 
          <div className="submitcontainer">
          <button className = "submit-entry" onClick= { () => this.submitEntry(this.state.editorState)}>submit</button>
-         <h1 className="titleentry">{moment().format("LL")}</h1>
+         <div className="header">
+           {/* <span> */}
+         <span className="titleentry">{moment().format("LL")}</span>
+         {/* </span> */}
+          <span className= "saved">
+            {this.state.isSaved ? "submitted" : "unsubmitted"}
+          </span>
+          {/* <span>
+          </span> */}
+        </div>
          </div>
           {/* <div className="box blueFloor">hellooooo</div> */}
           <div>
@@ -93,11 +102,11 @@ class Entry extends Component {
             />
           </div>
         </div>
-        <div >
+        {/* <div >
           <span className= "saved">
             {this.state.isSaved ? "submitted" : "unsubmitted"}
           </span>
-        </div>
+        </div> */}
       </div>
   );
     }
